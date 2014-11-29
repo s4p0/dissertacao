@@ -1,0 +1,1573 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.28)  24 NOV 2014 19:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**publicacao.tex
+(./publicacao.tex
+LaTeX2e <2011/06/27>
+Babel <3.9g> and hyphenation patterns for 78 languages loaded.
+(./tdiinpe.cls
+Document Class: tdiinpe 2012/10/19 v1.19
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+===================tex4ht-false
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./titlesec.sty
+Package: titlesec 2007/08/12 v2.8 Sectioning titles
+\ttl@box=\box26
+\beforetitleunit=\skip43
+\aftertitleunit=\skip44
+\ttl@plus=\dimen103
+\ttl@minus=\dimen104
+\ttl@toksa=\toks14
+\titlewidth=\dimen105
+\titlewidthlast=\dimen106
+\titlewidthfirst=\dimen107
+) (./titletoc.sty
+Package: titletoc 2007/08/12 v1.6 TOC entries
+\ttl@leftsep=\dimen108
+) (./textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count88
+\calc@Bcount=\count89
+\calc@Adimen=\dimen109
+\calc@Bdimen=\dimen110
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count90
+\calc@Cskip=\skip47
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count92
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/10/10 3.9g The Babel package
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/10/10 3.9g Babel common definitions
+\babel@savecnt=\count93
+\U@D=\dimen113
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+Package babel Info: Making " an active character on input line 145.
+))
+(./hyphenat.sty
+Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
+\langwohyphens=\language79
+LaTeX Info: Redefining \_ on input line 43.
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen114
+\extrarowheight=\dimen115
+\NC@list=\toks20
+\extratabsurround=\skip48
+\backup@length=\skip49
+) (./setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) (./bigdelim.sty) (./multirow.sty
+\bigstrutjot=\dimen116
+) (./supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count94
+\ST@wd=\dimen117
+\ST@rightskip=\skip50
+\ST@leftskip=\skip51
+\ST@parfillskip=\skip52
+\ST@pageleft=\dimen118
+\ST@headht=\dimen119
+\ST@tailht=\dimen120
+\ST@pagesofar=\dimen121
+\ST@pboxht=\dimen122
+\ST@lineht=\dimen123
+\ST@stretchht=\dimen124
+\ST@prevht=\dimen125
+\ST@toadd=\dimen126
+\ST@dimen=\dimen127
+\ST@pbox=\box29
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen128
+\TX@old@table=\dimen129
+\TX@old@col=\dimen130
+\TX@target=\dimen131
+\TX@delta=\dimen132
+\TX@cols=\count95
+\TX@ftn=\toks21
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip53
+\LTright=\skip54
+\LTpre=\skip55
+\LTpost=\skip56
+\LTchunksize=\count96
+\LTcapwidth=\dimen133
+\LT@head=\box30
+\LT@firsthead=\box31
+\LT@foot=\box32
+\LT@lastfoot=\box33
+\LT@cols=\count97
+\LT@rows=\count98
+\c@LT@tables=\count99
+\c@LT@chunks=\count100
+\LT@p@ftn=\toks22
+)
+(./lastpage.sty
+Package: lastpage 2011/02/01 v1.2g Refers to last page's name (HMM; JPG)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/dvips/rotate.sty
+\@rotdimen=\dimen134
+\@rotbox=\box34
+)
+(./caption2.sty
+Package: caption2 2008/07/01 v2.2c Customising captions (AS)
+
+
+Package caption2 Warning: ****************************************************
+(caption2)                THIS PACKAGE IS OBSOLETE:
+(caption2)                This package attempts to provide an `caption2'
+(caption2)                package v2.0/2.1 author environment so that OLD
+(caption2)                documents can be successfully processed. It should
+(caption2)                NOT be used for NEW documents! New documents should
+(caption2)                use the regular `caption' package v3.x instead.
+(caption2)                ****************************************************
+
+(./caption3.sty
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+\captionmargin=\dimen135
+\captionmargin@=\dimen136
+\captionwidth=\dimen137
+\caption@indent=\dimen138
+\caption@parindent=\dimen139
+\caption@hangindent=\dimen140
+)
+Package caption2 Info: Running in caption2 v2.0 compatibility mode on input lin
+e 209.
+\captionlinewidth=\dimen141
+\realcaptionwidth=\dimen142
+Package caption2 Info: float package v1.2 (or newer) detected on input line 318
+.
+Package caption2 Info: longtable package v3.15 (or newer) detected on input lin
+e 340.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip57
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks23
+\ex@=\dimen143
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen144
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count101
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count102
+\leftroot@=\count103
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count104
+\DOTSCASE@=\count105
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box35
+\strutbox@=\box36
+\big@size=\dimen145
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
+\dotsspace@=\muskip10
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
+\tag@help=\toks24
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
+\andhelp@=\toks25
+\eqnshift@=\dimen146
+\alignsep@=\dimen147
+\tagshift@=\dimen148
+\tagwidth@=\dimen149
+\totwidth@=\dimen150
+\lineht@=\dimen151
+\@envbody=\toks26
+\multlinegap=\skip58
+\multlinetaggap=\skip59
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
+\thm@preskip=\skip60
+\thm@postskip=\skip61
+\thm@headsep=\skip62
+\dth@everypar=\toks33
+)
+(./subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip63
+\subfigcapskip=\skip64
+\subfigcaptopadj=\dimen152
+\subfigbottomskip=\skip65
+\subfigcapmargin=\dimen153
+\subfiglabelskip=\skip66
+\c@subfigure=\count113
+\c@lofdepth=\count114
+\c@subtable=\count115
+\c@lotdepth=\count116
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip67
+\subfig@bottom=\skip68
+)
+(./tocloft.sty
+Package: tocloft 2010/10/13 v2.3e parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 43.
+\cftparskip=\skip69
+\cftbeforetoctitleskip=\skip70
+\cftaftertoctitleskip=\skip71
+\cftbeforepartskip=\skip72
+\cftpartnumwidth=\skip73
+\cftpartindent=\skip74
+\cftbeforechapskip=\skip75
+\cftchapindent=\skip76
+\cftchapnumwidth=\skip77
+\cftbeforesecskip=\skip78
+\cftsecindent=\skip79
+\cftsecnumwidth=\skip80
+\cftbeforesubsecskip=\skip81
+\cftsubsecindent=\skip82
+\cftsubsecnumwidth=\skip83
+\cftbeforesubsubsecskip=\skip84
+\cftsubsubsecindent=\skip85
+\cftsubsubsecnumwidth=\skip86
+\cftbeforeparaskip=\skip87
+\cftparaindent=\skip88
+\cftparanumwidth=\skip89
+\cftbeforesubparaskip=\skip90
+\cftsubparaindent=\skip91
+\cftsubparanumwidth=\skip92
+\cftbeforeloftitleskip=\skip93
+\cftafterloftitleskip=\skip94
+\cftbeforefigskip=\skip95
+\cftfigindent=\skip96
+\cftfignumwidth=\skip97
+\cftbeforelottitleskip=\skip98
+\cftafterlottitleskip=\skip99
+\cftbeforetabskip=\skip100
+\cfttabindent=\skip101
+\cfttabnumwidth=\skip102
+\cftbeforesubfigskip=\skip103
+\cftsubfigindent=\skip104
+\cftsubfignumwidth=\skip105
+\cftbeforesubtabskip=\skip106
+\cftsubtabindent=\skip107
+\cftsubtabnumwidth=\skip108
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+) (./eso-pic.sty
+Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
+ (./everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fundus-calligra/calligra.sty
+Package: calligra 2012/04/10 v1.9 LaTeX package calligra
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen154
+\Hy@linkcounter=\count117
+\Hy@pagecounter=\count118
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count119
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `debug' set `true' on input line 4319.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4319.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4319
+.
+Package hyperref Info: Option `hyperindex' set `true' on input line 4319.
+Package hyperref Info: Option `verbose' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing ON on input line 4461.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/backref.sty
+Package: backref 2012/07/25 v1.38 Bibliographical back referencing
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+))
+\c@Hy@tempcnt=\count120
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen155
+\Fld@menulength=\count121
+\Field@Width=\dimen156
+\Fld@charsize=\dimen157
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing ON on input line 6308.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count122
+\c@Item=\count123
+\c@Hfootnote=\count124
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count125
+\c@bookmark@seq@number=\count126
+\Hy@SectionHShift=\skip109
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+-------------->Opcao: PublicacaoDissOuTese
+(./abntcite.sty (./abntex-abrev.sty (./nbr10522-1988.def)
+(./abntex-abrev-pt_BR.def)) (./nbr10520-2002.def)
+\minimumbiblabelwidth=\skip110
+\ABCIauxlen=\skip111
+\c@ABCIaux=\count127
+\c@ABCImax=\count128
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\biblabelsep=\skip112
+LaTeX Info: Redefining \newblock on input line 569.
+LaTeX Info: Redefining \cite on input line 596.
+\ABCItoken=\toks34
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count129
+\Gm@cntv=\count130
+\c@Gm@tempcnt=\count131
+\Gm@bindingoffset=\dimen158
+\Gm@wd@mp=\dimen159
+\Gm@odd@mp=\dimen160
+\Gm@even@mp=\dimen161
+\Gm@layoutwidth=\dimen162
+\Gm@layoutheight=\dimen163
+\Gm@layouthoffset=\dimen164
+\Gm@layoutvoffset=\dimen165
+\Gm@dimlist=\toks35
+)
+\linha=\skip113
+\baselsdefault=\skip114
+\parsdefault=\skip115
+\baselsinpe=\skip116
+\parsinpe=\skip117
+\seistoques=\skip118
+\lrotulo=\skip119
+\sepitem=\skip120
+\tempbox=\skip121
+\tempboxA=\skip122
+\tempboxB=\skip123
+\tempboxC=\skip124
+\tempboxD=\skip125
+\tempboxCalc=\skip126
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count132
+\rotFPtop=\skip127
+\rotFPbot=\skip128
+\rot@float@box=\box37
+\rot@mess@toks=\toks36
+)
+(./dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/local/texlive/2013/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count133
+\c@Blindtext=\count134
+\c@blind@countparstart=\count135
+\blind@countxx=\count136
+\blindtext@numBlindtext=\count137
+\blind@countyy=\count138
+\c@blindlist=\count139
+\c@blindlistlevel=\count140
+\c@blindlist@level=\count141
+\blind@listitem=\count142
+\c@blind@listcount=\count143
+\c@blind@levelcount=\count144
+\blind@mathformula=\count145
+\blind@Mathformula=\count146
+\c@blind@randomcount=\count147
+\c@blind@randommax=\count148
+\c@blind@pangramcount=\count149
+\c@blind@pangrammax=\count150
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box38
+\UL@hyphenbox=\box39
+\UL@skip=\skip129
+\UL@hook=\toks37
+\UL@height=\dimen166
+\UL@pe=\count151
+\UL@pixel=\dimen167
+\ULC@box=\box40
+Package: ulem 2012/05/18
+\ULdepth=\dimen168
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks38
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen169
+\lightrulewidth=\dimen170
+\cmidrulewidth=\dimen171
+\belowrulesep=\dimen172
+\belowbottomsep=\dimen173
+\aboverulesep=\dimen174
+\abovetopsep=\dimen175
+\cmidrulesep=\dimen176
+\cmidrulekern=\dimen177
+\defaultaddspace=\dimen178
+\@cmidla=\count152
+\@cmidlb=\count153
+\@aboverulesep=\dimen179
+\@belowrulesep=\dimen180
+\@thisruleclass=\count154
+\@lastruleclass=\count155
+\@thisrulewidth=\dimen181
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count156
+\mult@box=\box41
+\multicol@leftmargin=\dimen182
+\c@unbalance=\count157
+\c@collectmore=\count158
+\doublecol@number=\count159
+\multicoltolerance=\count160
+\multicolpretolerance=\count161
+\full@width=\dimen183
+\page@free=\dimen184
+\premulticols=\dimen185
+\postmulticols=\dimen186
+\multicolsep=\skip130
+\multicolbaselineskip=\skip131
+\partial@page=\box42
+\last@line=\box43
+\mult@rightbox=\box44
+\mult@grightbox=\box45
+\mult@gfirstbox=\box46
+\mult@firstbox=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\c@columnbadness=\count162
+\c@finalcolumnbadness=\count163
+\last@try=\dimen187
+\multicolovershoot=\dimen188
+\multicolundershoot=\dimen189
+\mult@nat@firstbox=\box65
+\colbreak@box=\box66
+\multicol@sort@counter=\count164
+)
+(./configuracao.tex
+\mylenfig=\skip132
+)
+\@indexfile=\write4
+\openout4 = `publicacao.idx'.
+
+
+Writing index file publicacao.idx
+(./publicacao.aux (./docs/resumo.aux) (./docs/abstract.aux)
+(./docs/introducao.aux) (./docs/revisao_bibliografica.aux)
+(./docs/metodologia.aux) (./docs/resultado_e_discussoes.aux)
+(./docs/contracapa.aux))
+\openout1 = `publicacao.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count165
+\scratchdimen=\dimen190
+\scratchbox=\box67
+\nofMPsegments=\count166
+\nofMParguments=\count167
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count168
+\MPscratchDim=\dimen191
+\MPnumerator=\count169
+\makeMPintoPDFobject=\count170
+\everyMPtoPDFconversion=\toks40
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package lastpage Info: Please have a look at the pagesLTS package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pagesLTS/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pagesLTS.tds.zip
+(lastpage)             ! on input line 58.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+ABD: EveryShipout initializing macros
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring ON on input line 58.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count171
+)
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
+
+(./publicacao.out) (./publicacao.out)
+\@outlinefile=\write5
+\openout5 = `publicacao.out'.
+
+Package hyperref Info: Anchor `Doc-Start' on input line 58.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=85.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+\metade@largura=\skip133
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `CAPA.0' on input line 60.
+<logoverno.pdf, id=140, 693.31017pt x 120.45pt>
+File: logoverno.pdf Graphic file (type pdf)
+ <use logoverno.pdf>
+Package pdftex.def Info: logoverno.pdf used on input line 60.
+(pdftex.def)             Requested size: 398.33858pt x 69.20674pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `page.i' on input line 60.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 60.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+Package `hyperref' Info: End of reference <VerboseLinkInfo>.
+ <./logoverno.pdf>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `VERSO.0' on input line 60.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 60.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `page.ii' on input line 60.
+[2
+Package `hyperref' Info: End of reference <VerboseLinkInfo>.
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `FOLHA DE ROSTO.0' on input line 60.
+File: logoverno.pdf Graphic file (type pdf)
+ <use logoverno.pdf>
+Package pdftex.def Info: logoverno.pdf used on input line 60.
+(pdftex.def)             Requested size: 398.33858pt x 69.20674pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `page.i' on input line 60.
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 \maketitle
+                 %% não alterar, gera páginas obrigatórias (folha de rosto, ...
+[1
+Package `hyperref' Info: End of reference <VerboseLinkInfo>.
+]
+\cutter@width=\skip134
+\oitava@coluna=\skip135
+\decimaterceira@coluna=\skip136
+\oitava@colunaminuscutter=\skip137
+\widthminusoitava@coluna=\skip138
+\widthminusdecimaterceira@coluna=\skip139
+\card@width=\skip140
+\insidecard@width=\skip141
+\sexta@coluna=\skip142
+\quarta@coluna=\skip143
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `nomefichac.0' on input line 60.
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+
+ []
+
+Package hyperref Info: Reference (link) `section.0.1' on input line 60.
+Package hyperref Info: Reference (link) `page.11' on input line 60.
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 60.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/ae/omsaer.fd
+File: omsaer.fd 1999/12/27
+)
+LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `page.ii' on input line 60.
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 \maketitle
+                 %% não alterar, gera páginas obrigatórias (folha de rosto, ...
+[2
+Package `hyperref' Info: End of reference (link) `section.0.1', line 60.
+Package `hyperref' Info: End of reference (link) `page.11', line 60.
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 60.
+Package hyperref Info: Anchor `aprovacao.0' on input line 60.
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]\T1/aer/bx/n/12 ATENÇÃO! A FO-LHA DE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\T1/aer/bx/n/12 APRO-VA-ÇÃO SERÁ IN-
+ []
+
+
+Overfull \hbox (14.37561pt too wide) in paragraph at lines 60--60
+ [] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 63.
+Package hyperref Info: Anchor `page.iii' on input line 63.
+[3
+
+
+]
+\openout2 = `./docs/resumo.aux'.
+
+ (./docs/resumo.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: Anchor `page.iv' on input line 1.
+ [4
+
+
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: Anchor `nomeresumo.0' on input line 1.
+Package hyperref Info: Anchor `estilo:resumo' on input line 5.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 63.
+Package hyperref Info: Anchor `page.v' on input line 63.
+ [5]
+\openout2 = `./docs/abstract.aux'.
+
+ (./docs/abstract.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: Anchor `page.vi' on input line 1.
+ [6
+
+
+
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: Anchor `nomeabstract.0' on input line 1.
+Package hyperref Info: Anchor `estilo:abstract' on input line 5.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 64.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 64.
+Package hyperref Info: Anchor `page.vii' on input line 64.
+ [7]
+Package hyperref Info: Anchor `section.0.1' on input line 66.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package hyperref Info: Anchor `page.viii' on input line 66.
+ [8
+
+
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package hyperref Info: Anchor `listfigurename.0' on input line 66.
+
+(./publicacao.lof)
+\tf@lof=\write6
+\openout6 = `publicacao.lof'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package hyperref Info: Anchor `page.ix' on input line 66.
+ [9]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 66.
+Package hyperref Info: Anchor `page.x' on input line 66.
+ [10
+
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 72.
+Package hyperref Info: Anchor `contentsname.0' on input line 72.
+ (./publicacao.toc
+Package hyperref Info: Reference (link) `chapter.1' on input line 10.
+Package hyperref Info: Reference (link) `chapter.2' on input line 11.
+Package hyperref Info: Reference (link) `section.2.1' on input line 12.
+Package hyperref Info: Reference (link) `subsection.2.1.1' on input line 13.
+Package hyperref Info: Reference (link) `subsection.2.1.2' on input line 14.
+Package hyperref Info: Reference (link) `section.2.2' on input line 15.
+Package hyperref Info: Reference (link) `subsection.2.2.1' on input line 16.
+Package hyperref Info: Reference (link) `subsection.2.2.2' on input line 17.
+Package hyperref Info: Reference (link) `subsection.2.2.3' on input line 18.
+Package hyperref Info: Reference (link) `subsection.2.2.4' on input line 19.
+Package hyperref Info: Reference (link) `subsubsection.2.2.4.1' on input line 2
+0.
+Package hyperref Info: Reference (link) `section.2.3' on input line 21.
+Package hyperref Info: Reference (link) `subsection.2.3.1' on input line 22.
+Package hyperref Info: Reference (link) `subsection.2.3.2' on input line 23.
+Package hyperref Info: Reference (link) `subsection.2.3.3' on input line 24.
+Package hyperref Info: Reference (link) `section.2.4' on input line 25.
+Package hyperref Info: Reference (link) `subsection.2.4.1' on input line 26.
+Package hyperref Info: Reference (link) `subsection.2.4.2' on input line 27.
+Package hyperref Info: Reference (link) `subsection.2.4.3' on input line 28.
+Package hyperref Info: Reference (link) `subsection.2.4.4' on input line 29.
+Package hyperref Info: Reference (link) `chapter.3' on input line 30.
+Package hyperref Info: Reference (link) `section.3.1' on input line 31.
+Package hyperref Info: Reference (link) `section.3.2' on input line 32.
+Package hyperref Info: Reference (link) `chapter.4' on input line 33.
+Package hyperref Info: Reference (link) `chapter.5' on input line 34.
+)
+\tf@toc=\write7
+\openout7 = `publicacao.toc'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 72.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 72.
+Package hyperref Info: Anchor `page.xi' on input line 72.
+ [11
+
+
+Package `hyperref' Info: End of reference (link) `chapter.1', line 10.
+Package `hyperref' Info: End of reference (link) `chapter.2', line 11.
+Package `hyperref' Info: End of reference (link) `section.2.1', line 12.
+Package `hyperref' Info: End of reference (link) `subsection.2.1.1', line 13.
+Package `hyperref' Info: End of reference (link) `subsection.2.1.2', line 14.
+Package `hyperref' Info: End of reference (link) `section.2.2', line 15.
+Package `hyperref' Info: End of reference (link) `subsection.2.2.1', line 16.
+Package `hyperref' Info: End of reference (link) `subsection.2.2.2', line 17.
+Package `hyperref' Info: End of reference (link) `subsection.2.2.3', line 18.
+Package `hyperref' Info: End of reference (link) `subsection.2.2.4', line 19.
+Package `hyperref' Info: End of reference (link) `subsubsection.2.2.4.1', line 
+20.
+Package `hyperref' Info: End of reference (link) `section.2.3', line 21.
+Package `hyperref' Info: End of reference (link) `subsection.2.3.1', line 22.
+Package `hyperref' Info: End of reference (link) `subsection.2.3.2', line 23.
+Package `hyperref' Info: End of reference (link) `subsection.2.3.3', line 24.
+Package `hyperref' Info: End of reference (link) `section.2.4', line 25.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.1', line 26.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.2', line 27.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.3', line 28.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.4', line 29.
+Package `hyperref' Info: End of reference (link) `chapter.3', line 30.
+Package `hyperref' Info: End of reference (link) `section.3.1', line 31.
+Package `hyperref' Info: End of reference (link) `section.3.2', line 32.
+Package `hyperref' Info: End of reference (link) `chapter.4', line 33.
+Package `hyperref' Info: End of reference (link) `chapter.5', line 34.
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 72.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 72.
+Package hyperref Info: Anchor `page.xii' on input line 72.
+ [12
+
+
+]
+\openout2 = `./docs/introducao.aux'.
+
+ (./docs/introducao.tex
+Package hyperref Info: Anchor `chapter.1' on input line 2.
+Cap\'{\i }tulo 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2.
+Package hyperref Info: bookmark on input line 2:
+(hyperref)             thecounter {1}
+(hyperref)             text {\protect \numberline {\thechapter }INTRODUÇÃO}
+(hyperref)             reference {chapter.1}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 77.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 77.
+Package hyperref Info: Anchor `page.1' on input line 77.
+ [1
+
+
+
+
+
+]
+\openout2 = `./docs/revisao_bibliografica.aux'.
+
+ (./docs/revisao_bibliografica.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 22.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 22.
+Package hyperref Info: Anchor `page.2' on input line 22.
+ [2
+
+
+
+
+]
+Package hyperref Info: Anchor `chapter.2' on input line 22.
+
+Cap\'{\i }tulo 2.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 22.
+Package hyperref Info: bookmark on input line 22:
+(hyperref)             thecounter {2}
+(hyperref)             text {\protect \numberline {\thechapter }REVISÃO BIBLIOG
+RÁFICA}
+(hyperref)             reference {chapter.2}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section.2.1' on input line 24.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 24.
+Package hyperref Info: bookmark on input line 24:
+(hyperref)             thecounter {2.1}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Sistemas de Monitoramento de Desmatamento}
+(hyperref)             reference {section.2.1}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.1.1' on input line 25.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 25.
+Package hyperref Info: bookmark on input line 25:
+(hyperref)             thecounter {2.1.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi PRODES}
+(hyperref)             reference {subsection.2.1.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.1.2' on input line 26.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 26.
+Package hyperref Info: bookmark on input line 26:
+(hyperref)             thecounter {2.1.2}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi DETER}
+(hyperref)             reference {subsection.2.1.2}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section.2.2' on input line 28.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 28.
+Package hyperref Info: bookmark on input line 28:
+(hyperref)             thecounter {2.2}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Ciência Cidadã}
+(hyperref)             reference {section.2.2}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.2.1' on input line 29.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 29.
+Package hyperref Info: bookmark on input line 29:
+(hyperref)             thecounter {2.2.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Definição}
+(hyperref)             reference {subsection.2.2.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.2.2' on input line 30.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 30.
+Package hyperref Info: bookmark on input line 30:
+(hyperref)             thecounter {2.2.2}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Histórico}
+(hyperref)             reference {subsection.2.2.2}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.2.3' on input line 31.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 31.
+Package hyperref Info: bookmark on input line 31:
+(hyperref)             thecounter {2.2.3}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Avanços na Ciência}
+(hyperref)             reference {subsection.2.2.3}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.2.4' on input line 32.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 32.
+Package hyperref Info: bookmark on input line 32:
+(hyperref)             thecounter {2.2.4}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Suas Formas}
+(hyperref)             reference {subsection.2.2.4}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsubsection.2.2.4.1' on input line 33.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 33.
+Package hyperref Info: bookmark on input line 33:
+(hyperref)             thecounter {2.2.4.1}
+(hyperref)             text {\ifnum 3>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsubsection\endcsname }\fi Exemplo de Projetos}
+(hyperref)             reference {subsubsection.2.2.4.1}
+(hyperref)             toclevel {3}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section.2.3' on input line 35.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 35.
+Package hyperref Info: bookmark on input line 35:
+(hyperref)             thecounter {2.3}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi ForestWatchers}
+(hyperref)             reference {section.2.3}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.3.1' on input line 36.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 36.
+Package hyperref Info: bookmark on input line 36:
+(hyperref)             thecounter {2.3.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Proposta}
+(hyperref)             reference {subsection.2.3.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.3.2' on input line 37.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package hyperref Info: bookmark on input line 37:
+(hyperref)             thecounter {2.3.2}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Metodologia}
+(hyperref)             reference {subsection.2.3.2}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.3.3' on input line 38.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 38.
+Package hyperref Info: bookmark on input line 38:
+(hyperref)             thecounter {2.3.3}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Resultados}
+(hyperref)             reference {subsection.2.3.3}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section.2.4' on input line 40.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 40.
+Package hyperref Info: bookmark on input line 40:
+(hyperref)             thecounter {2.4}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Desenvolvimento de Aplicativos Móveis}
+(hyperref)             reference {section.2.4}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.4.1' on input line 41.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 41.
+Package hyperref Info: bookmark on input line 41:
+(hyperref)             thecounter {2.4.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Surgimento}
+(hyperref)             reference {subsection.2.4.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.4.2' on input line 42.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 42.
+Package hyperref Info: bookmark on input line 42:
+(hyperref)             thecounter {2.4.2}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Aplicativos Nativos}
+(hyperref)             reference {subsection.2.4.2}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.4.3' on input line 43.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 43.
+Package hyperref Info: bookmark on input line 43:
+(hyperref)             thecounter {2.4.3}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Aplicativos }
+(hyperref)             reference {subsection.2.4.3}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `subsection.2.4.4' on input line 44.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 44.
+Package hyperref Info: bookmark on input line 44:
+(hyperref)             thecounter {2.4.4}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Divisão de Mercado}
+(hyperref)             reference {subsection.2.4.4}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 79.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 79.
+Package hyperref Info: Anchor `page.3' on input line 79.
+ [3]
+\openout2 = `./docs/metodologia.aux'.
+
+ (./docs/metodologia.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package hyperref Info: Anchor `page.4' on input line 3.
+ [4
+
+
+
+
+]
+Package hyperref Info: Anchor `chapter.3' on input line 3.
+
+Cap\'{\i }tulo 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package hyperref Info: bookmark on input line 3:
+(hyperref)             thecounter {3}
+(hyperref)             text {\protect \numberline {\thechapter }METODOLOGIA}
+(hyperref)             reference {chapter.3}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section.3.1' on input line 4.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4.
+Package hyperref Info: bookmark on input line 4:
+(hyperref)             thecounter {3.1}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Desenvolvimento do Aplicativo}
+(hyperref)             reference {section.3.1}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `section.3.2' on input line 5.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5.
+Package hyperref Info: bookmark on input line 5:
+(hyperref)             thecounter {3.2}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Captação dos Dados}
+(hyperref)             reference {section.3.2}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 98.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 98.
+Package hyperref Info: Anchor `page.5' on input line 98.
+ [5]
+\openout2 = `./docs/resultado_e_discussoes.aux'.
+
+ (./docs/resultado_e_discussoes.tex
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: Anchor `page.6' on input line 1.
+ [6
+
+
+
+
+]
+Package hyperref Info: Anchor `chapter.4' on input line 1.
+
+Cap\'{\i }tulo 4.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: bookmark on input line 1:
+(hyperref)             thecounter {4}
+(hyperref)             text {\protect \numberline {\thechapter }RESULTADOS E DI
+SCUSSÕES}
+(hyperref)             reference {chapter.4}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 101.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 101.
+Package hyperref Info: Anchor `page.7' on input line 101.
+ [7] (./publicacao.bbl (./publicacao.brf)
+\tf@brf=\write8
+\openout8 = `publicacao.brf'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package hyperref Info: Anchor `page.8' on input line 3.
+ [8
+
+
+
+]
+Package hyperref Info: Anchor `chapter.5' on input line 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package hyperref Info: bookmark on input line 3:
+(hyperref)             thecounter {5}
+(hyperref)             text {\refname }
+(hyperref)             reference {chapter.5}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 120.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 120.
+Package hyperref Info: Anchor `page.9' on input line 120.
+ [9]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 120.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 120.
+Package hyperref Info: Anchor `page.10' on input line 120.
+ [10
+
+
+]
+No file publicacao.ind.
+\openout2 = `./docs/contracapa.aux'.
+
+(./docs/contracapa.tex
+Underfull \hbox (badness 1430) in paragraph at lines 44--44
+\T1/aer/m/n/12 pes-qui-sas tanto de na-tu-reza téc-nica
+ []
+
+
+Underfull \hbox (badness 3333) in paragraph at lines 44--44
+[]|\T1/aer/m/n/12 São pro-pos-tas de pro-je-tos técnico-
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 44--44
+\T1/aer/m/n/12 di-gos, ex-pres-sos em uma lin-gua-gem
+ []
+
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 121.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 121.
+Package hyperref Info: Anchor `page.11' on input line 121.
+ [11] AED: lastpage setting LastPage 
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 122.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+(./publicacao.aux (./docs/resumo.aux) (./docs/abstract.aux)
+(./docs/introducao.aux) (./docs/revisao_bibliografica.aux)
+(./docs/metodologia.aux) (./docs/resultado_e_discussoes.aux)
+(./docs/contracapa.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
+Package rerunfilecheck Info: File `publicacao.out' has not changed.
+(rerunfilecheck)             Checksum: 0FCFE69D970923EB88A4A322F78D27B1;2226.
+Package rerunfilecheck Info: File `publicacao.brf' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+ ) 
+Here is how much of TeX's memory you used:
+ 10712 strings out of 493308
+ 154336 string characters out of 6137821
+ 289381 words of memory out of 5000000
+ 13762 multiletter control sequences out of 15000+600000
+ 35306 words of font info for 83 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 43i,11n,40p,1523b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on publicacao.pdf (25 pages, 868647 bytes).
+PDF statistics:
+ 336 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 278 words of extra memory for PDF output out of 10000 (max. 10000000)
+
