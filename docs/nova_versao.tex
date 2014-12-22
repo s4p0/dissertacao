@@ -1,26 +1,80 @@
-\chapter{REVISÃO BIBLIOGRÁFICA}
+\chapter{Introdução}
+\label{ch:introducao}
+\section{Objetivos}
+\label{ch:objetivos}
 
-\section{SISTEMAS DE MONITORAMENTO DE DESMATAMENTO DO INPE}
-\label{rainforests:sec:monitoring}
+Esta dissertação tem como objetivo, formalizar a integração dos módulos já desenvolvidos (ver figura \ref{fig:estrutura_atual}), para a definitiva automatização do processo de análise de uma nova área de interesse, e adicionar à arquitetura existente a capacidade de coletar dados in-situ (a principal característica de projetos de ciência cidadã do tipo volunteer sensing).
 
-Por mais de duas décadas, o Brasil vem utilizando imagens de satélites para realizar o monitoramento da Amazônia \cite{Monteiro2008}. Estes sistemas, desenvolvidos pelo INPE, tornaram o Brasil uma referência mundial na área \cite{Tollefson2012a}. \citeonline{Kintisch2007} afirma que esse sistema é motivo de admiração mundial por ser capaz de informar anualmente as estimativas de taxas de desmatamento na Amazônia, além de emitir alertas semanais para as autoridades pertinentes. Os principais sistemas utilizados pelo INPE na tarefa de monitorar o desmatamento são descritos nas seções a seguir.
+\subsection{Objectivos Específicos}
+\label{ch:objetivos:especificos}
+
+Os objetivos específicos desta pesquisa são:
+
+\begin{enumerate}
+    \item Validar o conceito de sensoriamento voluntário.
+
+    \item Propor e desevolver um módulo de sensoriamento voluntário.
+
+    \item Integrar o módulo de sensoriamento voluntário junto ao projeto \textit{ForestWatchers}.
+
+\end{enumerate}
+
+\section{Organização do Documento}
+\label{ch:organizacao}
+Este documento está organizado da seguinte forma: O Capítulo \ref{ch:monitoramento_florestas} é feita a revisão bibliográfica das ferramentas de monitoramento de florestas criado pelo INPE e suas metodologias. Uma revisão do tópico de ciência cidadã é abordado no Capítulo \ref{ch:ciencia_cidada}, onde é realizada uma comparação com as pesquisas científicas realizadas por voluntários antigamente e nos tempos atuais, conhecida por ciencia cidadã moderna. No Capítulo \ref{ch:forestwatchers} é comentado sobre o projeto ForestWatchers, a definição do projeto, a metodologia empregada e as aplicações feitas por este. As metodologias e resultados deste trabalho são apresentados no Capítulo \ref{ch:metodologia_resultados} e as conclusões no Capítulo \ref{ch:conclusoes}.
+
+\chapter{Monitoramento de Florestas}
+\label{ch:monitoramento_florestas}
+
+Por mais de duas décadas, o Brasil vem utilizando imagens de satélites (ver figura \ref{fig:comparacao_resourcesat_modis}) para realizar o monitoramento da Amazônia \cite{Monteiro2008}. Estes sistemas, desenvolvidos pelo INPE, tornaram o Brasil uma referência mundial na área \cite{Tollefson2012a}. \citeonline{Kintisch2007} afirma que esse sistema é motivo de admiração mundial por ser capaz de informar anualmente as estimativas de taxas de desmatamento na Amazônia, além de emitir alertas semanais para as autoridades pertinentes. Os principais sistemas utilizados pelo INPE na tarefa de monitorar o desmatamento são descritos nas seções a seguir.
 
 \section{PRODES}
-\label{rainforests:sec:prodes}
-Em 1988, o Projeto de Monitoramento do Desmatamento na Amazônia Legal (PRODES) foi desenvolvido para fornecer informações sobre a dinâmica anual do desmatamento de cobertura florestal na Amazônia Legal. As estimativas geradas pelo PRODES são anuais devido à complexidade e ao detalhamento necessários para o cálculo da área de desmate. Essas estimativas se baseiam em mapeamento detalhado com um grande conjunto de imagens do tipo LANDSAT (ou equivalente), que cobrem a Amazônia com baixa frequência temporal (16 e 26 dias) e com resolução espacial entre 20 e 30 metros. Esses sensores são capazes de mapear desmatamentos cujas áreas sejam superiores a $6,25$ hectares \cite{Monteiro2008}.
+\label{ch:prodes}
 
-Para realizar o cálculo da taxa de desmatamento as imagens são selecionadas de modo a obter a menor cobertura de nuvens possível, melhor visibilidade com uma adequada qualidade radiométrica\footnote{A resolução radiométrica é dada pelo número de valores digitais representando níveis de cinza, usados para expressar os dados coletados pelo sensor. Quanto maior o número de valores, maior é a resolução radiométrica} e com a data de aquisição das imagens próxima ao período de referência para o cálculo da taxa de desmatamento. Porém, considerando o histórico climatológico da Amazônia, a maioria das imagens não se apresentam livres de nuvens. Por isso é possível utilizar mais de uma imagem (inclusive de outros satélites) para compor as cenas. 
+Em 1988, o Projeto de Monitoramento do Desmatamento na Amazônia Legal (PRODES) foi desenvolvido para fornecer informações sobre a dinâmica anual do desmatamento de cobertura florestal na Amazônia Legal. As estimativas geradas pelo PRODES são anuais devido à complexidade e ao detalhamento necessários para o cálculo da área de desmate. Essas estimativas se baseiam em mapeamento detalhado com um grande conjunto de imagens do tipo LANDSAT (ou equivalente) , que cobrem a Amazônia com baixa frequência temporal (16 e 26 dias, ver figura \ref{fig:swath_width_LANDSAT-NASA}) e com resoluçãoção espacial entre 20 e 30 metros. Esses sensores são capazes de mapear desmatamentos cujas áreas sejam superiores a $6,25$ hectares \cite{Monteiro2008}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/swath_width_LANDSAT-NASA.jpg}
+    \caption{\textit{Swath} do LANDSAT, largura da cobertura diária realizado pelo LANDSAT, ilustrado no continente Norte Americano. Para obter toda a extensão amazônica é necessário de 16 a 26 dias, dependendo das condições climáticas do local.  }
+    \FONTE{\citeonline{NASA}}
+    \label{fig:swath_width_LANDSAT-NASA}
+\end{figure}
+
+\subsection{Metodologia}
+\label{ch:prodes_metodo}
+
+Para realizar o cálculo da taxa de desmatamento as imagens são selecionadas de modo a obter a menor cobertura de nuvens possível, melhor visibilidade com uma adequada qualidade radiométrica\footnote{A resolução radiométrica é dada pelo número de valores digitais representando níveis de cinza, usados para expressar os dados coletados pelo sensor. Quanto maior o número de valores, maior é a resolução radiométrica} e com a data de aquisição das imagens próxima ao período de referência para o cálculo da taxa de desmatamento. Porém, considerando o histórico climatológico da Amazônia, a maioria das imagens não se apresentam livres de nuvens. Por isso é possível utilizar mais de uma imagem (inclusive de outros satélites) para compor as cenas, formando um mosáico (ver figura \ref{fig:prodes_mosaico}). 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/mosaico_landsat-prodes.png}
+    \caption{ Mosaíco formado por imagens LANDSAT a serem utilizadas no sistema PRODES.}
+    \FONTE{\citeonline{INPE}}
+    \label{fig:prodes_mosaico}
+\end{figure}
 
 Após a seleção das imagens, a próxima etapa envolve transformar seus dados radiométricos em componentes de cena (vegetação, solo e sombra), utilizando o Modelo Linear de Mistura Espectral (MLME). As bandas 3, 4 e 5 do sensor TM são utilizadas para estimar a proporção dos componentes solo, vegetação e sombra para cada pixel, formando um sistema de equações lineares que pode ser solucionado pelo método dos mínimos quadrados ponderados. O resultado desse modelo linear é uma imagem-fração, onde se tem três bandas sintéticas com os valores proporcionais de vegetação, solo e sombra. A segmentação\footnote{Segmentação de imagem é uma técnica de agrupamentos de dados onde características espectrais semelhantes são agrupadas.} da imagem-fração é então realizada, ajustando-se os limiares de similaridades e de área. 
 
 Um algoritmo de classificação não-supervisionado de agrupamentos de dados trata as imagens segmentadas, classificando-as de acordo com as classes definidas pelo banco de dados. Como resultado tem-se uma nova imagem \textit{raster} ou vetorial com as áreas desflorestadas. Então, um fotointerprete tem a tarefa de analisar os polígonos temáticos gerados, tomando a decisão se esses devem ser aceitos ou reclassificados. Uma vez essa imagem aceita, uma máscara de desmatamento contendo as áreas de corte raso já detectados é gerada. Essa máscara será utilizada para eliminar desmatamentos antigos, impedindo que sejam identificados novamente.
 
-%%
 \section{DETER}
-\label{rainforests:sec:deter}
+\label{ch:deter}
+
 Devido ao tempo necessário para gerar os resultados e por observar apenas áreas de corte raso, o PRODES não pode ser utilizado como um sistema de prevenção. Portanto, a partir de 2004 o Sistema de Detecção de Desmatamento em Tempo Real (DETER) foi implementado para realizar o monitoramento contínuo do desmatamento e da degradação florestal. Esse sistema foi criado para atender ao Governo Federal no Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal. O principal objetivo desse sistema é de fornecer informações sobre o local e a dimensão aproximada de ocorrências de mudanças na vegetação de modo a agilizar a fiscalização. 
 
-As imagens utilizadas por esse sistema são obtidas pelo sensor MODIS (a bordo do satélite TERRA da NASA), que cobre a Amazônia a cada dia e meio. Essa alta resolução temporal reduz as limitações de observação impostas pela cobertura de nuvens da região. Com a máxima resolução espacial limitada em $250$ metros, as imagens desses sensores permitem a detecção de desmatamentos apenas para áreas maiores do que $25$ hectares. O objetivo do DETER é de fornecer indicadores para fiscalização a cada 15 dias, quando as condições de observação são favoráveis. Esse sistema observa diversos estágios de desmatamento para emitir seus alertas, como o de corte raso, degradação florestal de intensidade alta, média e baixa, sendo o último mais difícil devido a resolução das imagens do sensor MODIS \cite{Monteiro2008}.
+\subsection{Metodologia}
+\label{ch:deter_metodo}
+
+As imagens utilizadas por esse sistema são obtidas pelo sensor MODIS (a bordo do satélite TERRA da NASA), que cobre a Amazônia a cada dia e meio (ver figura \ref{fig:swath_width_MODIS-TERRA}. Essa alta resolução temporal reduz as limitações de observação impostas pela cobertura de nuvens da região. Com a máxima resolução espacial limitada em $250$ metros, as imagens desses sensores permitem a detecção de desmatamentos apenas para áreas maiores do que $25$ hectares. O objetivo do DETER é de fornecer indicadores para fiscalização a cada 15 dias, quando as condições de observação são favoráveis. Esse sistema observa diversos estágios de desmatamento para emitir seus alertas, como o de corte raso, degradação florestal de intensidade alta, média e baixa, sendo o último mais difícil devido a resolução das imagens do sensor MODIS \cite{Monteiro2008}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/swath_width_MODIS-TERRA.jpg}
+    \caption{\textit{Swath} do MODIS, largura da cobertura diária obtida a cada sobrevoo. Para obter toda a extensão amazônica é necessário em média um dia e meio.}
+    \FONTE{\citeonline{NASA}}
+    \label{fig:swath_width_MODIS-TERRA}
+\end{figure}
 
 A aquisição das imagens é feita de forma rápida, uma vez que que o DETER utiliza os produtos baseados em \textit{granules}\footnote{Granules são produtos gerados de uma área particular. Granules não cobrem todo o globo.} dos subconjuntos de resposta rápida da NASA. Esses dados encontram-se prontos para serem utilizados, pois já foram processados, disponibilizados em GeoTIFF, RGB-equivalente, no formato de 8-bits e geograficamente projetados. 
 
@@ -28,8 +82,18 @@ Essas imagens são então carregadas no Sistema de Processamento de Informações Ge
 
 Na última etapa, o especialista corrige os resultados da segmentação automática, pixel-a-pixel. As vezes é possível que as etapas de classificação e segmentação possam ser colocados de lado, pois o especialista pode extrair todas as informações baseando-se apenas em sua expertise olhando para as imagens do satélite, munido dos arquivos geográficos de desflorestamento e hidrografia.
 
+\begin{figure}[htb]
+\includegraphics[width=0.485\textwidth]{figuras/COMPARE_RESOURCESAT.png}
+\hfill
+\includegraphics[width=0.485\textwidth]{figuras/COMPARE_MODIS.png}
+\caption{Comparação de diferentes resoluções espaciais. À esquerda, uma imagem RESOURCESAT com 23,5 m por pixel. À direita, uma imagem MODIS com 250 m por pixel.}
+\label{fig:comparacao_resourcesat_modis}
+\end{figure}
 
-\section{Ciência Cidadã}
+
+
+\chapter{Ciência Cidadã}
+\label{ch:ciencia_cidada}
 
 Ciência cidadã é o termo usado para designar projetos no qual voluntários, muitos sem nenhum treinamento científico específico, efetuam ou gerenciam tarefas científicas, tais como a realização de observações, medições ou computação \cite{SoaresSant:2011:EnPoAt}. 
 
@@ -43,6 +107,9 @@ Os conteúdos destas cartas variavam de notações científicas sobre algumas espéci
 
 Um projeto da universidade de Oxford irá investigar o envolvimento do público na ciência do século 19 e 21 \cite{conscicom2014}, receberá o financeamento de quase 2 milhões de libras para realizar seus estudos. Supõe-se que este estudo poderá entender e desenvolver novas ferramentas para trocar informações entre cientistas profissionais e legiões de voluntários \cite{Leicester2013}. 
 
+\section{Ciência Cidadã Moderna}
+\label{ch:ciencia_cidada_moderna}
+
 O projeto considerado um dos primeiros de ciência cidadã moderno é o \textit{Christmas Bird Count}. Um projeto antigo e que ainda encontra-se em atividade, o Christmas Bird Count procura contar as diferentes espécies que existem na américa do Norte, suas eventuais mudanças de habitat, entre outras informações. Idealizado em 1900 por Frank Chapman, um famoso ornitólogo do Museu Americano de História Natural, como uma atividade alternativa ao evento de caça aos pássaros existente na época, Chapman publicou diversos livros com os resultados obtidos por este projeto com a ajuda de milhares de voluntários. Estes seguem diversas regras para conduzir a pesquisa durante os 20 dias em que as observações são feitas, de 14 de dezembro a 5 de janeiro de cada ano, só podem ser contabilizados os pássaros que forem avistados ou ouvidos em um diâmetro de 24-km, moradores próximos a estas áreas podem utilizar bebedouros para pássaros para atrair mais espécies e contabilizá-los \cite{Silvertown2009}. Em uma contagem recente milhares de observadores relataram mais de $63$ milhões de pássaros. 
 
 Hoje, o centro de pesquisa que deu origem a este projeto é considerado um dos maiores centros especializados em ciência cidadã com diversos estudos em biologia. Cientistas do laboratório Cornell de Ornitologia universidade de Cornell, lídereres no estudo e conservação dos pássaros, rastreiam projetos que utilizam ciência cidadã para realizar seus estudos. Estes acreditam que trabalhar com cientistas cidadãos é um fenômeno em expansão em todo o mundo \cite{Cohn.2008}. Este laboratório conta com uma comunidade de aproximadamente 200 mil participantes de ciência cidadã.
@@ -53,21 +120,27 @@ Para alguns tipos de projetos, \citeonline{Cohn.2008} defende que os voluntários
 
 \cite{Silvertown2009} enumera três fatores cruciais para o aparecimento de projetos de ciência cidadã nos últimos anos. Primeiramente, a Internet como meio de disseminar informações e adquirir dados do público, assim como a tecnologia dos smartphones, onde mais e mais aplicativos destes utilizam diversos sensores para coletar diferentes dados. Segundo fator se deve aos cientistas profissionais perceberem que voluntários são uma fonte sem custos de trabalho e habilidades pessoais como também de poder computacional, projetos que requerem adquirir diversos dados ao longo do globo, necessitam de ajuda, podendo ser de voluntários, para se obter sucesso. Terceiro fator, grandes fundadores de projetos científicos procuram beneficiar projetos que utilizam cientistas cidadãos em seus trabalhos.
 
-\subsection{Ciência Cidadã Moderna e a Internet}
+Com o aparecimento destes novos projetos, a ciência cidadã moderna pode ser classificadas em três formas, conforme o nível de envolvimento do voluntário e a tecnologia utilizada no projeto (ver figura \ref{fig:pt_citizen_science}).
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/pt_citizen_science.png}
+    \caption{A ciência cidadã pode ser classificadas em três formas: computação voluntária, onde os voluntários doam o poder computacional de suas máquinas para pesquisas científicas; pensamento voluntário utilizado em projetos que requerem a cognição dos voltuntários, como classificação de imagens; e sensoriamento voluntário onde a captação de dados é crucial para ter uma pesquisa.}
+    \label{fig:pt_citizen_science}
+\end{figure}
+
+Estas formas serão introduzidas a seguir.
+
+\section{Computação Voluntária}
+\label{ch:computacao_voluntaria}
 
 Recentemente, o número de projetos que se beneficiam de ciência cidadã está aumentando, cada dia há novos projetos surgindo. Estes projetos chamados de ciência cidadã moderno estão se tornando frequente por causa da accebilidade das tecnologias atuais, o que não requer aparatos especializados para realizar as pesquisas. Como mencionado anteriormente, as informações que \citeonline{Darwin1859} utilizou em suas pesquisas foram enviadas através de cartas que demoravam muitos meses. Hoje, com o avanço da internet, voluntários em diferentes partes do mundo podem fornecer diferentes tipos de dados a uma pesquisa. Seja por dispositivos móveis, que uma vez ligados a internet podem fornecer dados de qualquer lugar, ou então por meio de computadores. 
 
 Na década de 80, a internet ainda era apenas um embrião e poucos tinham acesso. Existiam menos de 200,000 servidores espalhados no mundo. Até então não existiam páginas para serem navegadas, a principal forma de troca de mensagem era através de e-mail, criado em 1977 \cite{HistoryOfInternet:David,HistoryOfInternet:Anthony}, outros meios eram por telnet e IRC, apenas. Só no início da década de 90 que as primeiras páginas de internet foram criadas, após a definição do \textit{WWW}\footnote{World-Wide Web} criado por \citeonline{berners1992world}. A internet estava tornando-se popular, com seus aproximados 1 milhão de servidores e suas 50 páginas de internet.
 
-\subsubsection{Computação Voluntária}
-
 Com a popularização da internet, iniciou-se a aparição de projetos notáveis da ciência cidadã moderna. Os computadores desta época eram caros e possuiam pouco poder computacional, apenas grandes indústrias e universidades tinham acesso a máquinas de grande desempenho. Neste período, surgiram os primeiros projetos de computação voluntária, onde os voluntários doavam o tempo de processamento ocioso de suas máquinas a projetos que necessitavam de grande poder computacional para trabalhar em cima dos seus dados. O conceito desta forma de projeto era de dividir a grande massa de dados existente em pequenas porções que fossem possíveis para os voluntários efetuar downloads, visto que naquela época não havia internet de banda larga. A forma de conexão à internet ainda era discada e o modem mais rápido deste período era o de 56k\footnote{56 kilobits por segundo} \cite{AndersonCKLW02}.
 
 No meio da década de 90, surgiu os projetos \textbf{\textit{GIMPS}}\footnote{\textit{\url{http://www.mersenne.org/}-Great Internet Mersenne Prime Search}} e \textbf{\textit{Distributed.net}}\footnote{http://www.distributed.net/}\cite{Anderson1999,AndersonCKLW02,Hayes1998}.
-
-\subsubsection{Projetos de Computação Voluntária}
-
-Alguns dos projetos que fizeram a computação voluntária uma realidad hoje são:
 
 \textit{GIMPS} foi primeiro projeto de computação voluntária de grande porte a ser realizado, \textit{GIMPS}, tinha como objetivo encontrar números primos de Mersenne, nome dado em homenagem ao estudioso Marin Mersenne da teoria dos números. A formula destes números equivale  $ M_n = 2^n -1 $, onde $n$ é um número natural. O desafio de descobrir números de Mersenne está diretamente ligado ao fato destes números serem exponênciais, tendo assim milhares de dígitos em sua composição. Até 1996, início do projeto \textit{GIMPS}, apenas 34 números primos de Mersenne eram conhecidos, logo no primeiro ano do projeto foram descubertos mais dois  números, $ M_{1398269} $ e $M_{2976221}$. O primeiro número possui $852.365$ algoritmos, o segundo $1.814.262$, uma operação que seria impossível para ser realizada por uma pessoa. Ambos foram descobertos na primeira versão do software disponibilizado pelo projeto, sendo calculado por um computador Pentium 90 MHz e Pentium 100MHz, respectivamente. Hoje, há o conhecimento de 48 números de Mersenne, sendo o último número descoberto o $M_{57885161}$ com $17.425.170$ dígitos em 2013, desde o início do projeto foram descobertos 14 destes números \cite{Marsenne:Primes,Hayes1998}.
 
@@ -75,16 +148,14 @@ A \textit{Distributed.net}, lançado em 1997, tinha o principal objetivo de quebr
 
 Em 1999, \citeonline{AndersonCKLW02} iniciou um dos primeiros e bem sucedido projeto de ciência cidadã, o objetivo deste projeto era de encontrar vida inteligente no espaço, através da análise de sinais de rádios captadas do espaço, \textit{SETI@Home}. Porém para conseguir analizar esses sinais, o projeto contou com o uso de diferentes computares, todos espalhados pela internet formando um grande sistema distruído de processamento. Os voluntários que se cadastravam no site podiam fazer download de um aplicativo que só era ativado quado o computador estava em modo ocioso, o aplicativo recebia pacotes de sinais a serem analizados e no fim do processamento enviava os resultados obtidos ao servidor do projeto.
 
-
-\subsection{A Chegada da Web 2.0}
+\section{Pensamento Voluntário}
+\label{ch:pensamnto_voluntario}
 
 \cite{Anderson1999}, a frente do projeto \textit{SETI@Home}, iniciou o desenvolvimento de uma nova ferramenta para diminuir as barreiras que ele havia encontrado ao longo do desenvolvimento de seu projeto, viabilizando assim novas iniciativas para utilizar computação voluntária de forma rápida e sem grandes conhecimentos de computação. Outra função da ferramenta, BOINC\footnote{Berkeley Open Infrastructure for Network Computing}, era de avaliar a exatidão e veracidade dos dados antes de enviá-los aos servidores dos projetos \cite{anderson2003public}. Esta ferramenta já foi utilizada por mais de 150 projetos, tendo atualmente 70 projetos online. Estes fatos só foram alcançados pela acessibilidade que novos projetos do tipo de computação voluntária tiveram com a criação da nova ferramenta e também pela visibilidade que a ferramenta deu aos projetos deste porte.
 
 No fim da década de 90, \citeonline{dinucci1999fragmented} cunhou o termo \textit{Web 2.0} dizendo que a internet até então não tinha mostrado o seu real potencial. As páginas eram simplesmentes recursos estáticos onde a navegação era composta de uma simples requisição a este recurso e o recurso era então exibido na tela dos computadores da época. A revolução da \textit{Web 2.0} seria marcada pela interatividade do conteúdo, permitindo a qualquer pessoa utilizando de um computador ou dispositivo móvel, não mais carregar um simples recurso estático, mas sim o poder de interagir com este recurso, expressando ideias e adicionando novas informações a \textit{Web}. Diversas novas ferramentas foram criadas nesta nova era. Diferentes tipos de \textit{blogs}, \textit{wikis} e páginas de internet repletos de conteúdos dinâmicos.
 
 Além da ferramenta \textit{BOINC} realizar verificações redundantes para melhorar a exatidão dos resultados, esta também era uma plataforma de pontuação. Na página da ferramenta existem diversas estatísticas dos projetos em andamento, estas estatísticas são atualizadas dinâmicamente conforme os resultados são submetidos pelos voluntários. Uma vez que os novos resultados são submetidos e aprovados, cada voluntário tem o valor da sua contribuição ao projeto calculado novamente. Tendo assim um sistema de creditos, que pontua a participação dos voluntários, destacando os que mais contribuem. Este é considerado o sistema de recompensa dos usuários, levando o projeto a ter cada vez mais voluntários contribuindo com a performance da sua máquina para ganhar notoriedade \cite{Anderson1999}.
-
-\subsubsection{Projetos de Pensamento Voluntário}
 
 Com a possibilidade de conteúdo dinâmico e a interação dos usuários, sugiram novos tipos de projetos que passaram a utilizar a capacidade cognitiva dos voluntários para analisar visualmente determinados dados e em função destes tomar ações. 
 
@@ -102,51 +173,72 @@ Um dos resultados mais significativos, foi alcançado pelos jogadores do projeto 
 
 \citeonline{mcgonigal2011reality} sugere que os problemas atuais poderiam ser solucionados efetivamente de outra forma, através dos jogos. Concientizando pessoas dos problemas reais e inserindo os diversos problemas como contexto dos jogos, os jogadores iriam buscar soluções para estes desafios. Diversos pesquisadores sugerem que construir projetos de ciência com a temática na forma de jogos poderiam atrair ainda mais os voluntários e resolver ainda mais rápido os desafios empregados \cite{Silvertown2009,Hand2010,Khatib2011,Anderson1999,Pereira:2013:NoInUs,Cooper2010,Mansell2012}.
 
-\subsection{A Tecnológica Móvel}
+\section{Sensoriamento Voluntário}
+\label{ch:sensoriamento_voluntario}
 
 As duas formas de ciência cidadã discutidas anteriormente tem suas vantagens conforme a necessidade do método de pesquisa científica que irá ser executada. Computação voluntária tem maior vantagem para as atividades científicas que requerem grande poder computacional, avaliando grandes quantidades de dados, o que levariam horas para uma pessoa realizar. Já o pensamento voluntário, mostra-se mais eficaz em atividades que requerem o poder cognitivo dos voluntários, como detecções de padrões utilizando inspeção visual.
 
 Algumas vezes, os dados disponíveis para projetos científicos não são suficientes e a coleta de outros tipos de medidas se faz necessária. Adquirir novas fontes de dados não é um simples trabalho, necessita-se de equipes capazes de efetuar as coletas científicas conforme padrões exigidos e ferramentas adequadas para tal.
 A realização desta tarefa, porém, se feita apenas pelos cientistas envolvidos diretamente com o projeto, pode se tornar custosa e demorada. Portanto, uma alternativa viável é a utilização de sensoriamento voluntário onde voluntários contribuem com dados, sejam anotações de observações, captação de imagem ou sons de um ambiente. A tecnologia atual permite soluções de menor custo para coletar diversos tipos de dados para serem utilizados em projetos científicos.
 
+O sensoriamento voluntário é uma junção de Informação Geográfica Voluntariada (IGV), termo de \citeonline{Goodchild2007} para descrever as tarefas realizadas por voluntários ao fornecer dados complementares a determinadas localizações geográficas a diversos projetos com a finalidade de enriqucer a base de dados, com sensoriamento móvel \cite{Lane2010}, onde pesquisas são conduzidas através de aparelhos móveis dos voluntários. 
+
+\subsection{Informação Geográfica Voluntariada}
+
+EDITING: IGV surgiu com a chegada da internet rápida, da \textit{Web} 2.0, que deu poder aos usuários de editar dinâmicamente os conteúdos de uma página e adicionar novos dados, e de ciência cidadã, onde voluntários são motivados a participarem de projetos que possam contribuir com algum propósito e muitas vezes, estes também são motivads por simplesmente ter a chance de obter-se destaque pelo seu trabalho.
+
 Em recentes relatórios, \citeonline{Gartner2014} aponta que em 2015 os dispositivos móveis (tablets, celulares e smartphones) irão ultrapassar os computadores pessoais (computadores de mesa e portáteis), em quantidade, conforme figura \ref{fig:gartner}.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.95\textwidth]{figuras/gartner2014.png}
-	\caption{Relatório Gartner julho/2014}
-	\FONTE{\citeonline{Gartner2014}}
-	\label{fig:gartner}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/gartner2014.png}
+    \caption{Relatório Gartner julho/2014}
+    \FONTE{\citeonline{Gartner2014}}
+    \label{fig:gartner}
 \end{figure}
 
 A era pós-PC\footnote{A era \textit{post-PC} ou \textit{PC-plus} foi cuminada por ``FULANO'' em que estimava que os computadores deixariam de ser o principal aparato eletrônico.}, está se tornando realidade, os computadores pessoais estão sendo descentralizados como a décadas muitos já previam. Sua utilidade está mais fardada a um \textit{hub} tecnológico, servindo de meio de comunicação com outros dispositivos móveis como smartphones e tablets. No início dos anos 90, os celulares eram realidades para pouco, mas diversos fatores alteraram a rota deste para a sua popularização.
 
 O avanço da tecnologia permitiu reduzir o tamanho dos sensores físicos e a quantidade de energia requerida por esses. Diversos tipos de sensores estão cada vez mais presentes em celulares, tornando dispositivos móveis em unidades de coleta de informação de grande precisão. Câmeras e sensores de localização já são frequentes na maioria dos celulares, estes permitem obter a sua localização em qualquer parte do globo terrestre através de \textit{GPS}\footnote{\textbf{G}lobal \textbf{P}ositioning \textbf{S}ystem é um sistema de navegação baseado em uma constelação de 24 satélites.}, sendo alguns modernos integrado com \textit{GLONASS}\footnote{\textbf{GLO}bal \textbf{NA}vigatsionnaya \textbf{S}putnikovaya \textbf{S}istema, um sistema de navegação russo, constituído por uma constelação de 21 satélites}. Há também dispositivos que apresentam sensores de proximidade, giroscópio, magenetômetro, acelerômetro, barômetro e de luz ambiente. Mas sempre há um sensor presente nos celulares, o microfone que em conjunto com os demais sensores supracitados torna-se uma poderosa ferramenta de monitoramento ambiental.
 
+\chapter{ForestWatchers}
+\label{ch:forestwatchers}
 
+O projeto ForestWatchers (\url{http://www.forestwatchers.net}) propõe o desenvolvimento e o lançamento de uma iniciativa de ciência cidadã com o objetivo de envolver e integrar cidadãos ao redor do planeta na tarefa de monitorar o desmatamento das florestas tropicais \cite{ForestWatchersDesc}. Estes cidadãos poderão de suas casas, por meio de uma interface \textit{Web}, inspecionar imagens recentes de satélite de áreas de florestas. Estas podem ser de uma reserva indígena na Amazônia, uma floresta nacional em Bornéu ou um parque em Queensland. As imagens são então classificadas em áreas de floresta ou não-floresta, por meio de um algoritmo de classificação supervisionado pelos voluntários na \textit{Web}. Conforme mencionado por \citeonline{Ipeirotis2010}, erros e até mesmo fraude podem ser automaticamente tratados pela redundância do sistema. Para isso, é necessário atrair e manter um grande número de voluntários \cite{Soares:2011:EmCiSc}. Estima-se que cem mil voluntários analisando uma área de 100.000 hectares cada, com um fator de redundância de 20, podem examinar uma área de 500 milhões de hectares, cerca de 40\% a 50\% da área estimada das florestas tropicais do mundo \cite{ForestWatchersDesc}.
 
+O projeto conta com desenvolvedores do Laboratório Associado de Computação e Matemática Aplicada (LAC) do INPE, do \textit{Citizen Cyberscience Centre} (CCC), e do Departamento de Ciência e Tecnologia (DCT) da Universidade Federal de São Paulo (UNIFESP), com apoio do \textit{Open Society Foundations} (OSF), \textit{United Nations Institute for Training and Research} (UNITAR), e \textit{UNITAR's Operational Satellite Application Programme} (UNOSAT).
 
+A seguir, será discutida a metodologia empregada no projeto.
 
+\section{Metodologia}
+\label{ch:metodologia}
 
-\subsection{Definição}
-\subsection{Histórico}
-\subsection{Avanços na Ciência}
-\subsection{Suas Formas}
-\subsubsection{Projetos}
+A metodologia usada neste projeto é inspirada no bem-sucedido programa de detecção de desflorestamento DETER do INPE. Assim, como no sistema DETER, o projeto ForestWatchers também utiliza imagens do sensor MODIS, com resolução de $250$ metros (porém qualquer outro sensor de satélite que forneça suas imagens gratuitamente pode ser utilizado). Para que essas imagens possam ser exibidas para os voluntários é necessário que um pré-processamento seja feito. 
 
-\section{Sistemas de Monitoramento Ambientais Colaborativos}
-\subsection{Projetos}
+Um diagrama ilustrativo da metodologia utilizada pelo projeto ForestWatchers pode ser visto na Figura \ref{fig:estrutura_atual}.
+\begin{figure}[htb]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/arquitetura_atual.png}
+\caption{A metodologia utilizada pelo projeto ForestWatchers.}
+\label{fig:estrutura_atual}
+\FONTE{\citeonline{ForestWatchersDesc}}
+\end{figure}
 
-\section{ForestWatchers}
-\subsection{Proposta}
-\subsection{Metodologia}
-\subsection{Resultados}
+Primeiramente é necessário adquirir as imagens da NASA referentes à área de interesse do projeto. Para esse processo, ferramentas como FTP\footnote{\textit{File Transfer Protocol (FTP)} é um protocolo para transferência de arquivo utilizado na Internet para efetuar \textit{downloads} e \textit{uploads} de arquivos.}e WGET\footnote{WGET é um programa livre para efetuar \textit{download} de conteúdos na Internet.} são utilizadas para realizar os downloads necessários. A próxima etapa, envolve recortar as imagens que não são pertinentes à área de interesse, descartando-as e consolidando as imagens restantes num único arquivo GeoTIFF de 16 bits. Essa etapa pode ser executada rapidamente com o auxílio da ferramenta MODIS Reprojection Tool (MRT) \cite{MRToolManual2010}, um software gratuito disponibilizado pela NASA.
 
-\section{Aplicativos Móveis}
-\subsection{Surgimento}
-\subsection{Divisão de Mercado}
-\subsection{Aplicativos Nativos}
-\subsection{Aplicativos Híbridos}
+As imagens de 16 bits são convertidas para 8 bits por meio de um \textit{script} em Python\footnote{Python é uma linguagem de programação aberta.}. Logo após, uma única imagem é consolidada utilizando-se três bandas (infravermelho médio, vermelho, infravermelho próximo, equivalentes a vermelho, verde e azul) da imagem de 8 bits. Assim, essa imagem pode ser enviada para um servidor gerenciador de arquivos de mapa. Nesse projeto utiliza-se o MapServer (\url{http://www.mapserver.org}), responsável por tratar as requisições de inserção e seleção das imagens georreferenciadas, e de retornar apenas parte da imagem desejada na forma de \textit{tiles}. Todos os arquivos relacionados à imagem têm suas informações extraídas no formato GeoJSON\footnote{\textit{Geographic JavaScript Object Notation} é um formato para codificar variados tipos de estruturas geográficas.}, para facilitar a comunicação entre os outros módulos. O algoritmo de classificação (ainda em desenvolvimento) faz a segmentação das imagens, classificando-as como  áreas de floresta e de não-floresta. Existindo a necessidade de supervisão das imagens, serão criadas tarefas para os usuários poderem classificá-las visualmente.
 
+O \citeonline{PyBossa2013} é o sistema responsável por gerenciar a criação e distribuição das tarefas automaticamente, conforme necessário. Esse é um sistema livre que permite um usuário criar e gerenciar projetos que requeiram cognição humana, tais como classificação de imagem, transcrição e geo-codificação. Esse sistema é baseado no \citeonline{Boinc2008}, plataforma online desenvolvida para facilitar a criação e a operação de projetos baseados em ciência cidadã. Essa nova implementação traz maiores benefícios em relação ao sistema original, Bossa, por ser desenvolvida em Python e possuir uma API\footnote{\textit{Application Programming Interface} (API) é um protocolo com o objetivo de servir como interface para os componentes de softwares, permitindo comunicarem entre si.} RESTful \cite{Richardson2008}. 
 
+Com as tarefas criadas, os voluntários podem classificar as imagens de forma ordenada. O projeto, com o uso do sistema de redundância que envia a mesma tarefa para diferentes voluntários, garante um aumento na confiabilidade dos resultados \cite{Ipeirotis2010}.
 
+\section{Aplicações}
+\label{ch:aplicacoes}
+
+\chapter{Metodologia e Resultados}
+\label{ch:metodologia_resultados}
+
+\chapter{Conclusões}
+\label{ch:conclusoes}
+
+\section{Trabalhos Futuros}
+\label{ch:trabalhos_futuros}
