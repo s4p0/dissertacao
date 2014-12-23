@@ -59,7 +59,7 @@ Após a seleção das imagens, a próxima etapa envolve transformar seus dados radio
 Um algoritmo de classificação não-supervisionado de agrupamentos de dados trata as imagens segmentadas, classificando-as de acordo com as classes definidas pelo banco de dados. Como resultado tem-se uma nova imagem \textit{raster} ou vetorial com as áreas desflorestadas. Então, um fotointerprete tem a tarefa de analisar os polígonos temáticos gerados, tomando a decisão se esses devem ser aceitos ou reclassificados. Uma vez essa imagem aceita, uma máscara de desmatamento contendo as áreas de corte raso já detectados é gerada. Essa máscara será utilizada para eliminar desmatamentos antigos, impedindo que sejam identificados novamente.
 
 \section{DETER}
-\label{ch:deter}
+\label{ch:deter}\ref{}
 
 Devido ao tempo necessário para gerar os resultados e por observar apenas áreas de corte raso, o PRODES não pode ser utilizado como um sistema de prevenção. Portanto, a partir de 2004 o Sistema de Detecção de Desmatamento em Tempo Real (DETER) foi implementado para realizar o monitoramento contínuo do desmatamento e da degradação florestal. Esse sistema foi criado para atender ao Governo Federal no Plano de Ação para a Prevenção e Controle do Desmatamento na Amazônia Legal. O principal objetivo desse sistema é de fornecer informações sobre o local e a dimensão aproximada de ocorrências de mudanças na vegetação de modo a agilizar a fiscalização. 
 
@@ -185,11 +185,9 @@ O sensoriamento voluntário é uma junção de Informação Geográfica Voluntariada (I
 
 \subsection{Informação Geográfica Voluntariada}
 
-Informação Geográfica Voluntariada surgiu com a chegada da internet rápida, da \textit{Web} 2.0, que deu poder aos usuários de editar dinâmicamente os conteúdos de uma página e adicionar novos dados, e de ciência cidadã, onde voluntários são motivados a participarem de projetos que possam contribuir com algum propósito e muitas vezes, estes também são motivads por simplesmente ter a chance de obter-se destaque pelo seu trabalho.
+\citeonline{Goodchild2007} categoriza de \textbf{informação geográfica voluntariada} o fenômeno que vem atraindo cidadãos de toda parte, a criação de informações geográficas. Tarefa que antigamente era de uso exclusivo das agências oficiais responsáveis por realizar cartografias dos países, porém com o avanço da tecnologia, qualquer pessoa pode ter acesso a ferramentas de edição de mapa online e colaborar com alguma informação geográfica. Seja esta específica sobre um determinado prédio, dado sua latitude e longitude, como também por vastos terrenos, ao descrever uma cidade. Este recente paradigma representa uma dramática inovação e certamente terá grandes impactos aos sistemas de informação geográfica.
 
-Portais de mapas são utilizados de forma análogas a ferramenta \textit{wiki} onde qualquer pessoa cadastrada pode editar o conteúdo e informações ali encontradas. 
-
-\textit{Wikimapia} é uma referência de projetos IGV, onde voluntários podem contribuir com novas informações \cite{Wikimapia:online}. O objetivo deste portal é de descrever todo o mundo com o máximo de informções utéis reunidos por voluntários, organizá-los e disponibilizá-los para o uso do público. Através de uma interface simples, figura \ref{fig:wikimapia}, para que os usuários que não possuem experiências com mapas possam também fácilmente colaborar com o projeto. Lançado em maio de 2006, não tomou muito tempo para que as pessoas viessem a conhecer a inovação e com menos de 3 meses o projeto já possuia 1 milhão de novos registros criados por voluntários. Até julho de 2012, 19 milhões de registros foram criados por voluntários \cite{Wikimapia:history}.
+Um marcante projeto de informação geográfica voluntariada, \textit{Wikimapia}, é referência nesta categoria, onde voluntários podem contribuir com novas informações geográficas simplesmente escolhendo um local (através de uma coordenada geográfica) e complementando a informação local \cite{Wikimapia:online}. Possui um objetivo ambicioso de descrever todo o globo terrestre com o máximo de informções geográficas utéis reunidas através do uso de voluntários, organizá-las e disponibilizá-las para diversos outros usos públicos das informação. Através de uma interface simples, figura \ref{fig:wikimapia}, para que os voluntários que não possuam experiências com edição de mapas possam também, de forma rápida e intuitiva, colaborar com o projeto. Foi lançado em maio de 2006 como uma ferramenta similar a wikipedia, onde todos podem editar seu conteúdo, e em pouco tempo diversos voltuntários já haviam se cadastrado, com menos de 3 meses o projeto possuia 1 milhão de novos registros geográficos criados apenas por voluntários. Em julho de 2012 o projeto já atingia a marca de 19 milhões de registros geográficos criados \cite{Wikimapia:history}.
 
 \begin{figure}[htb]
     \centering
@@ -197,6 +195,16 @@ Portais de mapas são utilizados de forma análogas a ferramenta \textit{wiki} ond
     \caption{Modo de inserção de dados do portal wikimapia.}
     %\FONTE{\citeonline{NASA}}
     \label{fig:wikimapia}
+\end{figure}
+
+Outro projeto que merece destaque nesta categoria é o renomado \textit{OpenStreetMaps}. Muito parecido com a ferramenta de mapas do Google, mas de forma livre, o OSM possui diferentes características e funcionalidades. Lançado em julho de 2004 e deste então vem atraindo novos voluntários a cada dia, tendo um crescimento constante (ver figura \ref{fig:osm_table}). Construído para que voluntários mantenham sempre os dados geográficos atualizados, assim como o wikimapia, porém o OSM conta diversas funcionalidades para integração dos seus dados a projetos de terceiros, utilizando-se de protocolos abertos e com muitas opções para exportar os dados. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/osm_table.png}
+    \caption{Gráfico do crescimento exponêncial de usuários registrados e contribuições realizadas por mês.}
+    \FONTE{\citeonline{haklay2008openstreetmap}}
+    \label{fig:osm_table}
 \end{figure}
 
 \subsection{Sensoriamento Móvel}
