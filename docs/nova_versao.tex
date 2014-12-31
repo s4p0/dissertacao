@@ -3,7 +3,7 @@
 \section{Objetivos}
 \label{ch:objetivos}
 
-Esta dissertação tem como objetivo, formalizar a integração dos módulos já desenvolvidos (ver figura \ref{fig:estrutura_atual}), para a definitiva automatização do processo de análise de uma nova área de interesse, e adicionar à arquitetura existente a capacidade de coletar dados in-situ (a principal característica de projetos de ciência cidadã do tipo volunteer sensing).
+Esta dissertação tem como objetivo, formalizar a integração dos módulos já desenvolvidos (ver figura \ref{fig:estrutura_atual}), para a definitiva automatização do processo de análise de uma nova área de interesse, e adicionar à arquitetura existente a capacidade de coletar dados in-situ, característica principal de um projeto de ciência cidadã do tipo de sensoriamento voluntário, utilizando-se de dispositivos móveis utilizados pelos voluntários.
 
 \subsection{Objectivos Específicos}
 \label{ch:objetivos:especificos}
@@ -21,7 +21,7 @@ Os objetivos específicos desta pesquisa são:
 
 \section{Organização do Documento}
 \label{ch:organizacao}
-Este documento está organizado da seguinte forma: O Capítulo \ref{ch:monitoramento_florestas} é feita a revisão bibliográfica das ferramentas de monitoramento de florestas criado pelo INPE e suas metodologias. Uma revisão do tópico de ciência cidadã é abordado no Capítulo \ref{ch:ciencia_cidada}, onde é realizada uma comparação com as pesquisas científicas realizadas por voluntários antigamente e nos tempos atuais, conhecida por ciencia cidadã moderna. No Capítulo \ref{ch:forestwatchers} é comentado sobre o projeto ForestWatchers, a definição do projeto, a metodologia empregada e as aplicações feitas por este. As metodologias e resultados deste trabalho são apresentados no Capítulo \ref{ch:metodologia_resultados} e as conclusões no Capítulo \ref{ch:conclusoes}.
+Este documento está organizado da seguinte forma: O Capítulo \ref{ch:monitoramento_florestas} é feita a revisão bibliográfica das ferramentas de monitoramento de florestas criado pelo INPE e suas metodologias. Uma revisão do tópico de ciência cidadã é abordado no Capítulo \ref{ch:ciencia_cidada}, onde é realizada uma comparação com as pesquisas científicas realizadas por voluntários antigamente e nos tempos atuais, conhecida por ciencia cidadã moderna. No Capítulo \ref{ch:forestwatchers} é comentado sobre o projeto ForestWatchers, a definição do projeto, a metodologia empregada e as aplicações feitas por este. As metodologias e resultados deste trabalho são apresentados no Capítulo \ref{ch:metodologia} e \ref{ch:resultados}, respectivamente. Para finalizar, as conclusões são feitas no Capítulo \ref{ch:conclusoes}.
 
 \chapter{Monitoramento de Florestas}
 \label{ch:monitoramento_florestas}
@@ -274,8 +274,27 @@ O \citeonline{PyBossa2013} é o sistema responsável por gerenciar a criação e dis
 
 Com as tarefas criadas, os voluntários podem classificar as imagens de forma ordenada. O projeto, com o uso do sistema de redundância que envia a mesma tarefa para diferentes voluntários, garante um aumento na confiabilidade dos resultados \cite{Ipeirotis2010}.
 
-\chapter{Metodologia e Resultados}
-\label{ch:metodologia_resultados}
+\section{Metodologia}
+\label{ch:metodologia}
+
+O conceito de um módulo de sensoriamento voluntário consiste básicamente de \textbf{(a)} um dispositivo capaz de coletar dados, \textbf{(b)} estrutura de recebimento e armazenamento, e \textbf{(c)} um sistema de visualização dos dados obtidos \cite{VolunteerSensing2011,Gouveia2008}. 
+
+Para a validação deste conceito o seguinte módulo foi construído em duas etapas. Uma aplicação móvel, utilizado pelos voluntários para enviarem os dados coletados a partir de um dispositivo móvel. E uma infraestrutura tecnológica, divida em: uma camada de recebimento e armazenamento, processamento e visualização dos dados.
+
+Este capítudo descreve a metodologia utilizada em cada etapa da construção do módulo, por fim, detalha o experimento de coleta de dados utilizado por este módulo.
+
+\subsection{Aplicação Móvel} % (fold)
+\label{sub:aplicacao_movel}
+
+\subsection{Infraestrutura Tecnológica} % (fold)
+\label{sub:infraestrutura_tecnologica}
+
+\subsection{Coleta de Dados} % (fold)
+\label{sub:coleta_de_dados}
+
+
+\section{Resultado}
+\label{ch:resultados}
 
 \chapter{Conclusões}
 \label{ch:conclusoes}
