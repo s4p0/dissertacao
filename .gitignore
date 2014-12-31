@@ -1,3 +1,7 @@
+publicacao.synctex.gz
+singlepages/
+*.fdb_latexmk
+*.fls
 *.log
 *.aux
 *.dvi
