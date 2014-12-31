@@ -279,12 +279,30 @@ Com as tarefas criadas, os voluntários podem classificar as imagens de forma ord
 
 O conceito de um módulo de sensoriamento voluntário consiste básicamente de \textbf{(a)} um dispositivo capaz de coletar dados, \textbf{(b)} estrutura de recebimento e armazenamento, e \textbf{(c)} um sistema de visualização dos dados obtidos \cite{VolunteerSensing2011,Gouveia2008}. 
 
-Para a validação deste conceito o seguinte módulo foi construído em duas etapas. Uma aplicação móvel, utilizado pelos voluntários para enviarem os dados coletados a partir de um dispositivo móvel. E uma infraestrutura tecnológica, divida em: uma camada de recebimento e armazenamento, processamento e visualização dos dados.
+Para a validação deste conceito o seguinte módulo foi construído em duas etapas. Um aplicativo híbrido, utilizado pelos voluntários para enviarem os dados coletados a partir de um dispositivo móvel. E uma infraestrutura tecnológica, divida em: uma camada de recebimento e armazenamento, processamento e visualização dos dados.
 
 Este capítudo descreve a metodologia utilizada em cada etapa da construção do módulo, por fim, detalha o experimento de coleta de dados utilizado por este módulo.
 
-\subsection{Aplicação Móvel} % (fold)
-\label{sub:aplicacao_movel}
+\subsection{Aplicativo Híbrido} % (fold)
+\label{sub:aplicativo_hibrido}
+
+% Até o momento, a aplicação móvel é a única forma que os voluntários têm para submeter dados de coleta ao projeto.
+Supondo que um vetor de coleta de dados de difícil acesso, com alta complexibilidade e desenvolvido com o único propósito de coletar dados, construídos sobre demanda, sejam fatores inibidores, restringindo significantemente o número de possíveis voluntários comitidos com o projeto \cite{Lane2010}. Optou-se por utilizar uma aplicação desenvolvida para dispositivos móveis (smartphones e tablet). Hoje, a grande maioria possui um dispositivo móvel com capacidade de conectar-se a internet, tirar fotos, captar áudio e gravar vídeos. Com a popularização dos sensores embargados em dispositivos móveis e as expectativas de crescimento deste mercado \cite{Lane2010,Gartner2014}, utilizá-los como ferramenta para projetos de ciência cidadã parecem bastante sugestivas.
+
+%%%%% dividir ???
+Inicialmente tentou-se utilizar sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados. Há ferramentas disponíveis gratuitamente para auxiliar a construção de aplicativos para dispositivos móveis. Estes, em grande parte, seguem o princípio aberto-fechados \cite{meyer1988:open-closed}, onde uma pessoa com conhecimento podem estender as funcionalidades principais, mas não modificá-las diretamente. 
+
+Um aplicativo para a ferramenta EpiCollect foi criado e um outro para a ferramenta Sensr.
+
+
+
+\subsection{Sistemas de Coletas de Dados} % (fold)
+\label{sub:sistemas_de_coletas_de_dados}
+
+% subsection sistemas_de_coletas_de_dados (end)
+
+
+
 
 \subsection{Infraestrutura Tecnológica} % (fold)
 \label{sub:infraestrutura_tecnologica}
