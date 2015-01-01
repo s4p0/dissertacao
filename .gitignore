@@ -16,9 +16,8 @@ singlepages/
 *.ind
 *.out
 *.blg
-
+*.brf
 *sublime-*
 publicacao.pdf
 bib/example.bib
 todo-pkg/
-

@@ -274,7 +274,7 @@ O \citeonline{PyBossa2013} é o sistema responsável por gerenciar a criação e dis
 
 Com as tarefas criadas, os voluntários podem classificar as imagens de forma ordenada. O projeto, com o uso do sistema de redundância que envia a mesma tarefa para diferentes voluntários, garante um aumento na confiabilidade dos resultados \cite{Ipeirotis2010}.
 
-\section{Metodologia}
+\chapter{Metodologia}
 \label{ch:metodologia}
 
 O conceito de um módulo de sensoriamento voluntário consiste básicamente de \textbf{(a)} um dispositivo capaz de coletar dados, \textbf{(b)} estrutura de recebimento e armazenamento, e \textbf{(c)} um sistema de visualização dos dados obtidos \cite{VolunteerSensing2011,Gouveia2008}. 
@@ -283,39 +283,58 @@ Para a validação deste conceito o seguinte módulo foi construído em duas etapas.
 
 Este capítudo descreve a metodologia utilizada em cada etapa da construção do módulo, por fim, detalha o experimento de coleta de dados utilizado por este módulo.
 
-\subsection{Aplicativo Híbrido} % (fold)
-\label{sub:aplicativo_hibrido}
+\section{Aplicativos} % (fold)
+\label{sub:aplicativos}
 
 % Até o momento, a aplicação móvel é a única forma que os voluntários têm para submeter dados de coleta ao projeto.
 Supondo que um vetor de coleta de dados de difícil acesso, com alta complexibilidade e desenvolvido com o único propósito de coletar dados, construídos sobre demanda, sejam fatores inibidores, restringindo significantemente o número de possíveis voluntários comitidos com o projeto \cite{Lane2010}. Optou-se por utilizar uma aplicação desenvolvida para dispositivos móveis (smartphones e tablet). Hoje, a grande maioria possui um dispositivo móvel com capacidade de conectar-se a internet, tirar fotos, captar áudio e gravar vídeos. Com a popularização dos sensores embargados em dispositivos móveis e as expectativas de crescimento deste mercado \cite{Lane2010,Gartner2014}, utilizá-los como ferramenta para projetos de ciência cidadã parecem bastante sugestivas.
 
-%%%%% dividir ???
-Inicialmente tentou-se utilizar sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados. Há ferramentas disponíveis gratuitamente para auxiliar a construção de aplicativos para dispositivos móveis. Estes, em grande parte, seguem o princípio aberto-fechados \cite{meyer1988:open-closed}, onde uma pessoa com conhecimento podem estender as funcionalidades principais, mas não modificá-las diretamente. 
+Foram criados quatro aplicativos como protótipos para testar suas funcionalidades verificarem a sua significância em relação as necessidades do projeto: (i) dois destes aplicativos utilizando-se sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados. Há ferramentas disponíveis gratuitamente para auxiliar a construção de aplicativos para dispositivos móveis. Estes, em grande parte, seguem o princípio aberto-fechados \cite{meyer1988:open_closed}, onde uma pessoa com conhecimento pode estender as funcionalidades principais, mas não modificá-las diretamente; (ii) um utilizando bibliotecas nativas, disponibilizadas pelos fabricantes de dispositivos móveis para criar novos aplicativos, como estes que são fácilmente encontrados nas lojas online de aplicativos; e por fim, (iii) um utilizando uma abordagem de desenvolvimento de aplicativos híbrido, onde há uma biblioteca em comum entre os demais dispositivos existentes e necessitando de apenas uma linguagem de programação.
 
-Um aplicativo para a ferramenta EpiCollect foi criado e um outro para a ferramenta Sensr.
+A metodologia para o desenvolvimento dos protótipos (i), (ii) e (iii) são descritos nas seções \ref{ssub:aplicativo_com_sistemas_prontos}, \ref{ssub:aplicativo_com_biblioteca_nativa} e \ref{ssub:aplicativo_com_biblioteca_hibrida}, respectivamente.
 
+\subsection{Aplicativo com Sistemas Prontos} % (fold)
+\label{ssub:aplicativo_com_sistemas_prontos}
 
+Existem alguns aplicativos que permitem criar ferramentas de coleta de dados com sensores utilizando formulários feitos através de interfaces gráficas e inserido no aplicativo. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e interface gráfica para a construção dos formulários.
 
-\subsection{Sistemas de Coletas de Dados} % (fold)
-\label{sub:sistemas_de_coletas_de_dados}
+EpiCollect é um destes sistemas e foi utilizado para construir o primeiro protótipo do projeto.
+Foi desenvolvido um formulário baseado nos principais requisitos do projeto no qual visa captar áudio, vídeo e imagem juntamente com a coordenada geográfica atual do voluntário, conforme este observa um fenômeno.
 
-% subsection sistemas_de_coletas_de_dados (end)
+Este sistema é de muito fácil uso, bastando ter acesso a internet para cadastrar-se e criar o formulário. 
 
+\subsection{Aplicativo com Biblioteca Nativa} % (fold)
+\label{ssub:aplicativo_com_biblioteca_nativa}
 
+\subsection{Aplicativo com Biblioteca Híbrida} % (fold)
+\label{ssub:aplicativo_com_biblioteca_hibrida}
 
-
-\subsection{Infraestrutura Tecnológica} % (fold)
+\section{Infraestrutura Tecnológica} % (fold)
 \label{sub:infraestrutura_tecnologica}
 
-\subsection{Coleta de Dados} % (fold)
+\subsection{Armazenamento} % (fold)
+\label{sub:armazenamento}
+
+\subsection{Servidor para Internet} % (fold)
+\label{sub:servidor_web}
+
+\subsubsection{Back-End} % (fold)
+\label{ssub:back_end}
+
+\subsubsection{Front-End} % (fold)
+\label{ssub:front_end}
+
+
+\section{Coleta de Dados} % (fold)
 \label{sub:coleta_de_dados}
 
 
-\section{Resultado}
+
+
+
+
+\chapter{Resultados e Discussões}
 \label{ch:resultados}
 
-\chapter{Conclusões}
+\section{Conclusões e Trabalhos Futuros}
 \label{ch:conclusoes}
-
-\section{Trabalhos Futuros}
-\label{ch:trabalhos_futuros}
