@@ -296,12 +296,35 @@ A metodologia para o desenvolvimento dos protótipos (i), (ii) e (iii) são descri
 \subsection{Aplicativo com Sistemas Prontos} % (fold)
 \label{ssub:aplicativo_com_sistemas_prontos}
 
-Existem alguns aplicativos que permitem criar ferramentas de coleta de dados com sensores utilizando formulários feitos através de interfaces gráficas e inserido no aplicativo. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e interface gráfica para a construção dos formulários.
+Alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
 
-EpiCollect é um destes sistemas e foi utilizado para construir o primeiro protótipo do projeto.
-Foi desenvolvido um formulário baseado nos principais requisitos do projeto no qual visa captar áudio, vídeo e imagem juntamente com a coordenada geográfica atual do voluntário, conforme este observa um fenômeno.
+EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra.
 
-Este sistema é de muito fácil uso, bastando ter acesso a internet para cadastrar-se e criar o formulário. 
+Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}). Foi desenvolvido um formulário baseado nos principais requisitos do projeto no qual visa captar áudio, vídeo e imagem juntamente com a coordenada geográfica atual do voluntário.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/01_PROJECT_EPICOLLECT.png}
+\hfill
+\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/02_DATA_VISIBILITY_EPICOLLECT.png}
+
+\includegraphics[keepaspectratio,width=0.45\textwidth]{figuras/epicollect/03_LISTING_ON_HOMEPAGE_EPICOLLECT.png}
+\caption{À esquerda, página apresentada para a criação de um novo projeto usando o EpiCollect+, opcionalmente pode ser informado um proejto do primeiro EpiCollect para transformá-lo em um novo. À direita,  escolha da visibilidade do projeto, se este poderá ser visível a todos ou se os usuários deverão cadastrar-se no projeto. Por último, a opção se o projeto poderá ser listado no site do EpiCollect+. }
+\label{fig:epicollect_novo_projeto}
+\end{figure*}
+
+Para validação deste aplicativo um formulário foi criado utilizando a interface gráfica oferecido pela página do EpiCollect+ (Figura \ref{fig:epicollect_formulario}). Após efetuar o downlaod do aplicativo 
+
+Para a validação deste sistema, foi criado um formulário onde o voluntário registra a data e hora em que está utilizando o aplicativo, selecionar se esta coleta será uma captura de image, vídeo ou áudio, então é apresentado ao voluntário a tela de captura conforme a seleção feita (Figura \ref{fig:epicollect_formulario}). Desta forma, fica fácil filtrar os dados pelo tipo de escolha do voluntário.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/epicollect/04_FORM_CREATION.png}
+\caption{Um formulário criado para o EpiCollect+, com a finalidade de capturar uma imagem, foto ou vídeo, com a data e hora de acqusição, a coordenada geográfica e algum comentário adicional. }
+\label{fig:epicollect_formulario}
+\end{figure*}
+
+Uma vez que todos os dados sejam capturados e corretamente preenchidos, estes são salvos e o voluntário pode inserir um novo registro ou efetuar a sincronização com o servidor do EpiCollect+, caso ao contrário, pode a sincronização pode ser feita a critério do voluntário, mantendo os dados de forma off-line.
 
 \subsection{Aplicativo com Biblioteca Nativa} % (fold)
 \label{ssub:aplicativo_com_biblioteca_nativa}
