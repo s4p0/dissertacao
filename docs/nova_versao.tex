@@ -287,7 +287,7 @@ Este capítudo descreve a metodologia utilizada em cada etapa da construção do mó
 \label{sub:aplicativos}
 
 % Até o momento, a aplicação móvel é a única forma que os voluntários têm para submeter dados de coleta ao projeto.
-Supondo que um vetor de coleta de dados de difícil acesso, com alta complexibilidade e desenvolvido com o único propósito de coletar dados, construídos sobre demanda, sejam fatores inibidores, restringindo significantemente o número de possíveis voluntários comitidos com o projeto \cite{Lane2010}. Optou-se por utilizar uma aplicação desenvolvida para dispositivos móveis (smartphones e tablet). Hoje, a grande maioria possui um dispositivo móvel com capacidade de conectar-se a internet, tirar fotos, captar áudio e gravar vídeos. Com a popularização dos sensores embargados em dispositivos móveis e as expectativas de crescimento deste mercado \cite{Lane2010,Gartner2014}, utilizá-los como ferramenta para projetos de ciência cidadã parecem bastante sugestivas.
+Supondo que um vetor de coleta de dados de difícil acesso, com alta complexibilidade e desenvolvido com o único propósito de coletar dados ou construídos sobre demanda, sejam fatores inibidores, restringindo significantemente o número de possíveis voluntários comitidos com o projeto \cite{Lane2010}. Optou-se por utilizar uma aplicação desenvolvida para dispositivos móveis (smartphones e tablet). Hoje, a grande maioria possui um dispositivo móvel com capacidade de conectar-se a internet, tirar fotos, captar áudio e gravar vídeos. Com a popularização dos sensores embargados em dispositivos móveis e as expectativas de crescimento deste mercado \cite{Lane2010,Gartner2014}, utilizá-los como ferramenta para projetos de ciência cidadã parecem bastante sugestivas.
 
 Foram criados quatro aplicativos como protótipos para testar suas funcionalidades verificarem a sua significância em relação as necessidades do projeto: (i) dois destes aplicativos utilizando-se sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados. Há ferramentas disponíveis gratuitamente para auxiliar a construção de aplicativos para dispositivos móveis. Estes, em grande parte, seguem o princípio aberto-fechados \cite{meyer1988:open_closed}, onde uma pessoa com conhecimento pode estender as funcionalidades principais, mas não modificá-las diretamente; (ii) um utilizando bibliotecas nativas, disponibilizadas pelos fabricantes de dispositivos móveis para criar novos aplicativos, como estes que são fácilmente encontrados nas lojas online de aplicativos; e por fim, (iii) um utilizando uma abordagem de desenvolvimento de aplicativos híbrido, onde há uma biblioteca em comum entre os demais dispositivos existentes e necessitando de apenas uma linguagem de programação.
 
@@ -300,7 +300,9 @@ Alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive
 
 EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra.
 
-Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}). Foi desenvolvido um formulário baseado nos principais requisitos do projeto no qual visa captar áudio, vídeo e imagem juntamente com a coordenada geográfica atual do voluntário.
+Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}).  
+
+%Foi desenvolvido um formulário baseado nos principais requisitos do projeto no qual visa captar áudio, vídeo e imagem juntamente com a coordenada geográfica atual do voluntário.
 
 \begin{figure*}[htb]
 \centering
@@ -313,18 +315,36 @@ Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome
 \label{fig:epicollect_novo_projeto}
 \end{figure*}
 
-Para validação deste aplicativo um formulário foi criado utilizando a interface gráfica oferecido pela página do EpiCollect+ (Figura \ref{fig:epicollect_formulario}). Após efetuar o downlaod do aplicativo 
-
-Para a validação deste sistema, foi criado um formulário onde o voluntário registra a data e hora em que está utilizando o aplicativo, selecionar se esta coleta será uma captura de image, vídeo ou áudio, então é apresentado ao voluntário a tela de captura conforme a seleção feita (Figura \ref{fig:epicollect_formulario}). Desta forma, fica fácil filtrar os dados pelo tipo de escolha do voluntário.
+Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, desmatamento...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/epicollect/04_FORM_CREATION.png}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/epicollect/03_FORM_ANTIGO.png}
 \caption{Um formulário criado para o EpiCollect+, com a finalidade de capturar uma imagem, foto ou vídeo, com a data e hora de acqusição, a coordenada geográfica e algum comentário adicional. }
 \label{fig:epicollect_formulario}
 \end{figure*}
 
 Uma vez que todos os dados sejam capturados e corretamente preenchidos, estes são salvos e o voluntário pode inserir um novo registro ou efetuar a sincronização com o servidor do EpiCollect+, caso ao contrário, pode a sincronização pode ser feita a critério do voluntário, mantendo os dados de forma off-line.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/pertinencia.png}
+\caption{Fase de avaliação utilizando o sistema PyBossa para verificar a pertinência da imagem em relação ao projeto.}
+\label{fig:pybossa_pertinente}
+\end{figure*}
+
+O administrador do projeto pode verificar os dados online (Figura \ref{fig:epicollect_dados_online}) e usá-los localmente após baixar os arquivos em csv, tsv ou xml, dependendo da necessidade.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/epicollect/05_ALL_EPICOLLECT_DATA.png}
+\caption{Os dados são mantidos nos servidores do EpiCollect+ para uso do administrador do projeto. }
+\label{fig:epicollect_dados_online}
+\end{figure*}
+
+Diferente da primeira versão do sistema, o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos} onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. 
+
+Outra plataforma de sistemas prontos foi avaliado, Sensr, porém só existe um aplicativo para a plataforma iOS. Assim estes dois protótipos foram criados, mas não utilizados devido a falta de estrutura apresentados pelos sistemas pronto em realação a mais de uma plataforma.
 
 \subsection{Aplicativo com Biblioteca Nativa} % (fold)
 \label{ssub:aplicativo_com_biblioteca_nativa}
