@@ -293,7 +293,7 @@ Foram criados quatro aplicativos como protótipos para testar suas funcionalidade
 
 A metodologia para o desenvolvimento dos protótipos (i), (ii) e (iii) são descritos nas seções \ref{ssub:aplicativo_com_sistemas_prontos}, \ref{ssub:aplicativo_com_biblioteca_nativa} e \ref{ssub:aplicativo_com_biblioteca_hibrida}, respectivamente.
 
-\subsection{Aplicativo com Sistemas Prontos} % (fold)
+\subsection{Aplicativo de Sistemas Prontos} % (fold)
 \label{ssub:aplicativo_com_sistemas_prontos}
 
 Alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
@@ -317,39 +317,64 @@ Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome
 
 Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, desmatamento...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/epicollect/03_FORM_ANTIGO.png}
-\caption{Um formulário criado para o EpiCollect+, com a finalidade de capturar uma imagem, foto ou vídeo, com a data e hora de acqusição, a coordenada geográfica e algum comentário adicional. }
-\label{fig:epicollect_formulario}
-\end{figure*}
-
 Uma vez que todos os dados sejam capturados e corretamente preenchidos, estes são salvos e o voluntário pode inserir um novo registro ou efetuar a sincronização com o servidor do EpiCollect+, caso ao contrário, pode a sincronização pode ser feita a critério do voluntário, mantendo os dados de forma off-line.
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/pertinencia.png}
-\caption{Fase de avaliação utilizando o sistema PyBossa para verificar a pertinência da imagem em relação ao projeto.}
-\label{fig:pybossa_pertinente}
-\end{figure*}
 
 O administrador do projeto pode verificar os dados online (Figura \ref{fig:epicollect_dados_online}) e usá-los localmente após baixar os arquivos em csv, tsv ou xml, dependendo da necessidade.
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/epicollect/05_ALL_EPICOLLECT_DATA.png}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/epicollect/03_FORM_ANTIGO.png}
+\caption{Um formulário criado para o EpiCollect+, com a finalidade de capturar uma imagem, foto ou vídeo, com a data e hora de acqusição, a coordenada geográfica e algum comentário adicional. }
+\label{fig:epicollect_formulario}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/pertinencia.png}
+\caption{Fase de avaliação utilizando o sistema PyBossa para verificar a pertinência da imagem em relação ao projeto.}
+\label{fig:pybossa_pertinente}
+\end{figure*}
+
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/epicollect/05_ALL_EPICOLLECT_DATA.png}
 \caption{Os dados são mantidos nos servidores do EpiCollect+ para uso do administrador do projeto. }
 \label{fig:epicollect_dados_online}
 \end{figure*}
 
 Diferente da primeira versão do sistema, o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos} onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. 
 
-Outra plataforma de sistemas prontos foi avaliado, Sensr, porém só existe um aplicativo para a plataforma iOS. Assim estes dois protótipos foram criados, mas não utilizados devido a falta de estrutura apresentados pelos sistemas pronto em realação a mais de uma plataforma.
+Outra plataforma de sistemas prontos foi avaliado, Sensr, porém só existe aplicativo para a plataforma iOS. Assim estes dois protótipos foram criados, mas não utilizados devido a falta de estrutura apresentados pelos sistemas pronto em realação a mais de uma plataforma.
 
-\subsection{Aplicativo com Biblioteca Nativa} % (fold)
+\subsection{Aplicativo de Biblioteca Nativa} % (fold)
 \label{ssub:aplicativo_com_biblioteca_nativa}
 
-\subsection{Aplicativo com Biblioteca Híbrida} % (fold)
+Após verificar a utilização de um aplicativo de sistemas prontos, optou-se por desenvolver cada aplicativo com a suas próprias ferramentas. Cada fabricante de dispositivos móveis disponibiliza conjuntos de códigos a serem utilizados por um desenvolvedor de aplicativos, estes conhecido por biblioteca, \textit{API} ou \textit{SDK}. A maioria dos fabricantes disponibilizam essas bibliotecas sem custos, porém, para poder publicar um aplicativo as lojas online cobram uma assinatura anual que variam de acordo com cada fabricante (Tabela \ref{tab:tabela_custo}).
+
+\begin{table}[htb]
+\caption{My caption}
+\label{tab:tabela_custo}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|l|c|}
+\hline   Plataforma  & Dispositvos         & Linguagem  & Preço / Ano \\ %header
+\hline   iOS (Apple)  &  Smartphones, Tablet     & C, Objective-C           & \$99        \\
+            BlackBerry OS (RIM)  &  Smartphones   & Java           & \$00        \\
+            Windows, Windows Phone (Microsoft)  &  Desktop, Smartphones, Tablet  & .NET                                               & \$19        \\
+            Android (Google)  &  Acessórios, Desktop, Smartphones, Tablet  & Java                             & \$25       \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesquisa realizada por \citeonline{IDC:2014Q3}, que ilustra as plataformas mais utilizadas trimestralmente desde 2011 até o penúltimo trimestre de 2014.
+
+Estas bibliotecas permitem desenvolver para diversos dispositivos do mesmo fabricante. Um exemplo, a fabricante Microsoft, permite criar aplicativos tanto para seus sistemas Desktop (Windows), quanto para aplicativos móveis (Windows Phone e Tablets), outras já são mais restritas e requer a aquisição de uma outra licença para produtos diferentes, como a Apple para Desktop e Smartphone, Tablet.
+
+
+
+\subsection{Aplicativo de Biblioteca Híbrida} % (fold)
 \label{ssub:aplicativo_com_biblioteca_hibrida}
 
 \section{Infraestrutura Tecnológica} % (fold)
