@@ -372,16 +372,21 @@ Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesq
 }
 \end{table}
 
-Devido a experiências anteriores com o framework .NET da Microsoft e por haver um aparelho Nokia Lumia 800 disponível, optou-se por criar um aplicativo para Windows Phone 7 (WP7) e um novo modelo de arquitetura. Este aparelho, lançado no final de 2011, possuia diversos sensores inovadores, como câmera de 8.0 MP, acelerômetro, aproximidade e bússola magnética. Seria então necessário novos paradigmas para receber e armazernar os dados enviados deste novo aplicativo, Figura \ref{fig:wp7}.
+A plataforma Windows Phone foi escolhida para criar o aplicativo por já haver um conhecimento prévio com a linguagem utilizada pelo framework da Microsoft. O aplicativo foi testado em um aparelho Lumia Nokia 800, lançado no final de 2011\footnote{\url{http://www.gsmarena.com/nokia_lumia_800-4240.php}}, e com sensores de GPS, câmera de 8 megapixel, acelerômetro e bússola magnética.
 
-Um servidor Asp.Net MVC foi desenvolvido para receber os dados utilizando-se RESTful e exibir os resultados captados dos voluntários, mostrando à esquerda um mapa em HTML5 provido pelo Bing e á direita a imagem captada com as propriedades captadas logo abaixo, como número de identificação da imagem, posição geográfica (latitude e longitude), precisão da posição geográfica e data em que a imagem foi captada. Um banco de dados postgresql 9.1 foi utilizado para armazenar os dados em formato GeoJSON.
+Este aplicativo tinha a simples função de utilizar as funções já dispoíveis da plataforma, captar uma imagen e verificar se a mesma possuia um cabeçalho Exif \cite{JEITA2002} válido georeferenciado. 
 
-\begin{figure}[htb]
-\centering
-\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/prot_app_01.png}
-\caption{Windows Phone 7}
-\label{fig:wp7}
-\end{figure}
+
+
+
+% Seria então necessário novos paradigmas para receber e armazernar os dados enviados deste novo aplicativo, Figura \ref{fig:wp7}.
+% Um servidor Asp.Net MVC foi desenvolvido para receber os dados utilizando-se RESTful e exibir os resultados captados dos voluntários, mostrando à esquerda um mapa em HTML5 provido pelo Bing e á direita a imagem captada com as propriedades captadas logo abaixo, como número de identificação da imagem, posição geográfica (latitude e longitude), precisão da posição geográfica e data em que a imagem foi captada. Um banco de dados postgresql 9.1 foi utilizado para armazenar os dados em formato GeoJSON.
+% \begin{figure}[htb]
+% \centering
+% \includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/prot_app_01.png}
+% \caption{Windows Phone 7}
+% \label{fig:wp7}
+% \end{figure}
 
 
 
