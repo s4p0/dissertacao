@@ -289,20 +289,56 @@ Este capítudo descreve a metodologia utilizada em cada etapa da construção do mó
 % Até o momento, a aplicação móvel é a única forma que os voluntários têm para submeter dados de coleta ao projeto.
 Supondo que um vetor de coleta de dados de difícil acesso, com alta complexibilidade e desenvolvido com o único propósito de coletar dados ou construídos sobre demanda, sejam fatores inibidores, restringindo significantemente o número de possíveis voluntários comitidos com o projeto \cite{Lane2010}. Optou-se por utilizar uma aplicação desenvolvida para dispositivos móveis (smartphones e tablet). Hoje, a grande maioria possui um dispositivo móvel com capacidade de conectar-se a internet, tirar fotos, captar áudio e gravar vídeos. Com a popularização dos sensores embargados em dispositivos móveis e as expectativas de crescimento deste mercado \cite{Lane2010,Gartner2014}, utilizá-los como ferramenta para projetos de ciência cidadã parecem bastante sugestivas.
 
-Foram criados quatro aplicativos como protótipos para testar suas funcionalidades verificarem a sua significância em relação as necessidades do projeto: (i) dois destes aplicativos utilizando-se sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados. Há ferramentas disponíveis gratuitamente para auxiliar a construção de aplicativos para dispositivos móveis. Estes, em grande parte, seguem o princípio aberto-fechados \cite{meyer1988:open_closed}, onde uma pessoa com conhecimento pode estender as funcionalidades principais, mas não modificá-las diretamente; (ii) um utilizando bibliotecas nativas, disponibilizadas pelos fabricantes de dispositivos móveis para criar novos aplicativos, como estes que são fácilmente encontrados nas lojas online de aplicativos; e por fim, (iii) um utilizando uma abordagem de desenvolvimento de aplicativos híbrido, onde há uma biblioteca em comum entre os demais dispositivos existentes e necessitando de apenas uma linguagem de programação.
+Foram criados quatro aplicativos como protótipos para testar suas funcionalidades e verificarem a sua significância em relação as necessidades do projeto: (i) um utilizando bibliotecas nativas, disponibilizadas pelos fabricantes de dispositivos móveis para criar novos aplicativos, como estes que são fácilmente encontrados nas lojas online de aplicativos; (ii)  dois aplicativos utilizando-se sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados; e por fim, (iii) um utilizando uma abordagem de desenvolvimento de aplicativos híbrido, onde há uma biblioteca em comum entre os demais dispositivos existentes e necessitando de apenas uma linguagem de programação.
 
-A metodologia para o desenvolvimento dos protótipos (i), (ii) e (iii) são descritos nas seções \ref{ssub:aplicativo_com_sistemas_prontos}, \ref{ssub:aplicativo_com_biblioteca_nativa} e \ref{ssub:aplicativo_com_biblioteca_hibrida}, respectivamente.
+Cada fabricante de dispositivos móveis disponibiliza conjuntos de códigos a serem utilizados para desenvolver aplicativos, estes são conhecido por biblioteca, \textit{API} ou \textit{SDK}. A maioria dos fabricantes disponibilizam essas bibliotecas sem custos, porém, para poder publicar um aplicativo nas lojas online, alguns fabricantes requerem uma assinatura anual, Tabela \ref{tab:tabela_custo}.
 
-\subsection{Aplicativo de Sistemas Prontos} % (fold)
-\label{ssub:aplicativo_com_sistemas_prontos}
+Estas bibliotecas permitem desenvolver para diversos dispositivos do mesmo fabricante. Um exemplo, a fabricante Microsoft, permite criar aplicativos tanto para seus sistemas Desktop (Windows), quanto para aplicativos móveis (Windows Phone e Tablets), outras já são mais restritas e requer a aquisição de uma outra licença para produtos diferentes, como a Apple para Desktop e Smartphone, Tablet.
 
-Alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
+Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesquisa realizada por \citeonline{IDC:2014Q3}, onde aparecem somente as plataformas que foram mais consumidas de 2011 a 2014.
 
-EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra.
+\begin{table}[htb]
+\caption{My caption}
+\label{tab:tabela_custo}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|l|c|}
+\hline   Plataforma  & Dispositvos         & Linguagem  & Preço / Ano \\ %header
+\hline   iOS (Apple)  &  Smartphones, Tablet     & C, Objective-C           & \$99        \\
+            BlackBerry OS (RIM)  &  Smartphones   & Java           & \$00        \\
+            Windows, Windows Phone (Microsoft)  &  Desktop, Smartphones, Tablet  & .NET                                               & \$19        \\
+            Android (Google)  &  Acessórios, Desktop, Smartphones, Tablet  & Java                             & \$25       \\
+\hline
+\end{tabular}
+}
+\end{table}
 
-Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}).  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-%Foi desenvolvido um formulário baseado nos principais requisitos do projeto no qual visa captar áudio, vídeo e imagem juntamente com a coordenada geográfica atual do voluntário.
+O primeiro aplicativo desenvolvido com protótipo foi criado para a plataforma Windows Phone da Microsoft por haver o conhecimento prévio da linguagem exígida para a programação deste e também a disponibilidade de um smartphone moder, o Nokia Lumia 800, lançado no final de 2011\footnote{\url{http://www.gsmarena.com/nokia_lumia_800-4240.php}}. Este aparelho possuí sensores de localização (GPS assistido), acelerômetro, bússola, proximidade, câmera de 8 megapixel com georeferenciamento, citando os principais. Um sensor de localização GPS assistido tem a iniciaização do seu serviço mais rápido do que um GPS convencional, pois pode utilizar informações de redes wireless ou 3G para obter um melhor posicionamento inicial. Acelerômetros permitem monitorar a inclinação do aparelho nos eixos X, Y e Z, sabendo assim qual a posição do celular ao capturar uma imagem e corrigir o posicionamento da bússola, para ter a direção correta da foto. Câmera com a habilidade de georeferenciamento permitem incluir informações geográficas no cabeçalho de uma imagem, vídeo ou áudio, assim que capturado e podendo posteriormente ser lido e compreendido por outros softwares através do padrão Exif \cite{JEITA2002}.
+
+Um simples aplicativo foi então desenvolvido para capturar uma imagem utilizando a câmera do dispositivo, guardar as coordenadas geográficas através do georeferenciamento e enviá-las a um servidor, extraindo as informações necessárias, Figura \ref{fig:wp7}. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/prot_app_01.png}
+\caption{Windows Phone 7}
+\label{fig:wp7}
+\end{figure}
+
+Ao enviar o único arquivo contendo apenas a imagem capturada para o servidor, todas as informações do cabeçalho do arquivo são extraídas e armazenadas em um banco de dados geográfico, utilizando  o formato GeoJSON \footnote{\url{http://geojson.org/}}, e a imagem armazenada em um diretório específico, para que possa ser rápidamente lido e exibido em uma página web. As primeiras imagens capturadas pelo aplicativo para validação do trabalho foram feitas de dentro do INPE em São José dos Campos. Uma página web foi criada para visualizar os resultados deste protótipo e com esta, um mapa do sistema Bing \footnote{\url{http://www.bing.com/maps/}} foi utilizado para mostrar os imagens captadas sobrepostas como pontos de interesse. Ao clicar no ícone de cada ponto de interesse, a imagem correspondente é exibida com as suas informações de identficação de imagem do banco de dados, coordenada geográfica, altitude, precisão e data de criação. 
+
+Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o seu uso. Estes são:
+
+\begin{itemize}
+    \item \textbf{Precisão Geográfica}. Aparelhos smartphone, em geral, não informam o nível de precisão do georeferenciamento utilizado, tornando-o inviável. Erros de precisão de GPS pode ser na escala de Kilometros de distância do ponto original, smartphones que possuem esta funcionalidade podem não captar uma posição geográfica por alguma falha e o usuário só saberá posteriormente.
+    \item \textbf{Georeferenciamento Automatizado}. Assim como não é possível determinar a precisão do georeferenciamento a priori, também é impossível prever se todas as mídias (áudio, vídeo, imagens) de um smartphone serão georeferenciadas automaticamente, uma vez que esta funcionalidade diverge conforme a plataforma. O dispositivo Lumia 800 possui somente imagens georeferenciadas, por exemplo.
+    \item \textbf{Um Aplicativo por Plataforma}. Mesmo a Tabela \ref{tab:tabela_custo}, mostrar apenas as 4 principais plataformas de dispositivos móveis, há diversas outras plataformas. Em geral, cada plataforma necessita de um código-fonte de um aplicativo diferente, precisando adequar o aplicativo de sensoriamento voluntário em diversas linguagens. Uma vez, que um aplicativo desenvolvido para uma única plataforma, em teoria, teria menos voluntários engajados do que aplicativos desenvolvidos para mais de uma plataforma. Assim, este seria um ponto crítico para o desenvolvimento de aplicativos de sensoriamento voluntário.
+\end{itemize}
+
+Com os problemas relatados anteriormente, buscou-se uma nova solução. Há diversos aplicativos que são desenvolvidos para uma determinada plataforma e posteriormente são migrados para uma outra plataforma, tornando-os multiplatafoma, com essa característica alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
+
+EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra. Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}).  
 
 \begin{figure}[htb]
 \centering
@@ -346,47 +382,6 @@ O administrador do projeto pode verificar os dados online (Figura \ref{fig:epico
 Diferente da primeira versão do sistema, o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos} onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. 
 
 Outra plataforma de sistemas prontos foi avaliado, Sensr, porém só existe aplicativo para a plataforma iOS. Assim estes dois protótipos foram criados, mas não utilizados devido a falta de estrutura apresentados pelos sistemas pronto em realação a mais de uma plataforma.
-
-\subsection{Aplicativo de Biblioteca Nativa} % (fold)
-\label{ssub:aplicativo_com_biblioteca_nativa}
-
-Após verificar a utilização de um aplicativo de sistemas prontos, optou-se por desenvolver um aplicativo para cada plataforma, utilizando as suas próprias ferramentas. Cada fabricante de dispositivos móveis disponibiliza conjuntos de códigos a serem utilizados para desenvolver aplicativos, estes são conhecido por biblioteca, \textit{API} ou \textit{SDK}. A maioria dos fabricantes disponibilizam essas bibliotecas sem custos, porém, para poder publicar um aplicativo nas lojas online, alguns fabricantes requerem uma assinatura anual, Tabela \ref{tab:tabela_custo}.
-
-Estas bibliotecas permitem desenvolver para diversos dispositivos do mesmo fabricante. Um exemplo, a fabricante Microsoft, permite criar aplicativos tanto para seus sistemas Desktop (Windows), quanto para aplicativos móveis (Windows Phone e Tablets), outras já são mais restritas e requer a aquisição de uma outra licença para produtos diferentes, como a Apple para Desktop e Smartphone, Tablet.
-
-Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesquisa realizada por \citeonline{IDC:2014Q3}, onde somente as plataformas mais populares de 2011 ao penúltimo trimestre de 2014 são discriminadas em intervalos trismestrais.
-
-\begin{table}[htb]
-\caption{My caption}
-\label{tab:tabela_custo}
-\centering
-\resizebox{\textwidth}{!}{
-\begin{tabular}{|l|l|l|c|}
-\hline   Plataforma  & Dispositvos         & Linguagem  & Preço / Ano \\ %header
-\hline   iOS (Apple)  &  Smartphones, Tablet     & C, Objective-C           & \$99        \\
-            BlackBerry OS (RIM)  &  Smartphones   & Java           & \$00        \\
-            Windows, Windows Phone (Microsoft)  &  Desktop, Smartphones, Tablet  & .NET                                               & \$19        \\
-            Android (Google)  &  Acessórios, Desktop, Smartphones, Tablet  & Java                             & \$25       \\
-\hline
-\end{tabular}
-}
-\end{table}
-
-A plataforma Windows Phone foi escolhida para criar o aplicativo por já haver um conhecimento prévio com a linguagem utilizada pelo framework da Microsoft. O aplicativo foi testado em um aparelho Lumia Nokia 800, lançado no final de 2011\footnote{\url{http://www.gsmarena.com/nokia_lumia_800-4240.php}}, e com sensores de GPS, câmera de 8 megapixel, acelerômetro e bússola magnética.
-
-Este aplicativo tinha a simples função de utilizar as funções já dispoíveis da plataforma, captar uma imagen e verificar se a mesma possuia um cabeçalho Exif \cite{JEITA2002} válido georeferenciado. 
-
-
-
-
-% Seria então necessário novos paradigmas para receber e armazernar os dados enviados deste novo aplicativo, Figura \ref{fig:wp7}.
-% Um servidor Asp.Net MVC foi desenvolvido para receber os dados utilizando-se RESTful e exibir os resultados captados dos voluntários, mostrando à esquerda um mapa em HTML5 provido pelo Bing e á direita a imagem captada com as propriedades captadas logo abaixo, como número de identificação da imagem, posição geográfica (latitude e longitude), precisão da posição geográfica e data em que a imagem foi captada. Um banco de dados postgresql 9.1 foi utilizado para armazenar os dados em formato GeoJSON.
-% \begin{figure}[htb]
-% \centering
-% \includegraphics[keepaspectratio,width=0.9\textwidth]{figuras/prot_app_01.png}
-% \caption{Windows Phone 7}
-% \label{fig:wp7}
-% \end{figure}
 
 
 
