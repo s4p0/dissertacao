@@ -315,6 +315,9 @@ Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesq
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
+\subsection{Aplicativo de Biblioteca Nativa} % (fold)
+\label{ssub:aplicativo_com_biblioteca_nativa}
+
 O primeiro aplicativo desenvolvido com protótipo foi criado para a plataforma Windows Phone da Microsoft por haver o conhecimento prévio da linguagem exígida para a programação deste e também a disponibilidade de um smartphone moder, o Nokia Lumia 800, lançado no final de 2011\footnote{\url{http://www.gsmarena.com/nokia_lumia_800-4240.php}}. Este aparelho possuí sensores de localização (GPS assistido), acelerômetro, bússola, proximidade, câmera de 8 megapixel com georeferenciamento, citando os principais. Um sensor de localização GPS assistido tem a iniciaização do seu serviço mais rápido do que um GPS convencional, pois pode utilizar informações de redes wireless ou 3G para obter um melhor posicionamento inicial. Acelerômetros permitem monitorar a inclinação do aparelho nos eixos X, Y e Z, sabendo assim qual a posição do celular ao capturar uma imagem e corrigir o posicionamento da bússola, para ter a direção correta da foto. Câmera com a habilidade de georeferenciamento permitem incluir informações geográficas no cabeçalho de uma imagem, vídeo ou áudio, assim que capturado e podendo posteriormente ser lido e compreendido por outros softwares através do padrão Exif \cite{JEITA2002}.
 
 Um simples aplicativo foi então desenvolvido para capturar uma imagem utilizando a câmera do dispositivo, guardar as coordenadas geográficas através do georeferenciamento e enviá-las a um servidor, extraindo as informações necessárias, Figura \ref{fig:wp7}. 
@@ -336,9 +339,192 @@ Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o s
     \item \textbf{Um Aplicativo por Plataforma}. Mesmo a Tabela \ref{tab:tabela_custo}, mostrar apenas as 4 principais plataformas de dispositivos móveis, há diversas outras plataformas. Em geral, cada plataforma necessita de um código-fonte de um aplicativo diferente, precisando adequar o aplicativo de sensoriamento voluntário em diversas linguagens. Uma vez, que um aplicativo desenvolvido para uma única plataforma, em teoria, teria menos voluntários engajados do que aplicativos desenvolvidos para mais de uma plataforma. Assim, este seria um ponto crítico para o desenvolvimento de aplicativos de sensoriamento voluntário.
 \end{itemize}
 
+\subsection{Aplicativo de Sistema Pronto} % (fold)
+\label{ssub:aplicativo_de_sistema_pronto}
+
 Com os problemas relatados anteriormente, buscou-se uma nova solução. Há diversos aplicativos que são desenvolvidos para uma determinada plataforma e posteriormente são migrados para uma outra plataforma, tornando-os multiplatafoma, com essa característica alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
 
 EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra. Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}).  
+
+Esta segunda geração do aplicativo possui mais tipos de dados do que o primeiro, conforme observado na Tabela \ref{tab:tipo_de_dados}.
+% Este sistema possibilita criar diversos formulários para serem carregados posteriormente no dispositivo através do seu aplicativo. Existem 
+
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+    \begin{landscape}% Landscape page
+\begin{table}[h!]
+     \begin{center}
+	     \begin{tabular}{ c  p{5cm}  p{5cm}  p{5cm}  }
+		     \toprule
+		      Controle & EpiCollect+ & EpiCollect & Descrição \\ 
+		    \cmidrule(r){1-1}\cmidrule(lr){2-2}\cmidrule(l){3-3}\cmidrule(l){4-4}
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_text.png}}
+		      & 
+		      \begin{itemize}[topsep=0pt]
+		      \item Sim
+		      \end{itemize}
+		      & 
+		      \begin{itemize}[topsep=0pt]
+		      \item Sim
+		      \end{itemize}
+        		      &
+        		      Entrada de texto livre, utilizado com maior frequência para responder perguntas feitas no formulário.
+                                Possui opções para ser visualizado como um rótulo do formulário, requerido, 
+		      \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_numeric.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_date.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_dropdown.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_radio.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_checkbox.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_multiline.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_location.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_photo.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_video.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_audio.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_barcode.png}}
+		      & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                & 
+                                \begin{itemize}[topsep=0pt]
+                                \item Sim
+                                \end{itemize}
+                                &
+                                desc
+                                \\ 
+
+			\bottomrule
+	      \end{tabular}
+      \caption{my.Lboro Analysis}
+      \label{tbl:myLboro}
+      \end{center}
+\end{table}
+\end{landscape}
+\clearpage% Flush page
+}
 
 \begin{figure}[htb]
 \centering
@@ -347,7 +533,7 @@ EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos
 \includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/02_DATA_VISIBILITY_EPICOLLECT.png}
 
 \includegraphics[keepaspectratio,width=0.45\textwidth]{figuras/epicollect/03_LISTING_ON_HOMEPAGE_EPICOLLECT.png}
-\caption{À esquerda, página apresentada para a criação de um novo projeto usando o EpiCollect+, opcionalmente pode ser informado um proejto do primeiro EpiCollect para transformá-lo em um novo. À direita,  escolha da visibilidade do projeto, se este poderá ser visível a todos ou se os usuários deverão cadastrar-se no projeto. Por último, a opção se o projeto poderá ser listado no site do EpiCollect+. }
+\caption{À esquerda, página apresentada para a criação de um novo projeto usando o EpiCollect+, opcionalmente pode ser informado um projeto do primeiro EpiCollect para transformá-lo em um novo. À direita,  escolha da visibilidade do projeto, se este poderá ser visível a todos ou se os usuários deverão cadastrar-se no projeto. Por último, a opção se o projeto poderá ser listado no site do EpiCollect+. }
 \label{fig:epicollect_novo_projeto}
 \end{figure}
 
@@ -379,11 +565,7 @@ O administrador do projeto pode verificar os dados online (Figura \ref{fig:epico
 \label{fig:epicollect_dados_online}
 \end{figure}
 
-Diferente da primeira versão do sistema, o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos} onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. 
-
-Outra plataforma de sistemas prontos foi avaliado, Sensr, porém só existe aplicativo para a plataforma iOS. Assim estes dois protótipos foram criados, mas não utilizados devido a falta de estrutura apresentados pelos sistemas pronto em realação a mais de uma plataforma.
-
-
+Diferente da primeira versão do sistema, o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos}, onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. Assim como EpiCollect+, o aplicativo Sensr tem a mesma função de criar formulários online e através do seu aplicativo utilizá-los como ferramenta de pesquisa. Porém ambos são desenvolvidos em uma única plataforma, o primeiro para Android e o segundo para iOS.
 
 \subsection{Aplicativo de Biblioteca Híbrida} % (fold)
 \label{ssub:aplicativo_com_biblioteca_hibrida}
