@@ -342,206 +342,156 @@ Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o s
 \subsection{Aplicativo de Sistema Pronto} % (fold)
 \label{ssub:aplicativo_de_sistema_pronto}
 
-Com os problemas relatados anteriormente, buscou-se uma nova solução. Há diversos aplicativos que são desenvolvidos para uma determinada plataforma e posteriormente são migrados para uma outra plataforma, tornando-os multiplatafoma, com essa característica alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
-
-EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra. Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet (Figura \ref{fig:epicollect_novo_projeto}) e criar um formulário (Figura \ref{fig:epicollect_formulario}).  
-
-Esta segunda geração do aplicativo possui mais tipos de dados do que o primeiro, conforme observado na Tabela \ref{tab:tipo_de_dados}.
-% Este sistema possibilita criar diversos formulários para serem carregados posteriormente no dispositivo através do seu aplicativo. Existem 
-
-\afterpage{%
-    \clearpage% Flush earlier floats (otherwise order might not be correct)
-    \thispagestyle{empty}% empty page style (?)
-    \begin{landscape}% Landscape page
-\begin{table}[h!]
+%%\afterpage{%
+%%    \clearpage% Flush earlier floats (otherwise order might not be correct)
+%%    \thispagestyle{empty}% empty page style (?)
+%%    \begin{landscape}% Landscape page
+{\centering
+\begin{table}[htb]
+     \label{tab:tipo_de_dados}
+     \caption{Tipo de Dados Utilizados Pelo EpiCollect e EpiCollect+}
      \begin{center}
-	     \begin{tabular}{ c  p{5cm}  p{5cm}  p{5cm}  }
-		     \toprule
-		      Controle & EpiCollect+ & EpiCollect & Descrição \\ 
-		    \cmidrule(r){1-1}\cmidrule(lr){2-2}\cmidrule(l){3-3}\cmidrule(l){4-4}
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_text.png}}
-		      & 
-		      \begin{itemize}[topsep=0pt]
-		      \item Sim
-		      \end{itemize}
-		      & 
-		      \begin{itemize}[topsep=0pt]
-		      \item Sim
-		      \end{itemize}
-        		      &
-        		      Entrada de texto livre, utilizado com maior frequência para responder perguntas feitas no formulário.
-                                Possui opções para ser visualizado como um rótulo do formulário, requerido, 
-		      \\ 
+         \begin{tabular}{ p{2cm}  p{12cm}  }
+             \toprule
+              \tiny{Controle} & \tiny{Descrição} \\ 
+            \cmidrule(lr){1-1}\cmidrule(l){2-2}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_text.png}}
+                               &
+              \tiny
+                      Entrada de texto livre. Utilizado com maior frequência para responder perguntas feitas no formulário.
+                                Opções:
+                                
+                                Rótulo. Exibição do texto como rótulo;
+                                Obrigatório. O usuário deve informar este dado;
+                                Numérico. Opção para tornar o campo númerico (EpiCollect).
+                                
+              \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_numeric.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                &
-                                desc
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_numeric.png}}
+              & 
+                                \tiny
+                                Entrada de número. Para o EpiCollect, um campo de entrada de texto com a opção ``Numérico'' deve ser selecionado para ter a mesma função.
+                                Opções:
+                                
+                                Rótulo. Exibição do texto como rótulo.
+                                Obrigatório. O usuário deve informar este dado.
+                                Decimal. Permitindo casas decimais.
+                                Integer. Permitindo somente entrada de números inteiros.
+                                Valor Máximo. Valor máximo permitido para este campo.
+                                Valor Mínimo. Valor mínimo permitido para este campo.
+                                Padrão. Valor padrão a ser específicado ao preencher o campo.
+                                Entrada Dupla. O usuário deve entrar com o dado duas vezes para confirmar o seu valor.
+                                
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_date.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                &
-                                desc
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_date.png}}
+              & 
+                                \tiny
+                                Entrada de data. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_dropdown.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+                                \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_time.png}}
                                 & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                &
-                                desc
+                                \tiny
+                                Entrada de Hora. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_radio.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_dropdown.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de dados por seleção. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Esta entrada permite escolher um valor através de uma lista.
+                                Opções:
+                                
+                                Rótulo. Exibição do texto como rótulo.
+                                Obrigatório. O usuário deve informar este dado.
+                                
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_checkbox.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_radio.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de dados por seleção. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Esta entrada permite escolher um valor através de uma lista, mostrando todos ao mesmo tempo.
+                                Opções:
+                                
+                                Rótulo. Exibição do texto como rótulo.
+                                Obrigatório. O usuário deve informar este dado.
+                                
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_multiline.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_checkbox.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de dados por seleção. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Esta entrada permite escolher múltiplos valores através de uma lista, mostrando todos ao mesmo tempo.
+                                Opções:
+                                
+                                Rótulo. Exibição do texto como rótulo.
+                                Obrigatório. O usuário deve informar este dado.
+                                
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_location.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_multiline.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de texto.
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_photo.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_location.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada da coordenada geográfica. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Permte visualizar antes de salvar:
+                                
+                                A coordenada geográfica atual.
+                                A altitude da coordenada atual.
+                                A orientação captada pela GPS atua.
+                                A precisão utilizada na captação dos dados acima.
+                                
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_video.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_photo.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de foto. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Permite captar uma nova foto ou selecionar uma a partir da memória do dispositivo.
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_audio.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_video.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de vídeo. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Permite captar uma nova vídeo ou selecionar uma a partir da memória do dispositivo.
                                 \\ 
 
-		     \raisebox{-\totalheight}{\includegraphics[width=0.175\textwidth]{figuras/epicollect/input_barcode.png}}
-		      & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
-                                & 
-                                \begin{itemize}[topsep=0pt]
-                                \item Sim
-                                \end{itemize}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_audio.png}}
                                 &
-                                desc
+                                \tiny
+                                Entrada de áudio. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Permite captar uma nova áudio ou selecionar uma a partir da memória do dispositivo.
                                 \\ 
 
-			\bottomrule
-	      \end{tabular}
-      \caption{my.Lboro Analysis}
-      \label{tbl:myLboro}
+             \raisebox{-0.5\height}{\centering\includegraphics[scale=0.4]{figuras/epicollect/_input_barcode.png}}
+                                &
+                                \tiny 
+                                Entrada de código de barra. Este dado não possui para a versão do EpiCollect, apenas para o versão EpiCollect+.
+                                Permite decodificar um código de barra ou código QR.
+                                \\ 
+
+            \bottomrule
+          \end{tabular}
       \end{center}
 \end{table}
-\end{landscape}
-\clearpage% Flush page
+%%%\end{landscape}
+%%%\clearpage% Flush page
+%%%}
 }
 
-\begin{figure}[htb]
-\centering
-\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/01_PROJECT_EPICOLLECT.png}
-\hfill
-\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/02_DATA_VISIBILITY_EPICOLLECT.png}
+Com os problemas relatados anteriormente, buscou-se uma nova solução. Há diversos aplicativos que são desenvolvidos para uma determinada plataforma e posteriormente são migrados para uma outra plataforma, tornando-os multiplatafoma, com essa característica alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
 
-\includegraphics[keepaspectratio,width=0.45\textwidth]{figuras/epicollect/03_LISTING_ON_HOMEPAGE_EPICOLLECT.png}
-\caption{À esquerda, página apresentada para a criação de um novo projeto usando o EpiCollect+, opcionalmente pode ser informado um projeto do primeiro EpiCollect para transformá-lo em um novo. À direita,  escolha da visibilidade do projeto, se este poderá ser visível a todos ou se os usuários deverão cadastrar-se no projeto. Por último, a opção se o projeto poderá ser listado no site do EpiCollect+. }
-\label{fig:epicollect_novo_projeto}
-\end{figure}
 
-Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, desmatamento...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
-
-Uma vez que todos os dados sejam capturados e corretamente preenchidos, estes são salvos e o voluntário pode inserir um novo registro ou efetuar a sincronização com o servidor do EpiCollect+, caso ao contrário, pode a sincronização pode ser feita a critério do voluntário, mantendo os dados de forma off-line.
-
-O administrador do projeto pode verificar os dados online (Figura \ref{fig:epicollect_dados_online}) e usá-los localmente após baixar os arquivos em csv, tsv ou xml, dependendo da necessidade.
+EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos novos recurso do que a sua primeira geração \cite{Aanensen2009:epicollect}, como capturar imagens, vídeos, áudios, localização geográfica e leitura de código de barra. Este sistema é de fácil uso, bastando ter acesso a internet para definir um nome para o projeto, especificar a visibilidade do projeto se público ou privado, se este poderá aparecer na página da internet e criar um formulário (Figura \ref{fig:epicollect_formulario}).  
 
 \begin{figure}[htb]
 \centering
@@ -550,13 +500,36 @@ O administrador do projeto pode verificar os dados online (Figura \ref{fig:epico
 \label{fig:epicollect_formulario}
 \end{figure}
 
+Esta segunda geração do aplicativo possui mais tipos de dados do que o primeiro, conforme observado na Tabela \ref{tab:tipo_de_dados}.
+% Este sistema possibilita criar diversos formulários para serem carregados posteriormente no dispositivo através do seu aplicativo. Existem 
+
+
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/01_PROJECT_EPICOLLECT.png}
+%\hfill
+%\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/02_DATA_VISIBILITY_EPICOLLECT.png}
+%
+%\includegraphics[keepaspectratio,width=0.45\textwidth]{figuras/epicollect/03_LISTING_ON_HOMEPAGE_EPICOLLECT.png}
+%\caption{À esquerda, página apresentada para a criação de um novo projeto usando o EpiCollect+, opcionalmente pode ser informado um projeto do primeiro EpiCollect para transformá-lo em um novo. À direita,  escolha da visibilidade do projeto, se este poderá ser visível a todos ou se os usuários deverão cadastrar-se no projeto. Por último, a opção se o projeto poderá ser listado no site do EpiCollect+. }
+%\label{fig:epicollect_novo_projeto}
+%\end{figure}
+
+Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, desmatamento...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
+
+
+
 \begin{figure}[htb]
 \centering
-\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/pertinencia.png}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/_pertinencia.png}
 \caption{Fase de avaliação utilizando o sistema PyBossa para verificar a pertinência da imagem em relação ao projeto.}
 \label{fig:pybossa_pertinente}
 \end{figure}
 
+Uma vez que todos os dados sejam capturados e corretamente preenchidos, estes são salvos e o voluntário pode inserir um novo registro ou efetuar a sincronização com o servidor do EpiCollect+, caso ao contrário, pode a sincronização pode ser feita a critério do voluntário, mantendo os dados de forma off-line.
+
+O administrador do projeto pode verificar os dados online (Figura \ref{fig:epicollect_dados_online}) e usá-los localmente após baixar os arquivos em csv, tsv ou xml, dependendo da necessidade.
 
 \begin{figure}[htb]
 \centering
@@ -565,10 +538,19 @@ O administrador do projeto pode verificar os dados online (Figura \ref{fig:epico
 \label{fig:epicollect_dados_online}
 \end{figure}
 
-Diferente da primeira versão do sistema, o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos}, onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. Assim como EpiCollect+, o aplicativo Sensr tem a mesma função de criar formulários online e através do seu aplicativo utilizá-los como ferramenta de pesquisa. Porém ambos são desenvolvidos em uma única plataforma, o primeiro para Android e o segundo para iOS.
+Apesar de apresentar melhores soluções para coletar diferentes tipos de dados, diferentemente da sua primeira versão o EpiCollect+ possui apenas aplicativo para a plataforma Android. Não justificando a hipótese supracitada no início da seção \ref{sub:aplicativos}, onde aplicativos criados somente para uma plataforma são fatores inibidores e atraem menos voluntários. Assim como EpiCollect+, o aplicativo Sensr tem a mesma função de criar formulários online e através do seu aplicativo utilizá-los como ferramenta de pesquisa. Porém ambos são desenvolvidos pra uma única plataforma, o primeiro para Android e o segundo para iOS.
 
 \subsection{Aplicativo de Biblioteca Híbrida} % (fold)
 \label{ssub:aplicativo_com_biblioteca_hibrida}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/developerforce_chart.png} %8.5
+\end{center}
+\caption{Aplicativos móveis podem ser desenvolvidos de três formas: com biblioteca Nativa (plataforma única); HTML5 (multi-plataforma e capacidade parcial); e Híbrida (multi-plataforma e capacidade total). Adaptada de \cite{Korf2013}.}
+%\caption{Aplicativos desenvolvidos utilizando bibliotecas nativa, não são múltipla-plataforma, mas apresentam um melhor controle e desempenho de todas suas funções. Aplicativos desenvolvidos em HTML5 tendem ser múltipla-plataforma e disponibilizar as atualizações de forma, porém apresentam funções com capacidades parciais, diferente do uso de bibliotecas nativas. O uso de bibliotecas híbridas oferece o desenvolvimento do mesmo aplicativo para demais plataformas com capacidade total das funções do dispositivo. Adaptada de \cite{Korf2013}.}
+\label{fig:developerforce}
+\end{figure}
 
 \section{Infraestrutura Tecnológica} % (fold)
 \label{sub:infraestrutura_tecnologica}
