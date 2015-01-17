@@ -558,19 +558,39 @@ Os websites evoluíram, deixaram de ser simples páginas estáticas e passaram a se
 
 HTML, CSS e JavaScript são conhecidos por serem os pilares para uma página moderna. Estes são padronizados por \textit{World Wide Web Consortium} (W3C), criado por Berners-Lee em 1994, este consórcio é constituído por quase 400 membros, com empresas, órgãos governamentais e organizações independentes, todos com a finalidade de estabelecer padrões para a criação e a interpretação de conteúdos para a Web. Sem a existência destes padrões, haveriam diversas navegadores para a internet, cada um interpretando uma determinada página diferente do outro, tendo que o usuário trocar de navegador a cada nova navegação.
 
-O desenvolvimento de aplicativos utilizando bibliotecas nativas são mais comuns, por possuirem todas as funcionalidades oferecidas pelo fabricante do dispositivos e também por serem mais rápidos \cite{Charland:2011:Mobile}. Entretando esta forma de desenvolvimnto de aplicativos pode não ser vantajoso para uma desenvolvedor que busca alcançar o máximo de pessoas possível, para isto o aplicativo teria que ser desenvolvido em todas as plataformas possíveis (a Tabela \ref{tab:tabela_custo} mostra apenas as mais populares dos últimos anos), contando que desenvolvedor conheça todas as linguagens de programação a serem utilizadas pelas bibliotecas nativas, disponibilizadas pelos fornecedores. Assim, alguns aplicativos são mais melhores se desenvolvidos para a web, utilizando HTML,CSS e JavaScript. Grandes empresas, por exemplo, que precisam fornecer interfaces móveis das suas aplicações para seus funcionários, teriam que recorrer a primeira forma de desenvolvimento de aplicativos para poder atender a todos. (ver Figura \ref{fig:developerforce}) 
-
-Alguns dispositivos móveis permitem a criação de aplicativos utilizando unicamente HTML5\footnote{Padrão recente da linguagem de marcação HTML.}, CSS2.0\footnote{Padrão recente da linguagem de estilo CSS.} e assim, JavaScript. Porém, nem todas as funcionalidades presentes no desenvolvimento utilizando bibliotecas nativas são encontradas utilizando esta abordagem de desenvolvimento web. 
+O desenvolvimento de aplicativos utilizando bibliotecas nativas são mais comuns, por poderem usufruir de todas as funcionalidades oferecidas pelos fabricantes de dispositivos móveis e também por serem mais rápidos \cite{Charland:2011:Mobile}. Entretando esta forma de desenvolvimnto de aplicativos pode não ser vantajoso para um desenvolvedor que busca alcançar o máximo de pessoas possível, para isto o aplicativo teria que ser desenvolvido em todas as plataformas possíveis (a Tabela \ref{tab:tabela_custo} mostra apenas as mais populares dos últimos anos), contando que desenvolvedor conheça todas as linguagens de programação a serem utilizadas pelas bibliotecas nativas, disponibilizadas pelos fornecedores. Assim, alguns aplicativos são mais melhores se desenvolvidos para a web, utilizando HTML,CSS e JavaScript. Grandes empresas, por exemplo, que precisam fornecer interfaces móveis das suas aplicações internas para que seus funcionários possam acessá-las fora do escritório, teriam que recorrer a primeira forma de desenvolvimento de aplicativos para poder atender a todos. (ver Figura \ref{fig:developerforce}) 
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/developerforce_chart.png} %8.5
 \end{center}
 \caption{Aplicativos móveis podem ser desenvolvidos de três formas: com biblioteca Nativa (plataforma única); HTML5 (multi-plataforma e capacidade parcial); e Híbrida (multi-plataforma e capacidade total). Adaptada de \cite{Korf2013}.}
-%\caption{Aplicativos desenvolvidos utilizando bibliotecas nativa, não são múltipla-plataforma, mas apresentam um melhor controle e desempenho de todas suas funções. Aplicativos desenvolvidos em HTML5 tendem ser múltipla-plataforma e disponibilizar as atualizações de forma, porém apresentam funções com capacidades parciais, diferente do uso de bibliotecas nativas. O uso de bibliotecas híbridas oferece o desenvolvimento do mesmo aplicativo para demais plataformas com capacidade total das funções do dispositivo. Adaptada de \cite{Korf2013}.}
 \label{fig:developerforce}
 \end{figure}
 
+Todos plataformas permitem que um desenvolvedor instancie um navegador dentro da sua aplicação de forma que este passe a se comportar como uma nova tela nativa da aplicação, ainda permite a interalção de códigos nativos através da utilização de JavaScript. Esta técnica foi utilizada pela primeira vez por Eric Oesterle, Rob Ellis, e Brock Whitten para a plataforma iOS, depois sendo portado para outras plataformas \cite{Charland:2011:Mobile}. O framework de código aberto para o desenvolvimento de aplicativos híbridos conhecido por PhoneGap foi fruto desta técnica, em 2011 a empresa Adobe\footnote{\url{http://www.adobe.com}} adquiriu a criadora deste framework, Nitobi, mantendo-o como código aberto \cite{Adobe:Nitobi:2011}. O PhoneGap então foi doado para a Fundação de Software Apache sobre o nome de Apache Cordova\footnote{\url{http://cordova.io/}} o propósito deste é para manter o código sempre aberto e em constante desenvolvimento \cite{PhoneGap:FAQ:2015}.
+
+A relação de PhoneGap e Cordova pode parecer confuso, porém a adobe esclarece que o PhoneGap é apenas uma distribuição livre do cordova, geralmente logo na versão mais atualizada deste último.
+
+Na sua versão mais atual, PhoneGap 4.0.0, existem mais de nove plataformas suportadas\footnote{\url{http://cordova.apache.org/contribute}}, algumas das princiais pode ser visto na Figura \ref{fig:phonegap_platforms}. Entre estas estão presentes as plataformas citadas na Tabela \ref{tab:tabela_custo}. As principais funcionalidades que possam ser encontradas nas bibliotecas nativas são encontradas no PhoneGap (ver Fig. \ref{fig:phonegap_platforms}), a partir da versão 3.0 e superior, o PhoneGap oferece estas funcionalidades através de plugin, na página do projeto Cordova. 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/phonegap_platforms.png}
+\end{center}
+\caption{Plataformas e funionalidades suportadas pela versão 4.0.0 do PhoneGap. As funcionalidades com um asterisco são suportadas através de \textit{plugins} de terceiros.}
+\label{fig:phonegap_platforms}
+\end{figure}
+
+Estes plugins permitem que apenas as funcionalidades desejadas sejam integradas ao aplicativo, sem a necessidade de haver todas as disponibilidades e algumas sem uso, mas esta não é a única vantagem desse novo sistema de plugins. Desta forma é possível manter o desenvolvimento de uma aplicação modular, tendo diversos plugins em diversas aplicações cada qual com diferentes versões. Portanto, não há mais a necessidade de atualizar todo o conjunto, apenas atualizar o plugin necessário e para a versão necessária. 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.8]{figuras/layers.png}
+\end{center}
+\caption{.}
+\label{fig:phonegap_platforms}
+\end{figure}
 
 
 \section{Infraestrutura Tecnológica} % (fold)
