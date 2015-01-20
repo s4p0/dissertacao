@@ -61,8 +61,49 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
+\usepackage{pstricks}
 
+% % JSON SET
 
+\usepackage{bera}% optional: just to have a nice mono-spaced font
+\usepackage{listings}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+% % JSON SET
 
 \input{configuracao} %% faça as modificações pertinentes no arquivo configuracao.tex
 
@@ -80,7 +121,7 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 \includeListaTabelas %% obrigatório caso haja mais de 3 tabelas, gerado automaticamente
 
 \include{./docs/abreviaturasesiglas} %% opcional %% altere o arquivo siglaseabreviaturas.tex
-\include{./docs/simbolos} %% opcional %% altere o arquivo simbolos.tex
+\include{./docs/simbolos} %% opcional %% altere o arq	uivo simbolos.tex
 
 \includeSumario  %% obrigatório, gerado automaticamente
 \inicioIntroducao %% não altere este comando

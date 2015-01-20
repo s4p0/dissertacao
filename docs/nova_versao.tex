@@ -582,15 +582,133 @@ Na sua versão mais atual, PhoneGap 4.0.0, existem mais de nove plataformas supor
 \label{fig:phonegap_platforms}
 \end{figure}
 
-Estes plugins permitem que apenas as funcionalidades desejadas sejam integradas ao aplicativo, sem a necessidade de haver todas as disponibilidades e algumas sem uso, mas esta não é a única vantagem desse novo sistema de plugins. Desta forma é possível manter o desenvolvimento de uma aplicação modular, tendo diversos plugins em diversas aplicações cada qual com diferentes versões. Portanto, não há mais a necessidade de atualizar todo o conjunto, apenas atualizar o plugin necessário e para a versão necessária. 
+Estes plugins permitem que apenas as funcionalidades desejadas sejam integradas ao aplicativo, sem a necessidade de haver todas as funcionalidades e algumas sem uso, mas esta não é a única vantagem desse novo sistema de plugins. Desta forma é possível manter o desenvolvimento de uma aplicação modular, tendo diversos plugins em diversas aplicações cada qual com diferentes versões. Portanto, não há mais a necessidade de atualizar todo o conjunto, apenas atualizar o plugin necessário e para a versão necessária. 
+
+Um plugin refere-se a uma funcionalidade específica do dispositvo a ser encapsulado por um código Javascript para sua utilização pelo framework PhoneGap. Em termos de Programação Orientada a Objetos, a biblioteca Javascript deste framework tem a funcionalidade de uma interface, na qual são definidas as chamadas a métodos que serão utilizado. A implementação destas funcionalidades são feitas a nível de plataforma, de modo que cada qual saiba como obter a funcionalidade desejada pela interface que a envocou, Figura \ref{fig:phonegap_layers}.
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.8]{figuras/layers.png}
 \end{center}
-\caption{.}
-\label{fig:phonegap_platforms}
+\caption{A partir da versão 3.0, o framework PhoneGap vem utilizando plugins para adicionar diversas funcionalidades aos aplicativos. A camada de visualização é composta por HTML5 e CSS, enquanto a camada lógica é composta pelo javascript do framework.}
+\label{fig:phonegap_layers}
 \end{figure}
+
+Diversos novos plugins podem ser desenvolvidos cobrindo novas funcionalidades, novos sensores e para novas plataformas. O PhoneGap mantém 19 plugins para as funcionalidades de bateria, câmera e áudio, GPS e sensores de movimento, conexão, contatos, dispositivo, arquivos e armazenamento, notificação e transferência de arquivos (ver Fig. \ref{fig:phonegap_platforms}) . Porém, na página oficial\footnote{\url{http://plugins.cordova.io}}, podem ser encontrados outros 678 diferentes plugins, alguns executando funcionalidades semelhantes e outros ampliando as plataformas suportadas.
+
+% \begin{figure}[ht]
+% \begin{center}
+% \includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/cordova_plugins_page.png}
+% \end{center}
+% \caption{.}
+% \label{fig:cordova_plugins_page}
+% \end{figure}
+
+Para o projeto foi criado um aplicativo híbrido com o framework PhoneGap. Este aplicativo utilizou jQueryMobile (jQM)\footnote{\url{http://jquerymobile.com/}} para construir a interface gráfica. jQM é um framework baseado em HTML5, CSS e JavaScript para construir interfaces gráficas para dispostivos móveis. Junto com este framework, utilizou-se a bilbioteca KnockoutJS\footnote{\url{http://knockoutjs.com/}}, um framework baseado em JavaScript para o uso de padrões de projeto do tipo \textit{Model-View-ViewModel} (MVVM).
+
+O aplicativo, Figura \ref{fig:app_phonegap}, é capaz de capturar imagem, vídeo e áudio, em conjunto adquirir dados dos sensores de localização (GPS) e orientação (bússola). Este aplicativo foi desenvolvido para permitir que no momento da captura dos dados de localização e orientação, o usuário pudesse verificar o nível de precisão dos dados coletados e, se necessário, captar novamente.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/dev_app04.png}
+% \hfill
+% \includegraphics[keepaspectratio,width=0.485\textwidth]{captura.eps}
+\caption{;}
+\label{fig:app_phonegap}
+\end{figure}
+
+Os dados captados por este aplicativo são em geral dados dos sensores de localização (GPS), orientação (bússola), informações do dispositivo e informações do arquivo capturado. Estes dados podem ser verificados na Tabela \ref{tab:dados_captados}, onde as principais propriedades são listadas. Dados sobre a configuração de cada sensor também são armazenados, mas apenas para referência. Diversos outros dados poderiam ser captados, mas para um primeiro protótipo apenas estes foram utilizados.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[h]
+\centering
+\caption{My caption}
+\label{tab:dados_captados}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Contexto}    & \textbf{Propriedade} & \textbf{Descrição}                         \\ \midrule
+\textbf{}            &                      &                                            \\
+\textbf{Entrada}     & Nome do Arquivo      & Nome do arquivo gerado                     \\
+\textbf{}            & Caminho do Arquivo   & Local do armazenamento do arquivo          \\
+\textbf{}            &                      &                                            \\
+\textbf{Bússola}     & Norte Verdadeiro     & Valor captado do Norte Verdadeiro          \\
+\textbf{}            & Norte Magnético      & Valor captado do Norte Magnético           \\
+\textbf{}            & Posição              & Uma posição, seguindo a rosas do vento     \\
+\textbf{}            & Seleção Manual       & Posição selecionada por sensor ou manual   \\
+\textbf{}            & Precisão             & Valor da precisão captada                  \\
+\textbf{}            &                      &                                            \\
+\textbf{GPS}         & Latitude             & Posição geográfica da paralela horizontal  \\
+\textbf{}            & Longitude            & Posição geográfica da paralela horizontal  \\
+\textbf{}            & Precisão             & Valor da precisão captada                  \\
+\textbf{}            & Altura               & Altura registrada pelo sensor              \\
+\textbf{}            & Precisão da Altura   & Valor da precisão da altura quando captada \\
+\textbf{}            & Direção              & Direção sugerida pelo sensor               \\
+\textbf{}            & Velocidade           & Velocidade sugerida pelo sensor            \\
+\textbf{}            &                      &                                            \\
+\textbf{Dispositivo} & UUID                 & Número de identificação único              \\
+\textbf{}            & Versão               & Versão do sistema operacional              \\
+\textbf{}            & Cordova              & Versão do cordova                          \\
+\textbf{}            & Plataforma           & Plataforma utilizada                       \\
+\textbf{}            & Modelo               & Modelo utilizado                           \\ \bottomrule
+\end{tabular}
+}
+\end{table}
+
+A sincronização dos dados entre dispositivo e servidor não precisam ocorrer ao mesmo tempo em que as entradas são captadas, pensando que muitas vezes quem irá utilizar o aplicativo estará em lugares remotos, as informações captadas são mantidas apenas no dispositvo para uma sincronização futura e de preferência através do WiFi, uma vez que arquivos de vídeos podem ser bem maiores do que uma foto. 
+
+O conjunto de entradas é armazenado no dispositivo através do plugin de armazenamento interno, que permite persistir objetos no formato JSON. Estes dados permanecerão no dispositov até que o usuário escolha a opção de remover as entradas, caso este já tenha sincronizado os dados com o servidor. A estrutura de uma única entrada é exibida no Código \ref{json:estrutura_imagem}. 
+
+\begin{lstlisting}[language=json,firstnumber=1,float,floatplacement=h, caption={Estrutura JSON para envio de um arquivo de imagem.}, label={json:estrutura_imagem},captionpos=b]
+{
+  "entry": {
+      "picture": {
+      "filename" : "",
+      "filepath" :  ""
+    },
+    "compass": {
+      "magneticHeading": "",
+      "trueHeading": "",
+      "orientation": "",
+      "useManual": "",
+      "accuracy" : "",
+    },
+    "gps": {
+      "latitude": "",
+      "longitude": "",
+      "accuracy": "",
+      "altitude": "",
+      "altitudeAccuracy": "",
+      "heading": "",
+      "speed": ""
+    },
+    "options": {
+      "gpsOptions": {
+        "enableHighAccuracy": "",
+        "maximumAge": "",
+        "timeout": ""
+      },
+      "compassOptions": {
+        "frequency": "",
+        "enabled": ""
+      },
+      "pictureOptions": {
+        "quality": ""
+      }
+    }
+  },
+  "device": {
+    "uuid": "",
+    "version": "",
+    "cordova": "",
+    "platform": "",
+    "model": ""
+  }
+}
+\end{lstlisting}
+
 
 
 \section{Infraestrutura Tecnológica} % (fold)
