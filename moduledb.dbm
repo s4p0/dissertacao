@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.8.0-beta" last-position="106,0" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<role name="tester"
+      superuser="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="moduledb" encoding="UTF8" lc-collate="en_US" lc-ctype="en_US">
+	<role name="tester"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" protected="true" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<extension name="postgis" cur-version="2.1.0rc1">
+	<schema name="public"/>
+	<comment><![CDATA[PostGIS geometry, geography, and raster spatial types and functions]]></comment>
+</extension>
+
+<schema name="topology" rect-visible="true" fill-color="#a98623">
+	<role name="tester"/>
+</schema>
+
+<extension name="postgis_topology" cur-version="2.1.0rc1">
+	<schema name="topology"/>
+	<comment><![CDATA[PostGIS topology spatial types and functions]]></comment>
+</extension>
+
+<table name="devices">
+	<schema name="public"/>
+	<role name="tester"/>
+	<position x="183" y="64"/>
+	<column name="uuid" not-null="true">
+		<type name="character varying"/>
+	</column>
+	<column name="version">
+		<type name="character varying"/>
+	</column>
+	<column name="cordova">
+		<type name="character varying"/>
+	</column>
+	<column name="platform">
+		<type name="character varying"/>
+	</column>
+	<column name="model">
+		<type name="character varying"/>
+	</column>
+	<constraint name="devices_pkey" type="pk-constr" table="public.devices">
+		<columns names="uuid" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="pictures_picture_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="tester"/>
+</sequence>
+
+<table name="pictures">
+	<schema name="public"/>
+	<role name="tester"/>
+	<position x="124.562" y="250"/>
+	<column name="picture_id" not-null="true" default-value="nextval('pictures_picture_id_seq'::regclass)">
+		<type name="integer"/>
+	</column>
+	<column name="file_name">
+		<type name="character varying"/>
+	</column>
+	<column name="file_path">
+		<type name="character varying"/>
+	</column>
+	<column name="created">
+		<type name="timestamp"/>
+	</column>
+	<column name="compass_magnetic_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="compass_true_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="compass_orientation">
+		<type name="character varying"/>
+	</column>
+	<column name="compass_manual">
+		<type name="boolean"/>
+	</column>
+	<column name="gps_latitude">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_longitude">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_accuracy">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_altitude_accuracy">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_speed">
+		<type name="double precision"/>
+	</column>
+	<column name="options_gps_highaccuracy">
+		<type name="boolean"/>
+	</column>
+	<column name="options_gps_maxage">
+		<type name="character varying"/>
+	</column>
+	<column name="options_gps_timeout">
+		<type name="character varying"/>
+	</column>
+	<column name="options_compass_frequency">
+		<type name="double precision"/>
+	</column>
+	<column name="options_compass_enabled">
+		<type name="boolean"/>
+	</column>
+	<column name="options_picture_quality">
+		<type name="double precision"/>
+	</column>
+	<column name="geom1">
+		<type name="geometry"/>
+	</column>
+	<column name="device">
+		<type name="character varying"/>
+	</column>
+	<column name="geom">
+		<type name="geometry"/>
+	</column>
+	<constraint name="pictures_pkey" type="pk-constr" table="public.pictures">
+		<columns names="picture_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="teste_raster">
+	<schema name="public"/>
+	<role name="tester"/>
+	<position x="713.938" y="50"/>
+	<column name="raster_column">
+		<type name="raster"/>
+	</column>
+</table>
+
+<sequence name="videos_video_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="tester"/>
+</sequence>
+
+<table name="videos">
+	<schema name="public"/>
+	<role name="tester"/>
+	<position x="709.125" y="266"/>
+	<column name="video_id" not-null="true" default-value="nextval('videos_video_id_seq'::regclass)">
+		<type name="integer"/>
+	</column>
+	<column name="file_name">
+		<type name="character varying"/>
+	</column>
+	<column name="file_path">
+		<type name="character varying"/>
+	</column>
+	<column name="created">
+		<type name="timestamp"/>
+	</column>
+	<column name="compass_magnetic_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="compass_true_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="compass_orientation">
+		<type name="character varying"/>
+	</column>
+	<column name="compass_manual">
+		<type name="boolean"/>
+	</column>
+	<column name="gps_latitude">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_longitude">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_accuracy">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_altitude_accuracy">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_speed">
+		<type name="double precision"/>
+	</column>
+	<column name="options_gps_highaccuracy">
+		<type name="boolean"/>
+	</column>
+	<column name="options_gps_maxage">
+		<type name="character varying"/>
+	</column>
+	<column name="options_gps_timeout">
+		<type name="character varying"/>
+	</column>
+	<column name="options_compass_frequency">
+		<type name="double precision"/>
+	</column>
+	<column name="options_compass_enabled">
+		<type name="boolean"/>
+	</column>
+	<column name="options_video_quality">
+		<type name="double precision"/>
+	</column>
+	<column name="device">
+		<type name="character varying"/>
+	</column>
+	<column name="geom">
+		<type name="geometry"/>
+	</column>
+	<constraint name="videos_pkey" type="pk-constr" table="public.videos">
+		<columns names="video_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="audios_audio_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="tester"/>
+</sequence>
+
+<table name="audios">
+	<schema name="public"/>
+	<role name="tester"/>
+	<position x="1095.5" y="271"/>
+	<column name="audio_id" not-null="true" default-value="nextval('audios_audio_id_seq'::regclass)">
+		<type name="integer"/>
+	</column>
+	<column name="file_name">
+		<type name="character varying"/>
+	</column>
+	<column name="file_path">
+		<type name="character varying"/>
+	</column>
+	<column name="created">
+		<type name="timestamp"/>
+	</column>
+	<column name="compass_magnetic_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="compass_true_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="compass_orientation">
+		<type name="character varying"/>
+	</column>
+	<column name="compass_manual">
+		<type name="boolean"/>
+	</column>
+	<column name="gps_latitude">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_longitude">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_accuracy">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_altitude_accuracy">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_heading">
+		<type name="double precision"/>
+	</column>
+	<column name="gps_speed">
+		<type name="double precision"/>
+	</column>
+	<column name="options_gps_highaccuracy">
+		<type name="boolean"/>
+	</column>
+	<column name="options_gps_maxage">
+		<type name="character varying"/>
+	</column>
+	<column name="options_gps_timeout">
+		<type name="character varying"/>
+	</column>
+	<column name="options_compass_frequency">
+		<type name="double precision"/>
+	</column>
+	<column name="options_compass_enabled">
+		<type name="boolean"/>
+	</column>
+	<column name="device">
+		<type name="character varying"/>
+	</column>
+	<column name="geom">
+		<type name="geometry"/>
+	</column>
+	<constraint name="audios_pkey" type="pk-constr" table="public.audios">
+		<columns names="audio_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="pictures_device_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.devices" table="public.pictures">
+	<columns names="device" ref-type="src-columns"/>
+	<columns names="uuid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="videos_device_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.devices" table="public.videos">
+	<columns names="device" ref-type="src-columns"/>
+	<columns names="uuid" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="audios_device_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.devices" table="public.audios">
+	<columns names="device" ref-type="src-columns"/>
+	<columns names="uuid" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_pictures_devices" type="relfk"
+	 custom-color="#6dc255"
+	 src-table="public.pictures"
+	 dst-table="public.devices"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_videos_devices" type="relfk"
+	 custom-color="#3468b5"
+	 src-table="public.videos"
+	 dst-table="public.devices"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_audios_devices" type="relfk"
+	 custom-color="#938206"
+	 src-table="public.audios"
+	 dst-table="public.devices"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

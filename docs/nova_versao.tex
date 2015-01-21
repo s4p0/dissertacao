@@ -279,7 +279,7 @@ Com as tarefas criadas, os voluntários podem classificar as imagens de forma ord
 
 O conceito de um módulo de sensoriamento voluntário consiste básicamente de \textbf{(a)} um dispositivo capaz de coletar dados, \textbf{(b)} estrutura de recebimento e armazenamento, e \textbf{(c)} um sistema de visualização dos dados obtidos \cite{VolunteerSensing2011,Gouveia2008}. 
 
-Para a validação deste conceito o seguinte módulo foi construído em duas etapas. Um aplicativo híbrido, utilizado pelos voluntários para enviarem os dados coletados a partir de um dispositivo móvel. E uma infraestrutura tecnológica, divida em: uma camada de recebimento e armazenamento, processamento e visualização dos dados.
+Para a validação deste conceito o seguinte módulo foi construído em duas etapas. Um aplicativo híbrido, utilizado pelos voluntários para enviarem os dados coletados a partir de um dispositivo móvel. E uma infraestrutura tecnológica, divida em: uma camada de recebimento, armazenamento, processamento e visualização dos dados.
 
 Este capítudo descreve a metodologia utilizada em cada etapa da construção do módulo, por fim, detalha o experimento de coleta de dados utilizado por este módulo.
 
@@ -714,17 +714,86 @@ O conjunto de entradas é armazenado no dispositivo através do plugin de armazena
 \section{Infraestrutura Tecnológica} % (fold)
 \label{sub:infraestrutura_tecnologica}
 
-\subsection{Armazenamento} % (fold)
-\label{sub:armazenamento}
+A infraestrutura tecnológica para receber, armazenar e exibir os dados coletados pelos voluntários utilizou-se de tecnologias de código-aberto para a sua construção com a finalidade de obter-se uma plataforma de distribuição livre juntamente com seu código fonte, podendo ser enriquecido por outros trabalhos.
 
 \subsection{Servidor para Internet} % (fold)
 \label{sub:servidor_web}
 
+Duas são as principais tecnologias por trás deste projeto: a primeira o aplicativo para dispositivos móveis, responsável por coletar os dados dos voluntários; a segunda o servidor para internet, responsável por receber os dados coletados pelos voluntários, armazená-los adequadamente e exíbi-los quando solicitados.
+
+Para a construção da aplicação web foi utilizado um pequeno framework criado em Python para construir páginas, aplicações e serviços para a internet, Flask\footnote{\url{http://flask.pocoo.org/}}. Este pequeno framework permite a construção de soluções para internet de forma rápida por possuir um grande repositório de extensões.
+
+Utilizando Flask foi possível desenvolver um servidor \textit{back-end} responsável por receber os dados enviados pelos voluntários e ao mesmo tempo um servidor \textit{front-end} responsável por mostrar os dados recebidos no formato de uma página web, a interface da plataforma.
+
 \subsubsection{Back-End} % (fold)
 \label{ssub:back_end}
 
+O principal meio de comunicação com servidores web é através do protocolo \textit{Hypertext Transfer Protocol} (HTTP), em português Protocolo de Transferência de Hipertexto, este funciona por meio de requisição e resposta, como cliente e servidor. Um usuário que deseja visualizar uma página da internet está fazendo uma requisição ao servidor para obter o conteúdo desejado, isto é feito de forma automática através do navegador. 
+
+Uma página, definida pelo URI \url{http://www.inpe.br/pos_graduacao/cursos/cap/index.php}, é um recurso do servidor \url{www.inpe.br}. Para obter este recurso é necessário efetuar uma requisição (Código \ref{http:inpe_request}) junto ao servidor, uma vez que este recurso seja encontrado uma resposta (Código \ref{http:inpe_response}) é retornada, com informações em seu cabeçalho e, caso possua, um corpo de resposta. Por este recurso ser uma página web, o \textit{Content-Type} é do tipo text/html, com essa informação o navegador pode renderizar a página de forma adequada.
+
+\begin{lstlisting}[language=json,firstnumber=1, caption={Requisição HTTP.}, label={http:inpe_request},captionpos=b]
+GET /pos_graduacao/cursos/cap/index.php HTTP/1.1
+Host: www.inpe.br
+Accept: text/html,application/xhtml+xml
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4
+\end{lstlisting}
+
+% float,floatplacement=H, 
+\begin{lstlisting}[language=json,firstnumber=1,float, caption={Resposta HTTP.}, label={http:inpe_response},captionpos=b]
+HTTP/1.1 200 OK
+Server: Apache/2.2.3 (CentOS)
+X-Powered-By: PHP/5.1.6
+Content-Type: text/html; charset=iso-8859-1
+\end{lstlisting}
+
+Este é o princípio do serviço web conhecido por \textit{Representational State Transfer} (REST), em português Transferência de Estado, onde o serviço é estilo arquitetural baseado no protocolo HTTP projetado para utilizar um conjunto de operações bem definidas utilizando os principais métodos HTTP (Tabela \ref{tab:metodos_http}), um protocolo cliente-servidor sem estado, um Identificador Uniforme de Recursos (URI) para um determinado objeto e transferência de dados, podendo utilizar o formato JSON.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[h]
+\centering
+\caption{My caption}
+\label{tab:metodos_http}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+Método HTTP & Descrição da Ação                                                             & Exemplo de Função                                                                                                             \\ \midrule
+GET         & \begin{tabular}[c]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagens\\ (listar todas as imagens)\end{tabular}                                \\
+GET         & \begin{tabular}[c]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagem/10\\ (listar a imagem de \\ identificação \#10)\end{tabular}             \\
+POST        & Criar um novo recurso                                                         & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagens\\ (criar um novo objeto imagem)\end{tabular}                            \\
+PUT         & Atualizar um recurso                                                          & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagem/10\\ (atualizar os dados da imagem\\ de identificação \#10)\end{tabular} \\
+DELETE      & Deletar um recurso                                                            & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagem/10\\ (deletar o objeto imagem \\ de identificação \#10)\end{tabular}     \\ \bottomrule
+\end{tabular}
+}
+\end{table}
+
+As operações que cada método HTTP executa utilizando REST são equivalentes as operaçãoes de um banco de dados, como selecionar, inserir, atualizar e deletar.
+
+O método \textit{GET} tem a responsabilidade de retornar os recursos solicitados e pode ser utilizando tanto de forma geral, solicitando diversos recursos de uma só vez (em geral, este URI encontra-se no plural) ou de forma específica, informando uma identifacação única do recurso. Ao invocar o método \textit{POST} e informando detalhes do objeto, um novo recurso é criado com essas informações (em geral, este URI encontra-se no plural). Os métodos \textit{PUT} e \textit{DELETE} exercem a função de atualizar os dados e deletá-los, respectivamente. No primeiro, os dados são informados no corpo da requisição, forma semelhante ao método \textit{POST}.
+
+REST é apenas um estilo arquitetural para receber ou enviar dados. Assim, tem-se que o meio de comunicação ao servidor deste projeto é dado através do protocolo HTTP, mesmo protocolo utilizado para requisições de páginas da internet. Porém, para armazenar os dados, ainda é necessário ter um banco de dados. 
+
+Como a principal característica deste projeto é permitir georeferenciar dados coletados em in situ, um banco geográfico é requerido, optou-se por utilizar o banco de dados de código-aberto PostgreSQL\footnote{\url{http://www.postgresql.org/}}. Este banco de dados oferece meios para adicionar entidades geográficas através da extensão PostGIS\footnote{\url{http://postgis.org/}}. Bancos geográficos possuem funções especiais para tratar este tipo de entidade, permitindo efetuar buscas tendo como parâmetro uma posição geográfica.
+
+Cada propriedade, demonstrada no Código \ref{json:estrutura_imagem}, que é captarada pelo voluntário utilizando o aplicativo híbrido descrito na Seção \ref{ssub:aplicativo_com_biblioteca_hibrida} foi devidamente mapeada no banco de dados, como visto na Figura \ref{fig:moduledb}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\textwidth]{figuras/moduledb.png}
+\caption{;}
+\label{fig:moduledb}
+\end{figure}
+
+Assim, o serviço web desenvolvido utilizando Flask permite usar os principais métodos do protocolo HTTP, através do estilo arquitetural REST, para receber os dados armazenados no aplicativo híbrido.
+
 \subsubsection{Front-End} % (fold)
 \label{ssub:front_end}
+
+\subsection{Armazenamento} % (fold)
+\label{sub:armazenamento}
 
 
 \section{Coleta de Dados} % (fold)
