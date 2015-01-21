@@ -761,11 +761,11 @@ Este é o princípio do serviço web conhecido por \textit{Representational State T
 \begin{tabular}{@{}lll@{}}
 \toprule
 Método HTTP & Descrição da Ação                                                             & Exemplo de Função                                                                                                             \\ \midrule
-GET         & \begin{tabular}[c]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagens\\ (listar todas as imagens)\end{tabular}                                \\
-GET         & \begin{tabular}[c]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagem/10\\ (listar a imagem de \\ identificação \#10)\end{tabular}             \\
-POST        & Criar um novo recurso                                                         & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagens\\ (criar um novo objeto imagem)\end{tabular}                            \\
-PUT         & Atualizar um recurso                                                          & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagem/10\\ (atualizar os dados da imagem\\ de identificação \#10)\end{tabular} \\
-DELETE      & Deletar um recurso                                                            & \begin{tabular}[c]{@{}l@{}}http://servidor.com/imagem/10\\ (deletar o objeto imagem \\ de identificação \#10)\end{tabular}     \\ \bottomrule
+GET         & \begin{tabular}[t]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagens\\ (listar todas as imagens)\end{tabular}                                \\
+GET         & \begin{tabular}[t]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (listar a imagem de \\ identificação \#10)\end{tabular}             \\
+POST        & Criar um novo recurso                                                         & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagens\\ (criar um novo objeto imagem)\end{tabular}                            \\
+PUT         & Atualizar um recurso                                                          & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (atualizar os dados da imagem\\ de identificação \#10)\end{tabular} \\
+DELETE      & Deletar um recurso                                                            & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (deletar o objeto imagem \\ de identificação \#10)\end{tabular}     \\ \bottomrule
 \end{tabular}
 }
 \end{table}
@@ -787,7 +787,39 @@ Cada propriedade, demonstrada no Código \ref{json:estrutura_imagem}, que é capta
 \label{fig:moduledb}
 \end{figure}
 
-Assim, o serviço web desenvolvido utilizando Flask permite usar os principais métodos do protocolo HTTP, através do estilo arquitetural REST, para receber os dados armazenados no aplicativo híbrido.
+Assim, o serviço web desenvolvido utilizando Flask permite usar os principais métodos do protocolo HTTP, através do estilo arquitetural REST, para tratar as solicitações dos dados, conforme Tabela \ref{tab:rest_prototipo}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[h]
+\centering
+\caption{My caption}
+\label{tab:rest_prototipo}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+Método HTTP & Descrição da Ação                                                                       & Recurso                                                                                                                                                              \\ \midrule
+GET         & \begin{tabular}[t]{@{}l@{}}Obter informações sobre\\ um ou vários recursos\end{tabular} & \begin{tabular}[t]{@{}l@{}}/api/\{recursos\}\\ (onde \{recursos\} pode ser \\ 'pictures', 'videos' ou 'audios')\end{tabular}                                         \\
+GET         & \begin{tabular}[t]{@{}l@{}}Obter informações sobre\\ um ou vários recursos\end{tabular} & \begin{tabular}[t]{@{}l@{}}/api/\{recurso\}/\#id\\ (onde \{recurso\} pode ser \\ 'picture', 'video' ou 'audio'\\ e \#id é a identificação do\\ recurso)\end{tabular} \\
+PUT         & \begin{tabular}[t]{@{}l@{}}Atualizar informações\\  de um recurso\end{tabular}          & \begin{tabular}[t]{@{}l@{}}/api/\{recurso\}/\#id\\ (onde \{recurso\} pode ser \\ 'picture', 'video' ou 'audio'\\ e \#id é a identificação do\\ recurso)\end{tabular} \\
+DELETE      & \begin{tabular}[t]{@{}l@{}}Deletar a informação\\  de um recurso\end{tabular}           & \begin{tabular}[t]{@{}l@{}}/api/\{recurso\}/\#id\\ (onde \{recurso\} pode ser \\ 'picture', 'video' ou 'audio'\\ e \#id é a identificação do\\ recurso)\end{tabular}
+\end{tabular}
+}
+\end{table}
+
+Um serviço web REST permite envio de arquivos para o servidor de três formas:
+\begin{enumerate}
+    \item Utilização de Base64. Onde o arquivo é codificado para uma string de 64 caracteres para ser enviado na requisição.
+    \item multipart/form-data e metadata. Utilizar um formulário, \textit{FormData}\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects}}, para enviar apenas os arquivos necessários e aguardar o retorno URI deste arquivo gerado e utilizar o método \textit{PUT} para atualizar as informações deste.
+    \item metatada e multipart/form-data. Método semelhante ao mencionado acima, porém primeiro é enviado as informações do arquivo e um URI é aguardado, uma veste este retornado o arquivo é encaminhado com a identificação do URI.
+\end{enumerate}
+
+Apesar destas 3 formas estarem corretas tratando-se de uma arquitetura REST, estas apresentam algumas desvantagens. O primeiro, eleva o tamanho do arquivo que poderia ser trafegado pela rede, podendo chegar a mais 33\% do tamanho original. O segundo e terceiro, esperam um retorno do servidor para continuar o envio, o que eleva quantidade de tranferências necessárias.
+
+Assim, constatou-se que enviar um arquivo pelo método tradicional, no contexto web, através de \textit{FormData} onde arquivos e uma estrutura de chave e valores são informados. Esta estrutura de chave e valores tem que ser padronizados, para que o servidor web que recebe a requisição possa saber quais as chaves estão sendo enviadas e quais são necessárias. Os valores de cada chave são os objetos JSON propriamente codificados. 
+
+Portanto, uma vez que a uma requisição de envio de imagens seja feita ao servidor do projeto, é esperado um formulário \textit{multipart/form-data} com o arquivo utilizando \textit{FormData} e as informações através de chave e valores de um formulário padrão\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest\#Submitting_forms_and_uploading_files}}.
 
 \subsubsection{Front-End} % (fold)
 \label{ssub:front_end}
