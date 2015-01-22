@@ -596,6 +596,14 @@ Um plugin refere-se a uma funcionalidade específica do dispositvo a ser encapsul
 
 Diversos novos plugins podem ser desenvolvidos cobrindo novas funcionalidades, novos sensores e para novas plataformas. O PhoneGap mantém 19 plugins para as funcionalidades de bateria, câmera e áudio, GPS e sensores de movimento, conexão, contatos, dispositivo, arquivos e armazenamento, notificação e transferência de arquivos (ver Fig. \ref{fig:phonegap_platforms}) . Porém, na página oficial\footnote{\url{http://plugins.cordova.io}}, podem ser encontrados outros 678 diferentes plugins, alguns executando funcionalidades semelhantes e outros ampliando as plataformas suportadas.
 
+Existem duas frentes para se desenvolver com o PhoneGap, a primeira é através do uso de ambientes de desenvolvimento proprietários (Android Studio, Visual Studio, XCode, etc) onde um projeto PhoneGap para a determinada plataforma é carregada, onde todo o desenvolvimento é realizado.
+
+A segunda frente de desenvolvimento é através de linhas de comando. Após a instalação do framework PhoneGap este permite compilar para mais de uma aplicação simultâneamente utilizando apenas linhas de comando. Assim, um desenvolvedor que possui as ferramentas de desenvolvimento para iOS e Android, por exemplo, pode compilar seu aplicativo para ambos apenas através de simples instruções digitados no terminal. 
+
+Como um aplicativo PhoneGap possui plugins e utiliza o JavaScript de inteface para acessar suas funcionaldades, o desenvolvedor precisa manter apenas o HTML5, CSS e JavaScript uma única vez, estes são replicados para as outras plataformas desejadas conforme solicitados através de linha de comando.
+
+Com uma funcionalidade extra, PhoneGap Build\footnote{\url{http://build.phonegap.com}}, o PhoneGap permite que seus usuários compilem seus aplicativos para mais de uma plataforma pela internet. Utilizando linhas de comando ou através de um arquivo zip que contenha os arquivos HTML, CSS e JavaScript necessários, o PhoneGap Build disponibiliza em segundos um um novo aplicativo compilado. Este ainda permite incluir a chave de acesso de desenvolvedor das demais plataformas, gerando assim um aplicativo pronto para inserir nas lojas de aplicativos existentes.
+
 % \begin{figure}[ht]
 % \begin{center}
 % \includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/cordova_plugins_page.png}
@@ -741,7 +749,7 @@ Accept-Language: en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4
 \end{lstlisting}
 
 % float,floatplacement=H, 
-\begin{lstlisting}[language=json,firstnumber=1,float, caption={Resposta HTTP.}, label={http:inpe_response},captionpos=b]
+\begin{lstlisting}[language=json,firstnumber=1, caption={Resposta HTTP.}, label={http:inpe_response},captionpos=b]
 HTTP/1.1 200 OK
 Server: Apache/2.2.3 (CentOS)
 X-Powered-By: PHP/5.1.6
@@ -792,7 +800,7 @@ Assim, o serviço web desenvolvido utilizando Flask permite usar os principais mé
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage{graphicx}
-\begin{table}[h]
+\begin{table}[bp]
 \centering
 \caption{My caption}
 \label{tab:rest_prototipo}
@@ -815,14 +823,25 @@ Um serviço web REST permite envio de arquivos para o servidor de três formas:
     \item metatada e multipart/form-data. Método semelhante ao mencionado acima, porém primeiro é enviado as informações do arquivo e um URI é aguardado, uma veste este retornado o arquivo é encaminhado com a identificação do URI.
 \end{enumerate}
 
-Apesar destas 3 formas estarem corretas tratando-se de uma arquitetura REST, estas apresentam algumas desvantagens. O primeiro, eleva o tamanho do arquivo que poderia ser trafegado pela rede, podendo chegar a mais 33\% do tamanho original. O segundo e terceiro, esperam um retorno do servidor para continuar o envio, o que eleva quantidade de tranferências necessárias.
+Apesar destas 3 formas estarem corretas tratando-se de uma arquitetura REST, estas apresentam algumas desvantagens. O primeiro, eleva o tamanho do arquivo que poderia ser trafegado pela rede, podendo chegar a mais 33\% do tamanho original. O segundo e terceiro, esperam um retorno do servidor para continuar o envio, o que eleva a quantidade de tranferências necessárias.
 
 Assim, constatou-se que enviar um arquivo pelo método tradicional, no contexto web, através de \textit{FormData} onde arquivos e uma estrutura de chave e valores são informados. Esta estrutura de chave e valores tem que ser padronizados, para que o servidor web que recebe a requisição possa saber quais as chaves estão sendo enviadas e quais são necessárias. Os valores de cada chave são os objetos JSON propriamente codificados. 
 
-Portanto, uma vez que a uma requisição de envio de imagens seja feita ao servidor do projeto, é esperado um formulário \textit{multipart/form-data} com o arquivo utilizando \textit{FormData} e as informações através de chave e valores de um formulário padrão\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest\#Submitting_forms_and_uploading_files}}.
+Portanto, uma vez que uma requisição de envio de imagens seja feita ao servidor do projeto, é esperado um formulário \textit{multipart/form-data} com o arquivo utilizando \textit{FormData} e as informações através de chave e valores de um formulário padrão\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest\#Submitting_forms_and_uploading_files}}.
 
 \subsubsection{Front-End} % (fold)
 \label{ssub:front_end}
+
+A camada de exibição, interface ou front-end para este projeto foi criado a partir de uma única página HTML5 com o auxilio dos seguintes frameworks:
+
+\begin{enumerate}
+    \item Twitter Bootstrap. Este framework para desenvolvimento de interface gráfica permite novas criações de forma rápida e simples. Conhecido por permitir um desenvolvimento rápido para dispositivos móveis, o Bootstrap, possui diversas funcionalidades que são acessados através da utilização de JavaScript com CSS.
+    \item OpenLayers 2. Um dos primeiros e mais utilizados frameworks para exibição de dados geográficos, o OpenLayers, possui diversas funcionalidades para mostrar gráficos em uma página HTML.
+    \item jQuery. Diversas funcionalidades do JavaScript são encapsuladas atravéss deste framework tornando o desenvolvimento de páginas dinâmicas mais simples. o jQuery permite fazer chamadas XMLHttpRequest (XHR) de forma fácil, essas chamadas características de páginas dinâmicas, permitem carregar conteúdos de servidores remotos e atualizar a página em exibição.
+    \item Sly. Este é um framework para a exibição de imagens em miniaturas onde o usuário pode, com o mouse ou com o movimento das mãos, mover as imagens de forma dinâmica.
+\end{enumerate}
+
+
 
 \subsection{Armazenamento} % (fold)
 \label{sub:armazenamento}
