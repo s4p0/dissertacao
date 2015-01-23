@@ -832,14 +832,62 @@ Portanto, uma vez que uma requisição de envio de imagens seja feita ao servidor 
 \subsubsection{Front-End} % (fold)
 \label{ssub:front_end}
 
-A camada de exibição, interface ou front-end para este projeto foi criado a partir de uma única página HTML5 com o auxilio dos seguintes frameworks:
+Para este projeto, uma página web foi desenvolvida para que os dados captados pelos voluntários utilizando o aplicativo híbrido, pudessem ser visualizados. Esta página tem que cumprir alguns requisitos para melhor exibir os dados, são esses:
 
-\begin{enumerate}
-    \item Twitter Bootstrap. Este framework para desenvolvimento de interface gráfica permite novas criações de forma rápida e simples. Conhecido por permitir um desenvolvimento rápido para dispositivos móveis, o Bootstrap, possui diversas funcionalidades que são acessados através da utilização de JavaScript com CSS.
-    \item OpenLayers 2. Um dos primeiros e mais utilizados frameworks para exibição de dados geográficos, o OpenLayers, possui diversas funcionalidades para mostrar gráficos em uma página HTML.
-    \item jQuery. Diversas funcionalidades do JavaScript são encapsuladas atravéss deste framework tornando o desenvolvimento de páginas dinâmicas mais simples. o jQuery permite fazer chamadas XMLHttpRequest (XHR) de forma fácil, essas chamadas características de páginas dinâmicas, permitem carregar conteúdos de servidores remotos e atualizar a página em exibição.
-    \item Sly. Este é um framework para a exibição de imagens em miniaturas onde o usuário pode, com o mouse ou com o movimento das mãos, mover as imagens de forma dinâmica.
+\begin{itemize}
+    \item Visualizar de forma rápida todos os dados disponíveis;
+    \item Visualizar as propriedades de um dado selecionado;
+    \item Exibir o conteúdo de um dado selecionado (imagem, áudio ou vídeo);
+    \item Exibir os dados georeferenciados utilizando mapas ou imagens de satélite;
+    \item Identificar os diferentes tipos de dados no mapa;
+    \item Permitir que o usuário alterne o mapa em exibição;
+\end{itemize}
+
+Assim, após alguns protótipos da interface da aplicações web, foi desenvolvida uma página web conforme ilustrado na Figura \ref{fig:frontend_mocqup}, que traz algumas das principais funcionalidades enumeradas, são estas:
+
+\begin{enumerate}[label=\arabic*.]
+
+    \item Barra de Navegação. Reunindo os principais links do site, a barra de navegação é uma importante ferramenta para os sistemas web. o usuário pode utilizar esta para conhecer outros recursos que o site pode aprensentar. Diversos tipos de recursos podem ser adicionados  a este componente, como menus, seletores, pesuisa e até formulários. A barra de navegação em questão deve permanecer sempre acima do mapa, para que os usuários possam navegar para outros links. 
+    \item Mapa. Um requisito de uma aplicação web que utiliza dados georeferenciado é poder exibí-los em um mapa. O usuário pode utilizar o mapa para localizar-se melhor.
+    \item Seletor de Camadas. Uma grande vantagem das aplicações web com mapas é a possibilidade de exibir diversas camadas em uma única aplicação. Pode ser exibido uma camada, aplicar transparência nesta e exibir outras diversas camadas deste modo, formando assim um grande mosáico de imagens georeferenciadas. Este também poderá permitir a alteração da visibilidade dos dados captados, por exemplo, podendo esconder a camada de fotos, mas manter a de vídeo e áudio visíveis.
+    \item Áudio. Representação de um dado de áudio.
+    \begin{enumerate}[label=\alph*.]
+        \item Áudio em navegação
+    \end{enumerate}
+    \item Foto. Representação de um dado de foto.
+    \begin{enumerate}[label=\alph*.]
+        \item Foto em navegação
+    \end{enumerate}
+    \item Vídeo. Representação de um dado de vídeo.
+    \begin{enumerate}[label=\alph*.]
+        \item Vídeo em navegação
+        \item Janela de Propriedades do vídeo
+        \item Exibição do conteúdo do vídeo
+        \item Propriedades do vídeo
+
+    \end{enumerate}
+    \item Navegação. 
 \end{enumerate}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\textwidth]{figuras/frontend_mocqup.png}
+\caption{;}
+\label{fig:frontend_mocqup}
+\end{figure}
+
+
+
+
+Para o desenvolvimento desta página foi necessária a utilização dos frameworks Twitter Bootstrap, OpenLayers 2, jQuery e Sly.
+
+O Twitter Bootstrap\footnote{\url{http://getbootstrap.com}} é um framework para desenvolvimento de interface gráfica permite novas criações de forma rápida e simples. Conhecido por permitir um desenvolvimento rápido para dispositivos móveis, o Bootstrap, possui diversas funcionalidades que são acessados através da utilização de JavaScript com CSS.
+
+Um dos primeiros e mais utilizados frameworks para exibição de dados geográficos, o OpenLayers\footnote{\url{http://openlayers.org/two/}}, possui diversas funcionalidades para mostrar gráficos em uma página HTML.
+
+Diversas funcionalidades do JavaScript são encapsuladas atravéss deste framework tornando o desenvolvimento de páginas dinâmicas mais simples. O jQuery\footnote{\url{http://jquery.com/}} permite fazer chamadas XMLHttpRequest (XHR) de forma fácil, essas chamadas características de páginas dinâmicas, permitem carregar conteúdos de servidores remotos e atualizar a página em exibição.
+
+Sly\footnote{\url{http://darsa.in/sly/}}, este é um framework para a exibição de imagens em miniaturas onde o usuário pode, com o mouse ou com o movimento das mãos, mover as imagens de forma dinâmica.
 
 
 
