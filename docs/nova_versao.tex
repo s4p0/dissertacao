@@ -846,50 +846,68 @@ Para este projeto, uma página web foi desenvolvida para que os dados captados pe
 Assim, após alguns protótipos da interface da aplicações web, foi desenvolvida uma página web conforme ilustrado na Figura \ref{fig:frontend_mocqup}, que traz algumas das principais funcionalidades enumeradas, são estas:
 
 \begin{enumerate}[label=\arabic*.]
-
     \item Barra de Navegação. Reunindo os principais links do site, a barra de navegação é uma importante ferramenta para os sistemas web. o usuário pode utilizar esta para conhecer outros recursos que o site pode aprensentar. Diversos tipos de recursos podem ser adicionados  a este componente, como menus, seletores, pesuisa e até formulários. A barra de navegação em questão deve permanecer sempre acima do mapa, para que os usuários possam navegar para outros links. 
+    
     \item Mapa. Um requisito de uma aplicação web que utiliza dados georeferenciado é poder exibí-los em um mapa. O usuário pode utilizar o mapa para localizar-se melhor.
+    
     \item Seletor de Camadas. Uma grande vantagem das aplicações web com mapas é a possibilidade de exibir diversas camadas em uma única aplicação. Pode ser exibido uma camada, aplicar transparência nesta e exibir outras diversas camadas deste modo, formando assim um grande mosáico de imagens georeferenciadas. Este também poderá permitir a alteração da visibilidade dos dados captados, por exemplo, podendo esconder a camada de fotos, mas manter a de vídeo e áudio visíveis.
-    \item Áudio. Representação de um dado de áudio.
-    \begin{enumerate}[label=\alph*.]
-        \item Áudio em navegação
+    
+    \item Áudio. Representação de um dado de áudio que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
+    \begin{enumerate}[label=4\alph*.]
+        \item A miniatura de uma imagem representando um arquivo de áudio na navegação que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
     \end{enumerate}
-    \item Foto. Representação de um dado de foto.
-    \begin{enumerate}[label=\alph*.]
-        \item Foto em navegação
+    
+    \item Foto. Representação de um dado de foto que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
+    \begin{enumerate}[label=5\alph*.]
+        \item A miniatura de uma imagem representando um arquivo de foto na navegação que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
     \end{enumerate}
-    \item Vídeo. Representação de um dado de vídeo.
-    \begin{enumerate}[label=\alph*.]
-        \item Vídeo em navegação
-        \item Janela de Propriedades do vídeo
-        \item Exibição do conteúdo do vídeo
-        \item Propriedades do vídeo
+    
+    \item Uma miniatura de imagem representando um arquivo de áudio na navegação que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
+    \begin{enumerate}[label=6\alph*.]
+        \item Vídeo em navegação.
+        \item Janela de Propriedades do vídeo. O mesmo para outros tipos de mídia.
+        \item Exibição do conteúdo do vídeo. O mesmo para outros tipos de mídia.
+        \item Propriedades do vídeo. O mesmo para outros tipos de mídia.
+    \end{enumerate}
 
-    \end{enumerate}
-    \item Navegação. 
+    \item Navegação. Utiliza miniaturas de imagens para facilicar a navegação do voluntário a procurar uma determinada imagem. Cada vez que uma dessas miniaturas é selecionada, o seu ponto de refernência no mapa é destacado e uma janela com suas propriedades pode ser visualizada.
 \end{enumerate}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.9\textwidth]{figuras/frontend_mocqup.png}
-\caption{;}
+\includegraphics[width=0.7\textwidth]{figuras/frontend_mocqup.png}
+\caption{Esboço da página de visualização dos resultados, destacando as principais funções conforme descrito acima.}
 \label{fig:frontend_mocqup}
 \end{figure}
 
 
 
 
-Para o desenvolvimento desta página foi necessária a utilização dos frameworks Twitter Bootstrap, OpenLayers 2, jQuery e Sly.
+Para o desenvolvimento desta página foi necessária a utilização dos frameworks Twitter Bootstrap, OpenLayers 2, jQuery e Sly. A Tabela \ref{tab:front_frameworks} descreve cada um destes frameworks.
 
-O Twitter Bootstrap\footnote{\url{http://getbootstrap.com}} é um framework para desenvolvimento de interface gráfica permite novas criações de forma rápida e simples. Conhecido por permitir um desenvolvimento rápido para dispositivos móveis, o Bootstrap, possui diversas funcionalidades que são acessados através da utilização de JavaScript com CSS.
-
-Um dos primeiros e mais utilizados frameworks para exibição de dados geográficos, o OpenLayers\footnote{\url{http://openlayers.org/two/}}, possui diversas funcionalidades para mostrar gráficos em uma página HTML.
-
-Diversas funcionalidades do JavaScript são encapsuladas atravéss deste framework tornando o desenvolvimento de páginas dinâmicas mais simples. O jQuery\footnote{\url{http://jquery.com/}} permite fazer chamadas XMLHttpRequest (XHR) de forma fácil, essas chamadas características de páginas dinâmicas, permitem carregar conteúdos de servidores remotos e atualizar a página em exibição.
-
-Sly\footnote{\url{http://darsa.in/sly/}}, este é um framework para a exibição de imagens em miniaturas onde o usuário pode, com o mouse ou com o movimento das mãos, mover as imagens de forma dinâmica.
+% \footnote\{\url\{http://getbootstrap.com\}}
+% \footnote\{\url\{http://openlayers.org/two/\}}
+% \footnote\{\url\{http://jquery.com/\}}
+% \footnote\{\url\{http://darsa.in/sly/\}}
 
 
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[h]
+\centering
+\small
+\caption{My caption}
+\label{tab:front_frameworks}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Framework         & Descrição                                                                                                                                                                                                                                                                                                                                                                                                              \\ \midrule
+Twitter Bootstrap & \begin{tabular}[t]{@{}l@{}}O Twitter Bootstrap é um framework para desenvolvimento \\ de interface gráfica permite novas criações de forma rápida \\ e simples. Conhecido por permitir um desenvolvimento rápido\\  para dispositivos móveis, o Bootstrap, possui diversas \\ funcionalidades que são acessados através da utilização de \\ JavaScript com CSS. \\ \linebreak \end{tabular}                                           \\
+OpenLayers2       & \begin{tabular}[t]{@{}l@{}}Um dos primeiros e mais utilizados frameworks para exibição\\ de dados geográficos, o OpenLayers, possui diversas \\ funcionalidades para mostrar gráficos em uma página HTML. \\  \linebreak \end{tabular}                                                                                                                                                                                                 \\
+jQuery            & \begin{tabular}[t]{@{}l@{}}Diversas funcionalidades do JavaScript são encapsuladas \\ atravéss deste framework tornando o desenvolvimento de \\ páginas dinâmicas mais simples. O jQuery permite fazer \\ chamadas XMLHttpRequest (XHR) de forma fácil, essas \\ chamadas características de páginas dinâmicas, permitem \\ carregar conteúdos de servidores remotos e atualizar a \\ página em exibição. \\ \linebreak \end{tabular} \\
+Sly                & \begin{tabular}[t]{@{}l@{}}Sly, este é um framework para a exibição de imagens em \\ miniaturas onde o usuário pode, com o mouse ou com o \\ movimento das mãos, mover as imagens de forma dinâmica. \\  \end{tabular}
+\end{tabular}
+\end{table}
 
 \subsection{Armazenamento} % (fold)
 \label{sub:armazenamento}
