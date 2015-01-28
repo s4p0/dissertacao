@@ -184,6 +184,7 @@ A realização desta tarefa, porém, se feita apenas pelos cientistas envolvidos di
 O sensoriamento voluntário é uma junção de Informação Geográfica Voluntariada (IGV), termo de \citeonline{Goodchild2007} para descrever as tarefas realizadas por voluntários ao fornecer dados complementares a determinadas localizações geográficas com a finalidade de enriqucer a base de dados, com sensoriamento móvel \cite{Lane2010}, onde pesquisas são conduzidas através de aparelhos móveis dos voluntários utilizando os sensores disponíveis neste. 
 
 \subsection{Informação Geográfica Voluntariada}
+\label{ch:informacao_geografica_voluntariada}
 
 \citeonline{Goodchild2007} categoriza de \textbf{informação geográfica voluntariada} o fenômeno que vem atraindo cidadãos de toda parte, a criação de informações geográficas. Tarefa que antigamente era de uso exclusivo das agências oficiais responsáveis por realizar cartografias dos países, porém com o avanço da tecnologia, qualquer pessoa pode ter acesso a ferramentas de edição de mapa online e colaborar com alguma informação geográfica. Seja esta específica sobre um determinado prédio, dado sua latitude e longitude, como também por vastos terrenos, ao descrever uma cidade. Este recente paradigma representa uma dramática inovação e certamente terá grandes impactos aos sistemas de informação geográfica.
 
@@ -518,7 +519,7 @@ Esta segunda geração do aplicativo possui mais tipos de dados do que o primeiro,
 %\label{fig:epicollect_novo_projeto}
 %\end{figure}
 
-Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, desmatamento...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
+Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, área sem floresta...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
 
 
 
@@ -952,7 +953,7 @@ Quando a página é exibida, as camadas encontradas disponíveis no servidor local 
 A área de estudo (Figura \ref{fig:para_exported}) neste trabalho faz parte da Floresta dos Tapajos, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, Pará, dentro da Amazônia. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas. 
 %  COPIADO DA MARIANE
 
-Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios aleatórios da área de estudo, mas que tenham algum ponto de interesse relevantes ao projeto, como desmatamento, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem representar diferentes formas em uma imagem de pequena resolução (250 m) podendo parecer imperceptível, mas com estas fotos in-situ é possível eliminar falsos-positivo.
+Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios aleatórios da área de estudo, mas que tenham algum ponto de interesse relevantes ao projeto, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem representar diferentes formas em uma imagem de pequena resolução (250 m) podendo parecer imperceptível, mas com estas fotos in-situ é possível eliminar falsos-positivo.
 
 \begin{figure}[h]
 \centering
@@ -976,57 +977,119 @@ A Figura \ref{fig:mapa_fullscreen} ilustra a interface desenvolvida neste trabal
 \label{fig:mapa_fullscreen}
 \end{figure}
 
-Esta pequena janela possui, na primeira linha, possui diferente conteúdo conforme dado selecionado. Caso venha ser uma imagem, são exibidos as diferentes dimensões desta imagem, caso seja um áudio ou vídeo, uma janela é exibida com o respectivo conteúdo pronto para reprodução, Figura \ref{fig:detalhes_conteudos}.
+Esta pequena janela é comum para os demais recursos (áudios, vídeos e imagens), porém a primeira linha apresenta um diferente comportamento, conforme dado selecionado. Caso venha ser uma imagem, são exibidos as diferentes dimensões desta imagem, caso seja um áudio ou vídeo, uma janela é exibida com o respectivo conteúdo pronto para reprodução, Figura \ref{fig:detalhes_conteudos}.
 \begin{figure}%
 \centering
-\includegraphics[width=0.4\textwidth]{figuras/resultados/detalhe_video.png}
-\includegraphics[width=0.4\textwidth]{figuras/resultados/detalhe_audio.png}
+\includegraphics[width=0.495\textwidth]{figuras/resultados/detalhe_video.png}
+\includegraphics[width=0.495\textwidth]{figuras/resultados/detalhe_foto.png}
 \qquad
-\includegraphics[width=0.4\textwidth]{figuras/resultados/detalhe_foto.png}
-\includegraphics[width=0.4\textwidth]{figuras/resultados/selecao_imagem_foto.png}
-\caption{No canto superior esquerdo, uma amostra de um vídeo capturado e pronto para exibição. No canto superior direito, uma gravação de áudio pronto para ser reproduzido. Na parte inferior esquerda o detalhe de exibição de uma foto e ao seu lado a seleção da imagem com melhor resolução, com link para efetuar o download.}%
+\includegraphics[width=0.495\textwidth]{figuras/resultados/detalhe_audio.png}
+\includegraphics[width=0.495\textwidth]{figuras/resultados/selecao_imagem_foto.png}
+\caption{No canto superior esquerdo, uma amostra de um vídeo capturado e pronto para exibição. No canto inferior esquerdo, uma gravação de áudio pronto para ser reproduzida. Na esquerda, o detalhe de exibição de uma foto e a seleção da imagem com melhor resolução, respectivamente na parte superior e inferior }%
 \label{fig:detalhes_conteudos}%
 \end{figure}
 
-
-% \begin{figure}
-%         \centering
-%         \begin{subfigure}{0.3\textwidth}
-%                 \includegraphics[width=\textwidth]{figuras/resultados/detalhe_audio.png}
-%                 % \caption{A gull}
-%                 % \label{fig:gull}
-%         \end{subfigure}%
-%         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-%           %(or a blank line to force the subfigure onto a new line)
-%         \begin{subfigure}{0.3\textwidth}
-%                 \includegraphics[width=\textwidth]{figuras/resultados/detalhe_video.png}
-%                 % \caption{A tiger}
-%                 % \label{fig:tiger}
-%         \end{subfigure}
-%         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-%           %(or a blank line to force the subfigure onto a new line)
-%         \begin{subfigure}{0.3\textwidth}
-%                 \includegraphics[width=\textwidth]{figuras/resultados/detalhe_foto.png}
-%                 % \caption{A mouse}
-%                 % \label{fig:mouse}
-%         \end{subfigure}
-%         % \caption{Pictures of animals}\label{fig:animals}
-% \end{figure}
-
-
-
-Os mapas de fundo são obtidos utilizando o componente OpenLayers2 que busca as informações geográficas diretamente do projeto OpenStreetMaps.
-
-Os mapas exibidos de fundo na Figura \ref{fig:mapa_fullscreen} são mapas do serviço OpenStreetMap, utilizando o componente OpenLayers2. Este componente pode ser configurado para exibir diversas outras canadas.
-
-Assim, foram adicionadas outras camadas para o componente conforme Figura \ref{fig:layers_menu}.
+O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido pelo projeto OpenStreetMaps, comentado na Seção \ref{ch:informacao_geografica_voluntariada}. Porém, a interface permite alternar a exibição dos mapas de fundo através da seleção de camadas definidas no menu de ``Camadas'', no canto superior direito da tela, visto na Figura \ref{fig:layers_menu}. Para este projeto foram definidas algumas camadas para melhor compreender este estudo, estas são:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{figuras/resultados/layers_menu.png}
-\caption{Menu.}
+\includegraphics[scale=0.7]{figuras/resultados/layers_menu.png}
+\caption{Menu com camadas para mapa.}
 \label{fig:layers_menu}
 \end{figure}
 
+\begin{itemize}
+    \item MODIS (250m). A imagem MODIS selecionada faz parte do acervo de catálogos de imagens rápidas da NASA, FAS Brazil 7, imagem TERRA 2013216\footnote{\url{http://rapidfire.sci.gsfc.nasa.gov/imagery/subsets/?subset=FAS_Brazil7.2013216.terra.250m}} datado de 04 de Agosto de 2013, semana em que iniciou-se o estudo. Imagens MODIS foram comentadas na Seção \ref{ch:monitoramento_florestas}.
+    \item SPOT (2.5m). A imagem SPOT\footnote{\url{http://www.sema.pa.gov.br/2010/02/09/8665/}} possui resolução geográfica de 2.5 metros. Estas imagens, datadas de 11 de Julho de 2009 e 30 de Julho de 2011, são produtos comprados e processados pela Sectretaria de Meio Ambiente (SEMA) do Estado do Pará, são utilizadas para uso acadêmico e estão sendo usadas neste trabalho apenas para realizar comparações com a imagem MODIS do mesmo local, porém com resolução 100 vezes superior.
+    \item Áudios. Camada de pontos de áudio com suas propriedades.
+    \item Imagens. Camada de pontos das imagens com suas propriedades, todas captadas utilizando o aplicativo híbrido.
+    \item Vídeos. Camada de pontos dos vídeos com suas propriedades, todas captadas utilizando o aplicativo híbrido.
+    \item Dados. Camada de dados captados de sensores externos. Futuramente, será incorporado ao projeto.
+    \item Rastreio. Camada de pontos provindos de rastreio. Futuramente, será incorporado ao projeto.
+    \item Classificação (RNA). Imagem gerado pela classificação não supervisionada de uma rede neural artificial apartir da mesma imagem MODIS selecionada.
+    \item Probabilidade (RNA). Imagem em escala de cinza da probabilidade de classificação da rede neural artificial ao classificar a imagem MODIS selecionada.
+    \item Outros. Esta é uma camada agregada de três outros mapas do Brasil: mapa hidrográfico, unidades de conservação e terras indígenas.
+    % [AllLayers.hydrography, AllLayers.conservation, AllLayers.indigenous];
+    %
+    % imagens do dropbox do Eduardo, acredito que esteja no ForestWatchers.
+\end{itemize}
+
+Alternando as camadas, é possível verificar mais precisamente a significância do pixel em questão. Uma imagem SPOT tem uma melhor clareza devido a sua resolução ser 100 vezes maior do que uma MODIS, isto permite verificar mais cuidadosamente o que há na composição de um pixel MODIS. 
+
+Na Figura \ref{map:crop_map_modis} é possível observar grandes áreas sem florestas, sendo estas os conjuntos de pixel mais claro. Contudo, não é trivial diferenciar um único pixel de imagens MODIS para conhecer se este representa uma área florestada ou não.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figuras/resultados/crop_map_modis.png}
+\caption{title}
+\label{map:crop_map_modis}
+\end{figure}
+
+
+A mesma área é representada pala Figura \ref{map:crop_map_spot}. Esta camada torna a tarefa de diferenciar um pixel mais fácil, bastando comparar a camada de imagem MODIS com a camada de imagem SPOT, uma vez que esta possui melhor resolução espacial.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figuras/resultados/crop_map_spot.png}
+\caption{title}
+\label{map:crop_map_spot}
+\end{figure}
+
+Porém, utilizar imagens SPOT, como é o caso deste trabalho, para comparar dois tipos de imagens em diferentes camadas não é viável. Imagens SPOT são pagas, diferente das imagens MODIS.
+
+Portanto a alternativa levantada pela hipótese deste trabalho sugere que imagens, vídeos ou áudios captados in-situ possam ajudar a discenir uma área florestada de uma área não-florestada. 
+
+A Figura \ref{map:small_map_modis} demonstra a área compreendida pelas coordenadas 54\textdegree55'26.4''W a 03\textdegree07'33''S a 03\textdegree07'04.8''S de uma imagem MODIS. Há uma variação de cor no píxel que está abaixo dos dois pontos de imagem, nesta figura. Porém é difícil saber ao certo se este representa uma área florestada ou não.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figuras/resultados/small_map_modis.png}
+\caption{title}
+\label{map:small_map_modis}
+\end{figure}
+
+Utilizando as imagens adquiridas pelo dispositivo e futuramente utilizada por voluntários, esta pode atuar de forma análoga a camada com a imagem SPOT. Pois a imagem oferece um recurso melhor de visualização da área compreendida por um pixel MODIS.
+
+Assim, na Figura \ref{map:small_selected_modis_left} é possível observar o ponto da imagem no mapa com a camada MODIS selecionada e as propriedades deste ponto. Na direita da figura,  a imagem capturada pelo aplicativo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.495\textwidth]{figuras/resultados/small_selected_modis_left.png}
+\hfill
+\includegraphics[width=0.495\textwidth]{figuras/resultados/small_modis_left.png}
+\caption{title}
+\label{map:small_selected_modis_left}
+\end{figure}
+
+
+Outra imagem pode também ilustrar a situação nesta área. A Figura \ref{map:small_selected_modis_right} traz respectivamente da esquerda para a direita, uma imagem captada pelo aplicativo com suas propriedades e uma imagem de maior resolução para melhor visualização.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.495\textwidth]{figuras/resultados/small_selected_modis_right.png}
+\hfill
+\includegraphics[width=0.495\textwidth]{figuras/resultados/small_modis_right.png}
+\caption{title}
+\label{map:small_selected_modis_right}
+\end{figure}
+
+Ambas imagens (Fig. \ref{map:small_selected_modis_left} e \ref{map:small_selected_modis_right}) são evidentes de ser áreas não florestas. Porém, utilizando apenas a imagem MODIS (Fig. \ref{map:small_map_modis}) falta parâmetros para poder obter uma classificação precisa.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figuras/resultados/small_map_spot.png}
+\caption{title}
+\label{map:small_map_spot}
+\end{figure}
+
+Observando as propriedades das imagens captadas acima, é possível notar uma propriedade em particular intrigante. A orientação das imagens, condiz perfeitamente com a visão d mapa mostrado na Figura \ref{map:small_map_spot}. Por essas terem sido capturadas logo no início do poligono desflorestado, e não no interior do mesmo, é possivel observar que a função da bússola é muito importante ao considerar qual a direção da foto. Caso a direção estivesse errada, a seta poderia mostrar para uma parte florestada e exibir uma imagem não florestada. Ao treinar uma algoritmo supervisionado, este poderia apresentar divergência por causa deste valor, assumindo que fosse 100\% correto.
+
+Da mesma forma, poderiam existir vídeos e áudios captados por um voluntário, registrando a faúna, uma atividade ilícita de desmatamento, áreas de incêndio, sons de tratores, entre outros. Assim, iriam funcionar com o mesmo princípio das imagens supracitadas, onde serviriam como um auxiliar para a classificação automática de uma imagem, podendo realizar feedback à rede neural e a tornando uma rede supervisionada.
+
 \section{Conclusões e Trabalhos Futuros}
 \label{ch:conclusoes}
+
+Este trabalho pondera o uso de ciência cidadã para auxiliar problemas reais, sendo um deles o monitoramento das florestas tropicais do mundo. Apesar do INPE ser pioneiro neste ramo e possuir grandes ferramentas para esta área, falta recursos para poder realizar monitoramento desta extensão e complexidade. 
+
+O modo como o projeto ForestWatchers aborda o problema de falta de monitoramento das florestas tropicais é inovador e tangível. Novas ferramentas como a proposta neste trabalho podem aumentar significamente a precisão dos resultados obtidos pelo projeto.
+
