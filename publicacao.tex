@@ -50,7 +50,7 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 \usepackage{booktabs}
 \usepackage{lscape}
 \usepackage{multicol}
-\usepackage{todo}
+%\usepackage{todo}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 %\usepackage{enumitem}
 \usepackage{booktabs}
@@ -72,6 +72,8 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 \usepackage{bera}% optional: just to have a nice mono-spaced font
 \usepackage{listings}
 \usepackage{xcolor}
+
+\renewcommand*\lstlistingname{Código}
 
 \colorlet{punct}{red!60!black}
 \definecolor{background}{HTML}{EEEEEE}
@@ -137,5 +139,5 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 \bibliography{./bib/publicacao_nova} %% aponte para seu arquivo de bibliografia no formato bibtex (p.ex: referencia.bib)
 \inicioIndice
 \include{./docs/contracapa}
-\todos
+%\todos
 \end{document}
