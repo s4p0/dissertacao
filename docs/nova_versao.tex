@@ -775,8 +775,9 @@ O conjunto de entradas é armazenado no dispositivo através do plugin de armazena
 \section{Infraestrutura Tecnológica} % (fold)
 \label{sub:infraestrutura_tecnologica}
 
-A infraestrutura tecnológica para receber, armazenar e exibir os dados coletados pelos voluntários utilizou-se de tecnologias de código aberto para a sua construção com a finalidade de obter-se uma plataforma de distribuição livre juntamente com seu código fonte, podendo ser enriquecido por outros trabalhos.
-
+A infraestrutura para receber, armazenar e exibir os dados coletados pelos voluntários utilizou-se de tecnologias de código aberto para a sua construção com a finalidade de obter-se uma plataforma de distribuição livre juntamente com seu código fonte, podendo ser enriquecido por outros trabalhos.
+%colocar a figura mais próximo%
+%muita figura e tabela para tal%
 A Figura \ref{fig:ArquiteturaServidores} ilustra a infraestrutura que foi criada para atender as necessidades deste módulo.
 
 \begin{figure}[h]
@@ -789,9 +790,9 @@ A Figura \ref{fig:ArquiteturaServidores} ilustra a infraestrutura que foi criada
 \subsection{Servidor para Internet} % (fold)
 \label{sub:servidor_web}
 
-Duas são as principais tecnologias por trás deste projeto: a primeira o aplicativo para dispositivos móveis, responsável por coletar os dados dos voluntários; a segunda o servidor para internet, responsável por receber os dados coletados pelos voluntários, armazená-los adequadamente e exibi-los quando solicitados.
+Duas são as principais tecnologias por trás deste projeto: a primeira, o aplicativo para dispositivos móveis, responsável por coletar os dados dos voluntários; a segunda, o servidor para internet, responsável por receber os dados coletados pelos voluntários, armazená-los adequadamente e exibi-los quando solicitados.
 
-Para a construção da aplicação web foi utilizado um pequeno \textit{framework} criado em Python para construir páginas, aplicações e serviços para a internet, Flask\footnote{\url{http://flask.pocoo.org/}}. Este pequeno \textit{framework} permite a construção de soluções para internet de forma rápida por possuir um grande repositório de extensões.
+Para a construção da aplicação web foi utilizado um \textit{framework} criado em Python para construir páginas, aplicações e serviços para a internet, Flask\footnote{\url{http://flask.pocoo.org/}}. Este \textit{framework} permite a construção de soluções para internet de forma rápida por possuir um grande repositório de extensões.
 
 Utilizando Flask foi possível desenvolver um servidor \textit{back-end} responsável por receber os dados enviados pelos voluntários e ao mesmo tempo um servidor \textit{front-end} responsável por mostrar os dados recebidos no formato de uma página web, a interface da plataforma.
 
@@ -800,7 +801,7 @@ Utilizando Flask foi possível desenvolver um servidor \textit{back-end} responsá
 
 O principal meio de comunicação com servidores web é através do protocolo \textit{Hypertext Transfer Protocol} (HTTP), em português Protocolo de Transferência de Hipertexto, este funciona por meio de requisição e resposta, como cliente e servidor. Um usuário que deseja visualizar uma página da internet está fazendo uma requisição ao servidor para obter o conteúdo desejado, isto é feito de forma automática através do navegador. 
 
-Uma página, definida pelo URI \url{http://www.inpe.br/pos_graduacao/cursos/cap/index.php}, é um recurso do servidor \url{www.inpe.br}. Para obter este recurso é necessário efetuar uma requisição (Código \ref{http:inpe_request}) junto ao servidor, uma vez que este recurso seja encontrado uma resposta (Código \ref{http:inpe_response}) é retornada, com informações em seu cabeçalho e, caso possua, um corpo de resposta. Por este recurso ser uma página web, o \textit{Content-Type} é do tipo text/html, com essa informação o navegador pode renderizar a página de forma adequada.
+Uma página, definida pelo endereço \url{http://www.inpe.br/pos_graduacao/cursos/cap/index.php}, é um recurso do servidor \url{www.inpe.br}. Para obter este recurso é necessário efetuar uma requisição (Código \ref{http:inpe_request}) junto ao servidor, uma vez que este recurso seja encontrado uma resposta (Código \ref{http:inpe_response}) é retornada, com informações em seu cabeçalho e, caso possua, um corpo de resposta. Por este recurso ser uma página web, o \textit{Content-Type} é do tipo text/html, com essa informação o navegador pode renderizar a página de forma adequada.
 
 \begin{lstlisting}[language=json,firstnumber=1,float, floatplacement=h, caption={Requisição HTTP.}, label={http:inpe_request},captionpos=b]
 GET /pos_graduacao/cursos/cap/index.php HTTP/1.1
@@ -818,7 +819,7 @@ X-Powered-By: PHP/5.1.6
 Content-Type: text/html; charset=iso-8859-1
 \end{lstlisting}
 
-Este é o princípio do serviço web conhecido por \textit{Representational State Transfer} (REST), em português Transferência de Estado, onde o serviço é estilo arquitetural baseado no protocolo HTTP projetado para utilizar um conjunto de operações bem definidas utilizando os principais métodos HTTP (Tabela \ref{tab:metodos_http}), um protocolo cliente-servidor sem estado, um Identificador Uniforme de Recursos (URI) para um determinado objeto e transferência de dados, podendo utilizar o formato JSON.
+Este é o princípio do serviço web conhecido por \textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional, onde o serviço é estilo arquitetural baseado no protocolo HTTP projetado para utilizar um conjunto de operações bem definidas utilizando os principais métodos HTTP (Tabela \ref{tab:metodos_http}), um protocolo cliente-servidor sem estado, um Identificador Uniforme de Recursos (Uniform Resource Identifier - URI) para um determinado objeto e transferência de dados, podendo utilizar o formato JSON.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
@@ -843,18 +844,18 @@ DELETE      & Deletar um recurso                                                
 
 As operações que cada método HTTP executa utilizando REST são equivalentes as operações de um banco de dados, como selecionar, inserir, atualizar e deletar.
 
-O método \textit{GET} tem a responsabilidade de retornar os recursos solicitados e pode ser utilizando tanto de forma geral, solicitando diversos recursos de uma só vez (em geral, este URI encontra-se no plural) ou de forma específica, informando uma identificação única do recurso. Ao invocar o método \textit{POST} e informando detalhes do objeto, um novo recurso é criado com essas informações (em geral, este URI encontra-se no plural). Os métodos \textit{PUT} e \textit{DELETE} exercem a função de atualizar os dados e deletá-los, respectivamente. No primeiro, os dados são informados no corpo da requisição, forma semelhante ao método \textit{POST}.
+O método \textit{GET} tem a responsabilidade de retornar os recursos solicitados e pode ser utilizando tanto de forma geral, solicitando diversos recursos de uma só vez (em geral, este URI encontra-se no plural) ou de forma específica, informando uma identificação única do recurso. Ao invocar o método \textit{POST} e informando detalhes do objeto, um novo recurso é criado com essas informações (em geral, este URI encontra-se no plural). Os métodos \textit{PUT} e \textit{DELETE} exercem a função de atualizar os dados e deletá-los, respectivamente. No primeiro, os dados são informados no corpo da requisição, forma semelhante ao método \textit{POST}. Uma descrição dos métodos pode ser visto na Tabela \ref{tab:metodos_http}.
 
 REST é apenas um estilo arquitetural para receber ou enviar dados. Assim, tem-se que o meio de comunicação ao servidor deste projeto é dado através do protocolo HTTP, mesmo protocolo utilizado para requisições de páginas da internet. Porém, para armazenar os dados, ainda é necessário ter um banco de dados. 
 
-Como a principal característica deste projeto é permitir georreferenciar dados coletados em in situ, um banco geográfico é requerido, optou-se por utilizar o banco de dados de código aberto PostgreSQL\footnote{\url{http://www.postgresql.org/}}. Este banco de dados oferece meios para adicionar entidades geográficas através da extensão PostGIS\footnote{\url{http://postgis.org/}}. Bancos geográficos possuem funções especiais para tratar este tipo de entidade, permitindo efetuar buscas tendo como parâmetro uma posição geográfica.
+Como a principal característica deste projeto é permitir georreferenciar dados coletados \textit{in-situ}, um banco geográfico é requerido, optou-se por utilizar o banco de dados de código aberto PostgreSQL\footnote{\url{http://www.postgresql.org/}}. Este banco de dados oferece meios para adicionar entidades geográficas através da extensão PostGIS\footnote{\url{http://postgis.org/}}. Bancos geográficos possuem funções especiais para tratar este tipo de entidade, permitindo efetuar buscas tendo como parâmetro uma posição geográfica.
 
-Cada propriedade, demonstrada no Código \ref{json:estrutura_imagem}, que é captarada pelo voluntário utilizando o aplicativo híbrido descrito na Seção \ref{ssub:aplicativo_com_biblioteca_hibrida} foi devidamente mapeada no banco de dados, como visto na Figura \ref{fig:moduledb}.
+Cada propriedade, demonstrada no Código \ref{json:estrutura_imagem}, que é captarada pelo voluntário utilizando o aplicativo híbrido descrito na Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}, foi devidamente mapeada no banco de dados, como visto na Figura \ref{fig:moduledb}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/moduledb.png}
-\caption{;}
+\caption{Disposição das tabelas de banco de dados utilizada neste módulo.}
 \label{fig:moduledb}
 \end{figure}
 
@@ -883,11 +884,11 @@ DELETE      & \begin{tabular}[t]{@{}l@{}}Deletar a informação\\  de um recurso\e
 Um serviço web REST permite envio de arquivos para o servidor de três formas:
 \begin{enumerate}
     \item Utilização de Base64. Onde o arquivo é codificado para uma string de 64 caracteres para ser enviado na requisição.
-    \item multipart/form-data e metadata. Utilizar um formulário, \textit{FormData}\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects}}, para enviar apenas os arquivos necessários e aguardar o retorno URI deste arquivo gerado e utilizar o método \textit{PUT} para atualizar as informações deste.
-    \item metatada e multipart/form-data. Método semelhante ao mencionado acima, porém primeiro é enviado as informações do arquivo e um URI é aguardado, uma veste este retornado o arquivo é encaminhado com a identificação do URI.
+    \item \textit{multipart/form-data} e \textit{metadata}. Utilizar um formulário, \textit{FormData}\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects}}, para enviar apenas os arquivos necessários e aguardar o retorno URI deste arquivo gerado e utilizar o método \textit{PUT} para atualizar as informações deste.
+    \item \textit{metatada} e \textit{multipart/form-data}. Método semelhante ao mencionado acima, porém primeiro é enviado as informações do arquivo e um URI é aguardado, uma veste este retornado o arquivo é encaminhado com a identificação do URI.
 \end{enumerate}
 
-Apesar destas 3 formas estarem corretas tratando-se de uma arquitetura REST, estas apresentam algumas desvantagens. O primeiro, eleva o tamanho do arquivo que poderia ser trafegado pela rede, podendo chegar a mais 33\% do tamanho original. O segundo e terceiro, esperam um retorno do servidor para continuar o envio, o que eleva a quantidade de transferências necessárias.
+Apesar destas 3 formas estarem corretas tratando-se de uma arquitetura REST, estas apresentam algumas desvantagens. A primeira, eleva o tamanho do arquivo que poderia ser trafegado pela rede, podendo chegar a mais 33\% do tamanho original. A segunda e terceira, esperam um retorno do servidor para continuar o envio, o que eleva a quantidade de transferências necessárias.
 
 Assim, constatou-se que enviar um arquivo pelo método tradicional, no contexto web, através de \textit{FormData} onde arquivos e uma estrutura de chave e valores são informados. Esta estrutura de chave e valores tem que ser padronizados, para que o servidor web que recebe a requisição possa saber quais as chaves estão sendo enviadas e quais são necessárias. Os valores de cada chave são os objetos JSON propriamente codificados. 
 
@@ -896,7 +897,7 @@ Portanto, uma vez que uma requisição de envio de imagens seja feita ao servidor 
 \subsubsection{Front-End} % (fold)
 \label{ssub:front_end}
 
-Para este projeto, uma página web foi desenvolvida para que os dados captados pelos voluntários utilizando o aplicativo híbrido, pudessem ser visualizados. Esta página tem que cumprir alguns requisitos para melhor exibir os dados, são esses:
+Para este projeto, uma página web foi desenvolvida para que os dados captados pelos voluntários utilizando o aplicativo híbrido pudessem ser visualizados. Esta página tem que cumprir alguns requisitos para melhor exibir os dados, são esses:
 
 \begin{itemize}
     \item Visualizar de forma rápida todos os dados disponíveis;
@@ -910,18 +911,18 @@ Para este projeto, uma página web foi desenvolvida para que os dados captados pe
 Assim, após alguns protótipos da interface da aplicações web, foi desenvolvida uma página web conforme ilustrado na Figura \ref{fig:frontend_mocqup}, que traz algumas das principais funcionalidades enumeradas, são estas:
 
 \begin{enumerate}[label=\arabic*.]
-    \item Barra de Navegação. Reunindo os principais links do site, a barra de navegação é uma importante ferramenta para os sistemas web. o usuário pode utilizar esta para conhecer outros recursos que o site pode apresentar. Diversos tipos de recursos podem ser adicionados  a este componente, como menus, seletores, pesuisa e até formulários. A barra de navegação em questão deve permanecer sempre acima do mapa, para que os usuários possam navegar para outros links. 
+    \item \textbf{Barra de Navegação.} Reunindo os principais links do site, a barra de navegação é uma importante ferramenta para os sistemas web. o usuário pode utilizar esta para conhecer outros recursos que o site pode apresentar. Diversos tipos de recursos podem ser adicionados  a este componente, como menus, seletores, pesuisa e até formulários. A barra de navegação em questão deve permanecer sempre acima do mapa, para que os usuários possam navegar para outros links. 
     
-    \item Mapa. Um requisito de uma aplicação web que utiliza dados georreferenciado é poder exibi-los em um mapa. O usuário pode utilizar o mapa para localizar-se melhor.
+    \item \textbf{Mapa.} Um requisito de uma aplicação web que utiliza dados georreferenciado é poder exibi-los em um mapa. O usuário pode utilizar o mapa para localizar-se melhor.
     
-    \item Seletor de Camadas. Uma grande vantagem das aplicações web com mapas é a possibilidade de exibir diversas camadas em uma única aplicação. Pode ser exibido uma camada, aplicar transparência nesta e exibir outras diversas camadas deste modo, formando assim um grande mosaico de imagens georreferenciadas. Este também poderá permitir a alteração da visibilidade dos dados captados, por exemplo, podendo esconder a camada de fotos, mas manter a de vídeo e áudio visíveis.
+    \item \textbf{Seletor de Camadas.} Uma grande vantagem das aplicações web com mapas é a possibilidade de exibir diversas camadas em uma única aplicação. Pode ser exibido uma camada, aplicar transparência nesta e exibir outras diversas camadas deste modo, formando assim um grande mosaico de imagens georreferenciadas. Este também poderá permitir a alteração da visibilidade dos dados captados, por exemplo, podendo esconder a camada de fotos, mas manter a de vídeo e áudio visíveis.
     
-    \item Áudio. Representação de um dado de áudio que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
+    \item \textbf{Áudio.} Representação de um dado de áudio que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
     \begin{enumerate}[label=4\alph*.]
         \item A miniatura de uma imagem representando um arquivo de áudio na navegação que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
     \end{enumerate}
     
-    \item Foto. Representação de um dado de foto que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
+    \item \textbf{Foto.} Representação de um dado de foto que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
     \begin{enumerate}[label=5\alph*.]
         \item A miniatura de uma imagem representando um arquivo de foto na navegação que ao clicar invoca uma janela modal mostrando todas as suas propriedades.
     \end{enumerate}
@@ -962,7 +963,7 @@ MapServer\footnote{\url{http://mapserver.org}} & \begin{tabular}[t]{@{}l@{}}O Ma
 \end{tabular}
 \end{table}
 
-Quando a página é exibida, as camadas encontradas disponíveis no servidor local MapServer são carregados. Estas camadas podem ser  de um arquivo de Imagem (raster) ou uma camada de pontos, o usuário poderá optar por visualizar cada uma destas camadas. Os arquivos de foto, vídeo e áudio que foram foram enviados pelos voluntários são exibidos no site, permitindo que o usuário possa interagir com estes. A Figura \ref{fig:UMLFrontEndSequence} ilustra este processo.
+Quando a página é exibida, as camadas encontradas disponíveis no servidor local MapServer são carregados. Estas camadas podem ser  de um arquivo de Imagem (raster) ou uma camada de pontos (vetorial), o usuário poderá optar por visualizar cada uma destas camadas. Os arquivos de foto, vídeo e áudio que foram foram enviados pelos voluntários são exibidos no site, permitindo que o usuário possa interagir com estes. A Figura \ref{fig:UMLFrontEndSequence} este processo.
 
 \begin{figure}[h]
 \centering
@@ -984,7 +985,7 @@ Quando a página é exibida, as camadas encontradas disponíveis no servidor local 
 A área de estudo (Figura \ref{fig:para_exported}) neste trabalho faz parte da Floresta dos Tapajós, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, Pará, dentro da Amazônia. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas. 
 %  COPIADO DA MARIANE
 
-Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios aleatórios da área de estudo, mas que tenham algum ponto de interesse relevantes ao projeto, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem representar diferentes formas em uma imagem de pequena resolução (250 m) podendo parecer imperceptível, mas com estas fotos in-situ é possível eliminar falsos-positivo.
+Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios aleatórios da área de estudo, mas que tenham algum ponto de interesse relevantes ao projeto, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem representar diferentes formas em uma imagem de pequena resolução (250 m) podendo parecer imperceptível, mas com estas fotos \textit{in-situ} é possível eliminar falsos-positivo.
 
 \begin{figure}[h]
 \centering
@@ -993,9 +994,9 @@ Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicati
 \label{fig:para_exported}
 \end{figure}
 
-Durante a validação, foi utilizado um dispositivo móvel Lumia 800, um \textit{smartphone} com o sistema operacional Windows Phone, este possui GPS e bússola interna. Para assegurar dos dados coletados, foi utilizado em conjunto com o dispositivo móvel uma bússola magnética e também um aparelho Garmin GPSMAP 60CSx\footnote{\url{https://buy.garmin.com/en-US/US/on-the-trail/discontinued/gpsmap-60csx/prod310.html}}.
+Durante a validação, foi utilizado um dispositivo móvel Lumia 800, um \textit{smartphone} com o sistema operacional Windows Phone, este possui GPS e bússola interna. Para assegurar a qualidade dos dados georreferenciados coletados, foi utilizado em conjunto com o dispositivo móvel uma bússola magnética e também um aparelho Garmin GPSMAP 60CSx\footnote{\url{https://buy.garmin.com/en-US/US/on-the-trail/discontinued/gpsmap-60csx/prod310.html}}.
 
-Durante os 15 dias de expedição, foram feitas  93 capturas com o aplicativo, sendo 83 imagens e 10 vídeos. Não foi possível efetuar captura de áudio devido a um bug na biblioteca híbrida PhoneGap na versão 2.9. Para testar o \textit{front-end} do módulo, utilizou-se áudios extraídos dos vídeos e posicionando-os a metros de distância de onde foram tirados originalmente, não interferindo assim na exibição dos mesmos em imagens de baixa resolução.
+Durante os 15 dias de experimento em campo, foram feitas  93 capturas com o aplicativo, sendo 83 imagens e 10 vídeos. Não foi possível efetuar captura de áudio devido a um bug na biblioteca híbrida PhoneGap na versão 2.9. Para testar o \textit{front-end} do módulo, utilizou-se áudios extraídos dos vídeos e posicionando-os a metros de distância de onde foram tirados originalmente, não interferindo assim na exibição dos mesmos em imagens de baixa resolução.
 
 Todos os dados foram capturados e mantidos no aparelho para que pudessem ser sincronizados posteriormente. 
 
@@ -1008,7 +1009,7 @@ A Figura \ref{fig:mapa_fullscreen} ilustra a interface desenvolvida neste trabal
 \label{fig:mapa_fullscreen}
 \end{figure}
 
-Esta pequena janela é comum para os demais recursos (áudios, vídeos e imagens), porém a primeira linha apresenta um diferente comportamento, conforme dado selecionado. Caso venha ser uma imagem, são exibidos as diferentes dimensões desta imagem, caso seja um áudio ou vídeo, uma janela é exibida com o respectivo conteúdo pronto para reprodução, Figura \ref{fig:detalhes_conteudos}.
+Esta pequena janela é comum para os demais recursos (áudios, vídeos e imagens), porém a primeira linha apresenta um diferente comportamento, conforme o tipo de dado selecionado. Caso venha ser uma imagem, são exibidos as diferentes dimensões desta imagem, caso seja um áudio ou vídeo, uma janela é exibida com o respectivo conteúdo pronto para reprodução. Os diferentes comportamentos estão ilustrados na Figura \ref{fig:detalhes_conteudos}.
 \begin{figure}%
 \centering
 \includegraphics[width=0.495\textwidth]{figuras/resultados/detalhe_video.png}
@@ -1020,7 +1021,7 @@ Esta pequena janela é comum para os demais recursos (áudios, vídeos e imagens), 
 \label{fig:detalhes_conteudos}%
 \end{figure}
 
-O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido pelo projeto OpenStreetMaps, comentado na Seção \ref{ch:informacao_geografica_voluntariada}. Porém, a interface permite alternar a exibição dos mapas de fundo através da seleção de camadas definidas no menu de ``Camadas'', no canto superior direito da tela, visto na Figura \ref{fig:layers_menu}. Para este projeto foram definidas algumas camadas para melhor compreender este estudo, estas são:
+O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido gratuitamente pelo projeto OpenStreetMaps, comentado na Seção \ref{ch:informacao_geografica_voluntariada}. Porém, a interface permite alternar a exibição dos mapas de fundo através da seleção de camadas definidas no menu de ``Camadas'', no canto superior direito da tela, visto na Figura \ref{fig:layers_menu}. Para este projeto foram definidas algumas camadas para melhor compreender este estudo, estas são:
 
 \begin{figure}[h]
 \centering
@@ -1030,16 +1031,16 @@ O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido pelo projeto Ope
 \end{figure}
 
 \begin{itemize}
-    \item MODIS (250m). A imagem MODIS selecionada faz parte do acervo de catálogos de imagens rápidas da NASA, FAS Brazil 7, imagem TERRA 2013216\footnote{\url{http://rapidfire.sci.gsfc.nasa.gov/imagery/subsets/?subset=FAS_Brazil7.2013216.terra.250m}} datado de 04 de Agosto de 2013, semana em que iniciou-se o estudo. Imagens MODIS foram comentadas na Seção \ref{ch:monitoramento_florestas}.
-    \item SPOT (2.5m). A imagem SPOT\footnote{\url{http://www.sema.pa.gov.br/2010/02/09/8665/}} possui resolução geográfica de 2.5 metros. Estas imagens, datadas de 11 de Julho de 2009 e 30 de Julho de 2011, são produtos comprados e processados pela Sectretaria de Meio Ambiente (SEMA) do Estado do Pará, são utilizadas para uso acadêmico e estão sendo usadas neste trabalho apenas para realizar comparações com a imagem MODIS do mesmo local, porém com resolução 100 vezes superior.
-    \item Áudios. Camada de pontos de áudio com suas propriedades.
-    \item Imagens. Camada de pontos das imagens com suas propriedades, todas captadas utilizando o aplicativo híbrido.
-    \item Vídeos. Camada de pontos dos vídeos com suas propriedades, todas captadas utilizando o aplicativo híbrido.
-    \item Dados. Camada de dados captados de sensores externos. Futuramente, será incorporado ao projeto.
-    \item Rastreio. Camada de pontos provindos de rastreio. Futuramente, será incorporado ao projeto.
-    \item Classificação (RNA). Imagem gerado pela classificação não supervisionada de uma rede neural artificial a partir da mesma imagem MODIS selecionada.
-    \item Probabilidade (RNA). Imagem em escala de cinza da probabilidade de classificação da rede neural artificial ao classificar a imagem MODIS selecionada.
-    \item Outros. Esta é uma camada agregada de três outros mapas do Brasil: mapa hidrográfico, unidades de conservação e terras indígenas.
+    \item \textbf{MODIS (250m).} A imagem MODIS selecionada faz parte do acervo de catálogos de imagens rápidas da NASA, FAS Brazil 7, imagem TERRA 2013216\footnote{\url{http://rapidfire.sci.gsfc.nasa.gov/imagery/subsets/?subset=FAS_Brazil7.2013216.terra.250m}} datado de 04 de Agosto de 2013, semana em que iniciou-se o estudo. Imagens MODIS foram comentadas na Seção \ref{ch:monitoramento_florestas}.
+    \item \textbf{SPOT (2.5m).} A imagem SPOT\footnote{\url{http://www.sema.pa.gov.br/2010/02/09/8665/}} possui resolução geográfica de 2.5 metros. Estas imagens, datadas de 11 de Julho de 2009 e 30 de Julho de 2011, são produtos comprados e processados pela Sectretaria de Meio Ambiente (SEMA) do Estado do Pará, são utilizadas para uso acadêmico e estão sendo usadas neste trabalho apenas para realizar comparações com a imagem MODIS do mesmo local, porém com resolução 100 vezes superior.
+    \item \textbf{Áudios.} Camada de pontos de áudio com suas propriedades.
+    \item \textbf{Imagens.} Camada de pontos das imagens com suas propriedades, todas captadas utilizando o aplicativo híbrido.
+    \item \textbf{Vídeos.} Camada de pontos dos vídeos com suas propriedades, todas captadas utilizando o aplicativo híbrido.
+    \item \textbf{Dados.} Camada de dados captados de sensores externos. Futuramente, será incorporado ao projeto.
+    \item \textbf{Rastreio.} Camada de pontos provindos de rastreio. Futuramente, será incorporado ao projeto.
+    \item \textbf{Classificação (RNA).} Imagem gerado pela classificação não supervisionada de uma rede neural artificial a partir da mesma imagem MODIS selecionada.
+    \item \textbf{Probabilidade (RNA).} Imagem em escala de cinza da probabilidade de classificação da rede neural artificial ao classificar a imagem MODIS selecionada.
+    \item \textbf{Outros.} Esta é uma camada agregada de três outros mapas do Brasil: mapa hidrográfico, unidades de conservação e terras indígenas.
     % [AllLayers.hydrography, AllLayers.conservation, AllLayers.indigenous];
     %
     % imagens do dropbox do Eduardo, acredito que esteja no ForestWatchers.
@@ -1066,9 +1067,7 @@ A mesma área é representada pala Figura \ref{map:crop_map_spot}. Esta camada tor
 \label{map:crop_map_spot}
 \end{figure}
 
-Porém, utilizar imagens SPOT, como é o caso deste trabalho, para comparar dois tipos de imagens em diferentes camadas não é viável. Imagens SPOT são pagas, diferente das imagens MODIS.
-
-Portanto a alternativa levantada pela hipótese deste trabalho sugere que imagens, vídeos ou áudios captados in-situ possam ajudar a discenir uma área florestada de uma área não-florestada. 
+Porém, utilizar imagens SPOT, como é o caso deste trabalho, para comparar dois tipos de imagens em diferentes camadas não é viável. Imagens SPOT são pagas, diferente das imagens MODIS. Portanto a alternativa levantada pela hipótese deste trabalho sugere que imagens, vídeos ou áudios captados in-situ possam ajudar a discenir uma área florestada de uma área não-florestada. 
 
 A Figura \ref{map:small_map_modis} demonstra a área compreendida pelas coordenadas 54\textdegree55'26.4''W a 03\textdegree07'33''S a 03\textdegree07'04.8''S de uma imagem MODIS. Há uma variação de cor no píxel que está abaixo dos dois pontos de imagem, nesta figura. Porém é difícil saber ao certo se este representa uma área florestada ou não.
 
@@ -1113,7 +1112,7 @@ Ambas imagens (Fig. \ref{map:small_selected_modis_left} e \ref{map:small_selecte
 \label{map:small_map_spot}
 \end{figure}
 
-Observando as propriedades das imagens captadas acima, é possível notar uma propriedade em particular intrigante. A orientação das imagens, condiz perfeitamente com a visão d mapa mostrado na Figura \ref{map:small_map_spot}. Por essas terem sido capturadas logo no início do polígono desflorestado, e não no interior do mesmo, é possível observar que a função da bússola é muito importante ao considerar qual a direção da foto. Caso a direção estivesse errada, a seta poderia mostrar para uma parte florestada e exibir uma imagem não florestada. Ao treinar uma algoritmo supervisionado, este poderia apresentar divergência por causa deste valor, assumindo que fosse 100\% correto.
+Observando as propriedades das imagens captadas acima, é possível notar uma propriedade em particular intrigante. A orientação das imagens, condiz perfeitamente com a visão do mapa mostrado na Figura \ref{map:small_map_spot}. Por essas terem sido capturadas logo no início do polígono desflorestado, e não no interior do mesmo, é possível observar que a função da bússola é muito importante ao considerar qual a direção da foto. Caso a direção estivesse errada, a seta poderia mostrar para uma parte florestada e exibir uma imagem não florestada. Ao treinar uma algoritmo supervisionado, este poderia apresentar divergência por causa deste valor, assumindo que fosse 100\% correto.
 
 Da mesma forma, poderiam existir vídeos e áudios captados por um voluntário, registrando a fauna, uma atividade ilícita de desmatamento, áreas de incêndio, sons de tratores, entre outros. Assim, iriam funcionar com o mesmo princípio das imagens supracitadas, onde serviriam como um auxiliar para a classificação automática de uma imagem, podendo realizar \textit{feedback} à rede neural e a tornando uma rede supervisionada.
 
@@ -1122,7 +1121,7 @@ Da mesma forma, poderiam existir vídeos e áudios captados por um voluntário, reg
 
 Apesar do INPE ser pioneiro neste ramo e possuir grandes ferramentas para esta área, falta recursos para poder realizar monitoramento desta extensão e complexidade. O modo como o projeto ForestWatchers aborda o problema de falta de monitoramento das florestas tropicais é inovador e tangível. Novas ferramentas como a proposta neste trabalho podem aumentar significantemente a precisão dos resultados obtidos pelo projeto.
 
-O objetivo deste trabalho foi de propor e desenvolver um módulo de sensoriamento voluntário e integrá-lo ao projeto ForestWatchers. A solução foi desenvolver um aplicativo híbrido em que voluntários que possuam diferentes tipos de dispositivos possam contribuir, captando áudio, vídeo e imagens. Junto com o aplicativo, foi desenvolvido um módulo web para exibição dos dados.
+O objetivo deste trabalho é de propor e desenvolver um módulo de sensoriamento voluntário e integrá-lo ao projeto ForestWatchers. A solução foi desenvolver um aplicativo híbrido em que voluntários que possuam diferentes tipos de dispositivos possam contribuir, captando áudio, vídeo e imagens. Junto com o aplicativo, foi desenvolvido um módulo web para exibição dos dados.
 
 O aplicativo foi desenvolvido utilizando o \textit{framework} PhoneGap, que permite utilizar um único código para gerar aplicativos em outras plataformas de forma fácil, até mesmo por linha de comando. O código foi escrito usando a convenção do PhoneGap (HTML, CSS e JavaScript) e os componentes JQueryMobile e KnockOutJS foram utilizados, para desenhar a interface gráfica do aplicativo. Porém antes de concluir que o aplicativo deveria ser híbrido, foram testados duas outras soluções para o desenvolvimento do aplicativo. A primeira, utilizando o desenvolvimento padrão de utilizar bibliotecas nativas para o desenvolvimento, porém cada aplicativo teria que ser desenvolvido na sua respectiva plataforma desde o princípio. Posteriormente, foi verificado o uso de \textit{frameworks} coleta de dados, como EpiCollect e Sensr como uma solução. Por não ter controle das funcionalidades e os \textit{frameworks} mais modernos serem desenvolvidos para apenas uma única plataforma, não optou-se pela sua utilização.
 
@@ -1136,7 +1135,7 @@ Uma interface gráfica (front-end) foi desenvolvida para exibir os dados resultad
 
 A interface foi desenvolvida em HTML5, CSS3 e JavaScript. Utilizou-se a biblioteca OpenLayers v2 para plotar cada recurso em sua coordenada que foi captada e mostrar diversos outros mapas ao fundo, dando o poder ao usuário de alternar estes mapas em um sistema de camadas, onde o último selecionado sobrepõe o primeiro. Porém, sempre mantendo os recursos no topo das camadas, sempre por cima. Outros componentes também foram utilizados na confecção desta página web, como o \textit{framework} de HTML5 Twitter Bootstrap na sua versão 3, permitindo de forma rápida e fácil a criação de sistemas de \textit{grid} para o posicionamento de conteúdo, janelas modais e de interações, menus e barras para navegação. Por último, o componente Sly foi utilizado para mostrar miniaturas dos recursos retornado pelo módulo web, facilitando a iteração do usuário com os dados a serem visualizados. Este também permite acesso por toque, sendo imprescindível no uso para \textit{tablets} e \textit{smartphones}, dispositivos capazes de toque.
 
-Para validar o módulo proposto neste trabalho o aplicativo foi utilizado em uma área do Estado do Pará, próximo a Belterra. O aplicativo captou fotos e vídeo para serem sincronizados posteriormente com o módulo web, também desenvolvido neste trabalho. Nesta etapa, não foi capaz de capturar o áudio devido a um bug encontrado na versão do PhoneGap para o sistema Windows Phone e por a área não possuir comunicação com Internet, foi incapaz de contornar o problema a tempo. Os dados apresentados neste trabalho para o áudio, são representativos e foram gerados a partir da extração do áudio dos arquivos de vídeos captados.
+Para validar o módulo proposto neste trabalho o aplicativo foi utilizado em uma área do Estado do Pará, próximo a Belterra. O aplicativo captou fotos e vídeo para serem sincronizados posteriormente com o módulo web, também desenvolvido neste trabalho. Nesta etapa, não foi possível validar o sistema de captura de áudio devido a um bug encontrado na versão do PhoneGap para o sistema Windows Phone e por a área não possuir comunicação com Internet, não sendo possível o contorno do problema a tempo. Os dados apresentados neste trabalho para o áudio, são representativos e foram gerados a partir da extração do áudio dos arquivos de vídeos captados.
 
 % There're few alternatives still:
 % http://2lemetry.com79
