@@ -330,22 +330,40 @@ Estas bibliotecas permitem desenvolver para diversos dispositivos do mesmo fabri
 
 Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesquisa realizada por \citeonline{IDC:2014Q3}, onde aparecem somente as plataformas que foram mais consumidas de 2011 a 2014.
 
+%% \begin{table}[htb]
+%% \caption{Preço de Licença de Desenvolvimento por Plataforma.}
+%% \label{tab:tabela_custo}
+%% \centering
+%% \small
+%% \resizebox{\textwidth}{!}{
+%%     \begin{tabular}{|l|l|l|c|}
+%%        Plataformas                                              & Dispositvos         & Linguagem  & Preço / Ano \\ 
+%%        iOS (Apple)                                               &  \textit{Smartphones}, \textit{Tablet}     & C, Objective-C           & \$99        \\
+%%                 BlackBerry OS (RIM)                                 &  \textit{Smartphones}   & Java           & \$00        \\
+%%                 Windows, Windows Phone (Microsoft)       &  \textit{Desktop}, \textit{Smartphones}, \textit{Tablet}  & .NET    & \$19        \\
+%%                 Android (Google)                                      &  Acessórios, \textit{Desktop}, \textit{Smartphones}, \textit{Tablet}  & Java     & \$25       \\                            
+%%     \FONTE{\citeonline{Registration:Android:2014;Registration:iPhone:2014;Registration:rim:2014;Registration:WP8:2014}}
+%%     \end{tabular}
+%% }
+%% \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
 \begin{table}[htb]
 \caption{Preço de Licença de Desenvolvimento por Plataforma.}
 \label{tab:tabela_custo}
-\centering
-\small
 \resizebox{\textwidth}{!}{
-\begin{tabular}{|l|l|l|c|}
-\hline   Plataforma  & Dispositvos         & Linguagem  & Preço / Ano \\ %header
-\hline   iOS (Apple)  &  \textit{Smartphones}, \textit{Tablet}     & C, Objective-C           & \$99        \\
-            BlackBerry OS (RIM)  &  \textit{Smartphones}   & Java           & \$00        \\
-            Windows, Windows Phone (Microsoft)  &  \textit{Desktop}, \textit{Smartphones}, \textit{Tablet}  & .NET                                               & \$19        \\
-            Android (Google)  &  Acessórios, \textit{Desktop}, \textit{Smartphones}, \textit{Tablet}  & Java                             & \$25       \\
-\hline
-\FONTE{\citeonline{Registration:Android:2014;Registration:iPhone:2014;Registration:rim:2014;Registration:WP8:2014}}
-\end{tabular}
+    \begin{tabular}{@{}llll@{}}
+    \toprule
+    Plataformas                            & Dispositivos                            & Principal Linguagem & Licença  \\ \midrule
+    iOS (Apple)                            & Smartphones, Tablets                    & Objective-C         & \$99/ano \\
+    BlackBerry OS (RIM)                    & Smartphones                             & Java                & \$0      \\
+    Windows 8, Windows Phone 8 (Microsoft) & Desktop, Smartphones, Tablets           & .NET                & \$19/ano \\
+    Android (Google)                       & Acessório, Desktop, Smartphone, Tablets & Java                & \$25/ano \\ \bottomrule    
+    \end{tabular}    
 }
+%%\cite{Registration:iPhone:2014}
+\FONTE{\citeonline{Registration:Android:2014,Registration:iPhone:2014,Registration:rim:2014,Registration:WP8:2014}}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
@@ -955,11 +973,11 @@ Para o desenvolvimento desta página foi utilizado os \textit{frameworks} Twitter
 \begin{tabular}{@{}ll@{}}
 \toprule
 Framework         & Descrição                                                                                                                                                                                                                                                                                                                                                                                                              \\ \midrule
-Twitter Bootstrap\footnote{\url{http://getbootstrap.com}} & \begin{tabular}[t]{@{}l@{}}O Twitter Bootstrap é um \textit{framework} para desenvolvimento \\ de interface gráfica permite novas criações de forma rápida \\ e simples. Conhecido por permitir um desenvolvimento rápido\\  para dispositivos móveis, o Bootstrap, possui diversas \\ funcionalidades que são acessados através da utilização de \\ JavaScript com CSS. \\ \linebreak \end{tabular} \\
-OpenLayers2\footnote{\url{http://openlayers.org/two}}  & \begin{tabular}[t]{@{}l@{}}Um dos primeiros e mais utilizados \textit{frameworks} para exibição\\ de dados geográficos, o OpenLayers, possui diversas \\ funcionalidades para mostrar gráficos em uma página HTML. \\  \linebreak \end{tabular} \\
-jQuery\footnote{\url{http://jquery.com}} & \begin{tabular}[t]{@{}l@{}}Diversas funcionalidades do JavaScript são encapsuladas \\ atravéss deste framework tornando o desenvolvimento de \\ páginas dinâmicas mais simples. O jQuery permite fazer \\ chamadas XMLHttpRequest (XHR) de forma fácil, essas \\ chamadas características de páginas dinâmicas, permitem \\ carregar conteúdos de servidores remotos e atualizar a \\ página em exibição. \\ \linebreak \end{tabular} \\
-Sly\footnote{\url{http://darsa.in/sly}} & \begin{tabular}[t]{@{}l@{}}Sly, este é um framework para a exibição de imagens em \\ miniaturas onde o usuário pode, com o mouse ou com o \\ movimento das mãos, mover as imagens de forma dinâmica. \\ \linebreak \end{tabular} \\
-MapServer\footnote{\url{http://mapserver.org}} & \begin{tabular}[t]{@{}l@{}}O MapServer é um servidor de mapas que permite distribuir \\ dados espaciais de forma que estes possam ser renderizados \\ por outros serviços, seguindo padrões geográficos como \\ GML, GeoJSON e outros.   \end{tabular}
+Twitter Bootstrap & \begin{tabular}[t]{@{}l@{}}O Twitter Bootstrap é um \textit{framework} para desenvolvimento \\ de interface gráfica permite novas criações de forma rápida \\ e simples. Conhecido por permitir um desenvolvimento rápido\\  para dispositivos móveis, o Bootstrap, possui diversas \\ funcionalidades que são acessados através da utilização de \\ JavaScript com CSS.\\ Endereço \url{http://getbootstrap.com} \\ \linebreak \end{tabular} \\
+OpenLayers2  & \begin{tabular}[t]{@{}l@{}}Um dos primeiros e mais utilizados \textit{frameworks} para exibição\\ de dados geográficos, o OpenLayers, possui diversas \\ funcionalidades para mostrar gráficos em uma página HTML.\\ Endereço\url{http://openlayers.org/two} \\  \linebreak \end{tabular} \\
+jQuery & \begin{tabular}[t]{@{}l@{}}Diversas funcionalidades do JavaScript são encapsuladas \\ atravéss deste framework tornando o desenvolvimento de \\ páginas dinâmicas mais simples. O jQuery permite fazer \\ chamadas XMLHttpRequest (XHR) de forma fácil, essas \\ chamadas características de páginas dinâmicas, permitem \\ carregar conteúdos de servidores remotos e atualizar a \\ página em exibição.\\ Endereço \url{http://jquery.com} \\ \linebreak \end{tabular} \\
+Sly & \begin{tabular}[t]{@{}l@{}}Sly, este é um framework para a exibição de imagens em \\ miniaturas onde o usuário pode, com o mouse ou com o \\ movimento das mãos, mover as imagens de forma dinâmica.\\ Endereço \url{http://darsa.in/sly} \\ \linebreak \end{tabular} \\
+MapServer & \begin{tabular}[t]{@{}l@{}}O MapServer é um servidor de mapas que permite distribuir \\ dados espaciais de forma que estes possam ser renderizados \\ por outros serviços, seguindo padrões geográficos como \\ GML, GeoJSON e outros. \\ Endereço \url{http://mapserver.org}  \end{tabular}
 \end{tabular}
 \end{table}
 
@@ -982,7 +1000,8 @@ Quando a página é exibida, as camadas encontradas disponíveis no servidor local 
 % Texto da Mariane Reis (artigo)
 % The area of interest in this study is part of the National Foerst of Tapajos and its surroundings, located in Belterra, Para state, in Brazilian Amazon. The region presents humid tropical climate, with mean annual precipitation about 1880 mm and the highest precipitations occurring between January and May. Dominant vegetation is Humid Tropical Rainforest and the terrain has flat surface constitution with portions slightly uneven [7]. The occupation process in region occurred along the BR-163 highway, after the deforestation of primary forest and the opening of roads to establish small farms [7]. As a result of this process, there are mosaics of secondary vegetation in varying stages of development, pasture, croplands and bare soil areas within the forest matrix [8]
 
-A área de estudo (Figura \ref{fig:para_exported}) neste trabalho faz parte da Floresta dos Tapajós, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, Pará, dentro da Amazônia. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas. 
+
+A área utilizada para este estudo (Figura \ref{fig:para_exported}) faz parte da Floresta dos Tapajós, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, Pará, dentro da Amazônia. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas \cite{LongoReDeBeRiMe:2012:PhChPa}.
 %  COPIADO DA MARIANE
 
 Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios aleatórios da área de estudo, mas que tenham algum ponto de interesse relevantes ao projeto, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem representar diferentes formas em uma imagem de pequena resolução (250 m) podendo parecer imperceptível, mas com estas fotos \textit{in-situ} é possível eliminar falsos-positivo.
