@@ -17,13 +17,7 @@ No meio da década de 90, surgiu os projetos \textit{Great Internet Mersenne Prim
 
 Na década seguinte, outra forma de realizar ciência cidadã moderna foi destacada. Reunindo diversos cidadãos para olhar para o espaço, o projeto GalaxyZoo \cite{oxfordgalaxy2007} ganhou grande notoriedade por conseguir milhões de classificações de galáxias realizadas por voluntários. Assim como na computação voluntária, o projeto recebeu apoio de cidadãos comuns. 
 
-%% ADICIONAR FONTE para Pensamento Voluntário
-
 Essas duas formas de ciência cidadã são diferentes entre si, onde a computação voluntária necessita apenas de uma conexão para interligar os computadores e disponibilizar potência computacional ociosa para auxiliar projetos. Porém a última, conhecida por pensamento voluntário, necessita apenas do poder cognitivo do cidadão, para que esse possa auxiliar os projetos deste tipo com tomadas de ação e decisões que não seriam fácil e nem rápido para uma máquina resolver, assim como  reconhecimento de padrões. A cada dia há um novo \textit{hardware} sendo aprimorado, mas nenhum supera o ser humano em questão de reconhecimento visual.
-
-%% QUESTIONAR a DESIGNAÇÃO DESTE PROJETO "tem-se os projetos que necessitam da contribuição dos voluntários para fornecer dados"  que é fornecido através do SENSORIAMENTO VOLUNTÁRIO
-
-%% já existe espaço após sobrescrito, porém adicionado mais um
 
 Outra forma de realizar projetos de ciência cidadã vem se fortalecendo ao longo dos últimos anos, diferente de utilizar somente a capacidade cognitiva ou de identificação de padrões e diferente de utilizar o tempo de processamento ocioso das máquinas, tem-se os projetos que necessitam da contribuição dos voluntários para fornecer dados. Um dos projetos mais antigos de ciência cidadã e ainda em vigor, o Christmas Bird Count, cativa milhares de pessoas até hoje, na sua 115\textdegree  edição, todos os anos.
 
@@ -51,8 +45,6 @@ Os objetivos específicos desta pesquisa são:
 \section{Organização do Documento}
 \label{ch:organizacao}
 Este documento está organizado da seguinte forma: No Capítulo \ref{ch:monitoramento_florestas} é feita a revisão bibliográfica das ferramentas de monitoramento de florestas criado pelo INPE e suas metodologias. Uma revisão do tópico de ciência cidadã é abordado no Capítulo \ref{ch:ciencia_cidada}, onde é realizada uma comparação com as pesquisas científicas realizadas por voluntários antigamente e nos tempos atuais, conhecida por ciência cidadã moderna. No Capítulo \ref{ch:forestwatchers} é apresentado o projeto ForestWatchers, a definição do projeto, a metodologia empregada e as aplicações feitas por este. As metodologias e resultados deste trabalho são apresentados no Capítulo \ref{ch:metodologia} e \ref{ch:resultados}, respectivamente. Para finalizar, as conclusões são feitas no Capítulo \ref{ch:conclusoes}.
-
-%% Sugiro colocar a análise dos resultados e conclusões em um capítulo a parte. Mudar?
 
 \chapter{Monitoramento de Florestas}
 \label{ch:monitoramento_florestas}
@@ -84,8 +76,6 @@ Para realizar o cálculo da taxa de desmatamento as imagens são selecionadas de m
     \FONTE{\citeonline{Monteiro2008}}
     \label{fig:prodes_mosaico}
 \end{figure}
-
-%% Tem alguma fonte para explicação ou maiores detalhes sobre esse modelo?
 
 Após a seleção das imagens, a próxima etapa envolve transformar seus dados radiométricos em componentes de cena (vegetação, solo e sombra), utilizando o Modelo Linear de Mistura Espectral (MLME) \cite{Monteiro2008}. As bandas 3, 4 e 5 do sensor TM são utilizadas para estimar a proporção dos componentes solo, vegetação e sombra para cada pixel, formando um sistema de equações lineares que pode ser solucionado pelo método dos mínimos quadrados ponderados. O resultado desse modelo linear é uma imagem fração, onde se tem três bandas sintéticas com os valores proporcionais de vegetação, solo e sombra. A segmentação\footnote{Segmentação de imagem é uma técnica de agrupamentos de dados onde características espectrais semelhantes são agrupadas \cite{Monteiro2008}.} da imagem fração é então realizada, ajustando-se os limiares de similaridades e de área. 
 
@@ -122,8 +112,6 @@ Na última etapa, o especialista corrige os resultados da segmentação automática,
 \caption{Comparação de diferentes resoluções espaciais. À esquerda, uma imagem RESOURCESAT com 23,5 m por pixel. À direita, uma imagem MODIS com 250 m por pixel.}
 \label{fig:comparacao_resourcesat_modis}
 \end{figure}
-
-
 
 \chapter{Ciência Cidadã}
 \label{ch:ciencia_cidada}
@@ -228,7 +216,6 @@ Um marcante projeto de informação geográfica voluntariada, \textit{Wikimapia}, é
     \centering
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figuras/wikimapia.png}
     \caption{Modo de inserção de dados do portal \textit{wikimapia}.}
-    %\FONTE{\citeonline{NASA}}
     \label{fig:wikimapia}
 \end{figure}
 
@@ -265,8 +252,6 @@ Em recentes relatórios, \citeonline{Gartner2014} aponta que em 2015 os dispositi
 
 Com esta visão, novos projetos tem surgido com a intenção de utilizar os sensores presentes nos dispositivos móveis como fonte de dados científicos, coletando constantemente informações do dia a dia de quem os utilizam \cite{Lane2010,Burke2006}. 
 
-
-
 Por anos a comunidade acadêmica e industrial vem debatendo o uso de dispositivos móveis em pesquisas de sensoriamento, porém sem grandes avanços até datas recentes. \citeonline{Lane2010} atribui esta mudanças aos seguintes fatores:
 
 \begin{enumerate}
@@ -275,7 +260,6 @@ Por anos a comunidade acadêmica e industrial vem debatendo o uso de dispositivos
     \item Lojas de aplicativo - Os desenvolvedores de aplicativos utilizam o serviço de loja de aplicativo do fabricante correspondente para publicar sua nova criação. Permitindo alcançar diferentes tipos de usuários em toda a parte.
     \item Computação na nuvem - Utilizando-se de computação na nuvem, os dispositivos móveis podem armazenar dados e até efetuar cálculos através de servidores na internet, sem a necessidade de utilizar estas funcionalidades apenas local, proporcionando um grande crescimento de uso e descentralização de dados.
 \end{enumerate}
-
 
 \chapter{ForestWatchers}
 \label{ch:forestwatchers}
@@ -319,7 +303,6 @@ Este capítulo descreve a metodologia utilizada em cada etapa da construção do mó
 \section{Aplicativos} % (fold)
 \label{sub:aplicativos}
 
-% Até o momento, a aplicação móvel é a única forma que os voluntários têm para submeter dados de coleta ao projeto.
 Ao supor que o vetor de coleta de dados complexo, seja um dispositivo unicamente desenvolvido com a finalidade de coletar certos tipos de dados, é um fator inibidor a projetos de ciência cidadã, fazendo que o público participante seja mais restrito \cite{Lane2010}, optou-se por utilizar uma aplicação desenvolvida para dispositivos móveis (\textit{smartphones} e \textit{tablet}). Hoje, a grande maioria das pessoas possui um dispositivo móvel com capacidade de conectar-se a internet, tirar fotos, captar áudio e gravar vídeos. Com a popularização dos sensores embarcados em dispositivos móveis e as expectativas de crescimento deste mercado \cite{Lane2010,Gartner2014}, utilizá-los como ferramenta para projetos de ciência cidadã parece bastante sugestivos.
 
 Foram criados quatro aplicativos como protótipos para testar suas funcionalidades e verificarem a sua significância em relação as necessidades do projeto: (i) um utilizando bibliotecas nativas, disponibilizadas pelos fabricantes de dispositivos móveis para criar novos aplicativos, como estes que são facilmente encontrados nas lojas online de aplicativos; (ii)  dois aplicativos utilizando-se sistemas prontos ou de fácil uso para a criação da ferramenta de coleta de dados; e por fim, (iii) um utilizando uma abordagem de desenvolvimento de aplicativos híbrido, onde há uma biblioteca em comum entre os demais dispositivos existentes e necessitando de apenas uma linguagem de programação.
@@ -330,25 +313,6 @@ Estas bibliotecas permitem desenvolver para diversos dispositivos do mesmo fabri
 
 Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesquisa realizada por \citeonline{IDC:2014Q3}, onde aparecem somente as plataformas que foram mais consumidas de 2011 a 2014.
 
-%% \begin{table}[htb]
-%% \caption{Preço de Licença de Desenvolvimento por Plataforma.}
-%% \label{tab:tabela_custo}
-%% \centering
-%% \small
-%% \resizebox{\textwidth}{!}{
-%%     \begin{tabular}{|l|l|l|c|}
-%%        Plataformas                                              & Dispositivos         & Linguagem  & Preço / Ano \\ 
-%%        iOS (Apple)                                               &  \textit{Smartphones}, \textit{Tablet}     & C, Objective-C           & \$99        \\
-%%                 BlackBerry OS (RIM)                                 &  \textit{Smartphones}   & Java           & \$00        \\
-%%                 Windows, Windows Phone (Microsoft)       &  \textit{Desktop}, \textit{Smartphones}, \textit{Tablet}  & .NET    & \$19        \\
-%%                 Android (Google)                                      &  Acessórios, \textit{Desktop}, \textit{Smartphones}, \textit{Tablet}  & Java     & \$25       \\                            
-%%     \FONTE{\citeonline{Registration:Android:2014;Registration:iPhone:2014;Registration:rim:2014;Registration:WP8:2014}}
-%%     \end{tabular}
-%% }
-%% \end{table}
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[htb]
 \caption{Preço de Licença de Desenvolvimento por Plataforma.}
 \label{tab:tabela_custo}
@@ -362,7 +326,6 @@ Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesq
     Android (Google)                       & Acessório, Desktop, Smartphone, Tablets & Java                & \$25/ano \\ \bottomrule    
     \end{tabular}    
 }
-%%\cite{Registration:iPhone:2014}
 \FONTE{\citeonline{Registration:Android:2014,Registration:iPhone:2014,Registration:rim:2014,Registration:WP8:2014}}
 \end{table}
 
@@ -395,10 +358,6 @@ Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o s
 \subsection{Aplicativo de Sistema Pronto} % (fold)
 \label{ssub:aplicativo_de_sistema_pronto}
 
-%%\afterpage{%
-%%    \clearpage% Flush earlier floats (otherwise order might not be correct)
-%%    \thispagestyle{empty}% empty page style (?)
-%%    \begin{landscape}% Landscape page
 {\centering
 \begin{table}[htb]
      \label{tab:tipo_de_dados}
@@ -537,9 +496,6 @@ Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o s
           \end{tabular}
       \end{center}
 \end{table}
-%%%\end{landscape}
-%%%\clearpage% Flush page
-%%%}
 }
 
 Com os problemas relatados anteriormente, buscou-se uma nova solução. Há diversos aplicativos que são desenvolvidos para uma determinada plataforma e posteriormente são migrados para uma outra plataforma, tornando-os multiplataforma, com essa característica alguns aplicativos tornam-se poderosas ferramentas de coleta de dados, inclusive adicionando as informações de alguns dos sensores presentes no dispositivo. Estes utilizam formulários para guiar a coleta de dados, formulários que são construídos através de interfaces gráficas de fácil manipulação. Estes sistemas prontos são indicados para efetuar a criação aplicativos voltado para pesquisas ou coleta de dados de uma forma rápida, uma vez que estas possuem toda uma infraestrutura para armazenamento de dados e sua visualização.
@@ -555,24 +511,8 @@ EpiCollect+ é a segunda geração de um conhecido sistema pronto e possui diversos
 \end{figure}
 
 Esta segunda geração do aplicativo possui mais tipos de dados do que o primeiro, conforme observado na Tabela \ref{tab:tipo_de_dados}.
-% Este sistema possibilita criar diversos formulários para serem carregados posteriormente no dispositivo através do seu aplicativo. Existem 
-
-
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/01_PROJECT_EPICOLLECT.png}
-%\hfill
-%\includegraphics[keepaspectratio,valign=t,width=0.45\textwidth]{figuras/epicollect/02_DATA_VISIBILITY_EPICOLLECT.png}
-%
-%\includegraphics[keepaspectratio,width=0.45\textwidth]{figuras/epicollect/03_LISTING_ON_HOMEPAGE_EPICOLLECT.png}
-%\caption{À esquerda, página apresentada para a criação de um novo projeto usando o EpiCollect+, opcionalmente pode ser informado um projeto do primeiro EpiCollect para transformá-lo em um novo. À direita,  escolha da visibilidade do projeto, se este poderá ser visível a todos ou se os usuários deverão cadastrar-se no projeto. Por último, a opção se o projeto poderá ser listado no site do EpiCollect+. }
-%\label{fig:epicollect_novo_projeto}
-%\end{figure}
 
 Um simples formulário foi criado (Figura \ref{fig:epicollect_formulario}) para verificar a viabilidade do sistema. Os dados do formulário são interpretado pelo PyBossa na fase de avaliação Figura \ref{fig:pybossa_pertinente}, onde outros voluntários classificam as diversas imagens como pertinente ao projeto (caso seja uma imagem de floresta, área sem floresta...) ou não. Esta simples pergunta pode determinar o nível de comprometimento que um voluntário tem com o projeto, verificando se as imagens que este submete devem ser levados em consideração ou não.
-
-
 
 \begin{figure}[htb]
 \centering
@@ -650,14 +590,6 @@ Como um aplicativo PhoneGap possui plugins e utiliza o JavaScript de interface p
 
 Com uma funcionalidade extra, PhoneGap Build\footnote{\url{http://build.phonegap.com}}, o PhoneGap permite que seus usuários compilem seus aplicativos para mais de uma plataforma pela internet. Utilizando linhas de comando ou através de um arquivo zip que contenha os arquivos HTML, CSS e JavaScript necessários, o PhoneGap Build disponibiliza em segundos um um novo aplicativo compilado. Este ainda permite incluir a chave de acesso de desenvolvedor das demais plataformas, gerando assim um aplicativo pronto para inserir nas lojas de aplicativos existentes.
 
-% \begin{figure}[ht]
-% \begin{center}
-% \includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/cordova_plugins_page.png}
-% \end{center}
-% \caption{.}
-% \label{fig:cordova_plugins_page}
-% \end{figure}
-
 Para o projeto foi criado um aplicativo híbrido com o framework PhoneGap. Este aplicativo utilizou jQueryMobile (jQM)\footnote{\url{http://jquerymobile.com/}} para construir a interface gráfica. jQM é um framework baseado em HTML5, CSS e JavaScript para construir interfaces gráficas para dispositivos móveis. Junto com este \textit{framework}, utilizou-se a biblioteca KnockoutJS\footnote{\url{http://knockoutjs.com/}}, um \textit{framework} baseado em JavaScript para o uso de padrões de projeto do tipo \textit{Model-View-ViewModel} (MVVM).
 
 A Figura \ref{fig:UMLApplicationUseCase} ilustra o caso de uso do protótipo desenvolvido, onde o voluntário é um dos atores para deste caso de uso. O voluntário pode capturar imagem, áudio e vídeo, que são recursos do sistema. Após capturar um recurso, automaticamente é solicitado ao voluntário selecionar um dos dados retornados de GPS e orientação, este último somente se existir um sensor de bússola presente no dispositivo.
@@ -666,12 +598,6 @@ A Figura \ref{fig:UMLApplicationUseCase} ilustra o caso de uso do protótipo dese
 \centering
 \includegraphics[width=0.9\textwidth]{figuras/UML/UMLApplicationUseCase.png}
 \caption{Caso de uso do aplicativo desenvolvido para o projeto. O ator deste caso de uso, o voluntário, pode capturar áudios, vídeos e imagens. Em conjunto com estes dados, podem ser capturados ainda a posição geográfica e a sua orientação.}
-%A Figura 5.9 ilustra o caso de uso do protótipo desenvolvido, onde o voluntário
-%é um dos atores para deste caso de uso. O voluntário pode capturar imagem,
-%áudio e vídeo, que são recursos do sistema. Após capturar um recurso, automaticamente
-%é solicitado ao voluntário selecionar um dos dados retornados
-%de GPS e orientação, este último somente se existir um sensor de bússola
-%presente no dispositivo.
 \label{fig:UMLApplicationUseCase}
 \end{figure}
 
@@ -680,8 +606,6 @@ O aplicativo, com o fluxo apresentado na Figura \ref{fig:app_phonegap}, é capaz 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figuras/dev_app04.png}
-% \hfill
-% \includegraphics[keepaspectratio,width=0.485\textwidth]{captura.eps}
 \caption{O aplicativo desenvolvido para este projeto baseado em Phonegap. A figura ilustra o fluxograma da captura de uma imagem, adquirindo informações extras do sensor de localização (GPS) e do sensor de orientação (bússola magnética).}
 \label{fig:app_phonegap}
 \end{figure}
@@ -697,9 +621,6 @@ A Figura \ref{fig:UMLApplicationCaptureImageSequence} ilustra a sequência de açõ
 
 Os dados captados por este aplicativo são em geral dados dos sensores de localização (GPS), orientação (bússola), informações do dispositivo e informações do arquivo capturado. Estes dados podem ser verificados na Tabela \ref{tab:dados_captados}, onde as principais propriedades são listadas. Dados sobre a configuração de cada sensor também são armazenados, mas apenas para referência. Diversos outros dados poderiam ser captados, mas para um primeiro protótipo apenas estes foram utilizados.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
 \begin{table}[h]
 \centering
 \small
@@ -794,8 +715,7 @@ O conjunto de entradas é armazenado no dispositivo através do plugin de armazena
 \label{sub:infraestrutura_tecnologica}
 
 A infraestrutura para receber, armazenar e exibir os dados coletados pelos voluntários utilizou-se de tecnologias de código aberto para a sua construção com a finalidade de obter-se uma plataforma de distribuição livre juntamente com seu código fonte, podendo ser enriquecido por outros trabalhos.
-%colocar a figura mais próximo%
-%muita figura e tabela para tal%
+
 A Figura \ref{fig:ArquiteturaServidores} ilustra a infraestrutura que foi criada para atender as necessidades deste módulo.
 
 \begin{figure}[h]
@@ -839,9 +759,6 @@ Content-Type: text/html; charset=iso-8859-1
 
 Este é o princípio do serviço web conhecido por \textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional, onde o serviço é estilo arquitetural baseado no protocolo HTTP projetado para utilizar um conjunto de operações bem definidas utilizando os principais métodos HTTP (Tabela \ref{tab:metodos_http}), um protocolo cliente-servidor sem estado, um Identificador Uniforme de Recursos (Uniform Resource Identifier - URI) para um determinado objeto e transferência de dados, podendo utilizar o formato JSON.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
 \begin{table}[h]
 \centering
 \small
@@ -879,9 +796,6 @@ Cada propriedade, demonstrada no Código \ref{json:estrutura_imagem}, que é captu
 
 Assim, o serviço web desenvolvido utilizando Flask permite usar os principais métodos do protocolo HTTP, através do estilo arquitetural REST, para tratar as solicitações dos dados, conforme Tabela \ref{tab:rest_prototipo}.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
 \begin{table}[h]
 \centering
 \caption{Configuração do Servidor REST do Projeto.}
@@ -997,12 +911,7 @@ Quando a página é exibida, as camadas encontradas disponíveis no servidor local 
 % Of course you can use these images.  These are with Eliana, in the lab of Sidneis students.  These are actually products purchased and processed by the Sectretaria de Meio Ambiente (SEMA) do Estado do Pará.  They are made available to research institutions, for educational purposes.  Please use and if you published anything, please cite and thank SEMA and the Government of Pará.  Thats it!
 %  http://www.sema.pa.gov.br/2010/02/09/8665/
 
-% Texto da Mariane Reis (artigo)
-% The area of interest in this study is part of the National Foerst of Tapajos and its surroundings, located in Belterra, Para state, in Brazilian Amazon. The region presents humid tropical climate, with mean annual precipitation about 1880 mm and the highest precipitations occurring between January and May. Dominant vegetation is Humid Tropical Rainforest and the terrain has flat surface constitution with portions slightly uneven [7]. The occupation process in region occurred along the BR-163 highway, after the deforestation of primary forest and the opening of roads to establish small farms [7]. As a result of this process, there are mosaics of secondary vegetation in varying stages of development, pasture, croplands and bare soil areas within the forest matrix [8]
-
-
 A área utilizada para este estudo (Figura \ref{fig:para_exported}) faz parte da Floresta dos Tapajós, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, Pará, dentro da Amazônia. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas \cite{LongoReDeBeRiMe:2012:PhChPa}.
-%  COPIADO DA MARIANE
 
 Para a validação do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios aleatórios da área de estudo, mas que tenham algum ponto de interesse relevantes ao projeto, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem representar diferentes formas em uma imagem de pequena resolução (250 m) podendo parecer imperceptível, mas com estas fotos \textit{in-situ} é possível eliminar falsos-positivo.
 
@@ -1060,8 +969,6 @@ O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido gratuitamente pe
     \item \textbf{Classificação (RNA).} Imagem gerado pela classificação não supervisionada de uma rede neural artificial a partir da mesma imagem MODIS selecionada.
     \item \textbf{Probabilidade (RNA).} Imagem em escala de cinza da probabilidade de classificação da rede neural artificial ao classificar a imagem MODIS selecionada.
     \item \textbf{Outros.} Esta é uma camada agregada de três outros mapas do Brasil: mapa hidrográfico, unidades de conservação e terras indígenas.
-    % [AllLayers.hydrography, AllLayers.conservation, AllLayers.indigenous];
-    %
     % imagens do dropbox do Eduardo, acredito que esteja no ForestWatchers.
 \end{itemize}
 
