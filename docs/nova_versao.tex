@@ -862,7 +862,7 @@ Assim, após alguns protótipos da interface da aplicações web, foi desenvolvida u
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{figuras/frontend_mocqup.png}
+\includegraphics[width=0.6\textwidth]{figuras/frontend_mocqup.png}
 \caption{Esboço da página de visualização dos resultados, destacando as principais funções conforme descrito acima.}
 \label{fig:frontend_mocqup}
 \end{figure}
@@ -874,25 +874,75 @@ Para o desenvolvimento desta página foi utilizado os \textit{frameworks} Twitter
 \small
 \caption{Componentes Utilizado na Interface Gráfica.}
 \label{tab:front_frameworks}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Framework         & Descrição                                                                                                                                                                                                                                                                                                                                                                                                              \\ \midrule
-Twitter Bootstrap & \begin{tabular}[t]{@{}l@{}}O Twitter Bootstrap é um \textit{framework} para desenvolvimento \\ de interface gráfica permite novas criações de forma rápida \\ e simples. Conhecido por permitir um desenvolvimento rápido\\  para dispositivos móveis, o Bootstrap, possui diversas \\ funcionalidades que são acessados através da utilização de \\ JavaScript com CSS.\\ Endereço \url{http://getbootstrap.com} \\ \linebreak \end{tabular} \\
-OpenLayers2  & \begin{tabular}[t]{@{}l@{}}Um dos primeiros e mais utilizados \textit{frameworks} para exibição\\ de dados geográficos, o OpenLayers, possui diversas \\ funcionalidades para mostrar gráficos em uma página HTML.\\ Endereço\url{http://openlayers.org/two} \\  \linebreak \end{tabular} \\
-jQuery & \begin{tabular}[t]{@{}l@{}}Diversas funcionalidades do JavaScript são encapsuladas \\ através deste framework tornando o desenvolvimento de \\ páginas dinâmicas mais simples. O jQuery permite fazer \\ chamadas XMLHttpRequest (XHR) de forma fácil, essas \\ chamadas características de páginas dinâmicas, permitem \\ carregar conteúdos de servidores remotos e atualizar a \\ página em exibição.\\ Endereço \url{http://jquery.com} \\ \linebreak \end{tabular} \\
-Sly & \begin{tabular}[t]{@{}l@{}}Sly, este é um framework para a exibição de imagens em \\ miniaturas onde o usuário pode, com o mouse ou com o \\ movimento das mãos, mover as imagens de forma dinâmica.\\ Endereço \url{http://darsa.in/sly} \\ \linebreak \end{tabular} \\
-MapServer & \begin{tabular}[t]{@{}l@{}}O MapServer é um servidor de mapas que permite distribuir \\ dados espaciais de forma que estes possam ser renderizados \\ por outros serviços, seguindo padrões geográficos como \\ GML, GeoJSON e outros. \\ Endereço \url{http://mapserver.org}  \end{tabular}
+% \begin{tabular}{@{}ll@{}}
+% \toprule
+% Framework            & Descrição                                                                                                                                                                                                                                                                                                                                                                                                              \\ \midrule
+% Twitter Bootstrap   & \begin{tabular}[t]{@{}l@{}}O Twitter Bootstrap é um \textit{framework} para desenvolvimento de \\interface gráfica permite novas criações de forma rápida e simples. \\Conhecido por permitir um desenvolvimento rápido para dispositivos \\móveis, o Bootstrap, possui diversas funcionalidades que são acessados \\através da utilização de JavaScript com CSS.\\ Endereço \url{http://getbootstrap.com} \\ \linebreak \end{tabular} \\
+% OpenLayers2         & \begin{tabular}[t]{@{}l@{}}Um dos primeiros e mais utilizados \textit{frameworks} para exibição de \\dados geográficos, o OpenLayers, possui diversas funcionalidades \\para mostrar gráficos em uma página HTML.\\ Endereço\url{http://openlayers.org/two} \\  \linebreak \end{tabular} \\
+% jQuery                   & \begin{tabular}[t]{@{}l@{}}Diversas funcionalidades do JavaScript são encapsuladas através deste \\framework tornando o desenvolvimento de páginas dinâmicas mais \\simples. O jQuery permite fazer chamadas XMLHttpRequest (XHR) \\de forma fácil, essas chamadas características de páginas dinâmicas, \\permitem carregar conteúdos de servidores remotos e atualizar a página \\em exibição.\\ Endereço \url{http://jquery.com} \\ \linebreak \end{tabular} \\
+% Sly                        & \begin{tabular}[t]{@{}l@{}}Sly, este é um framework para a exibição de imagens em miniaturas onde \\o usuário pode, com o mouse ou com o movimento das mãos, mover as \\imagens de forma dinâmica.\\ Endereço \url{http://darsa.in/sly} \\ \linebreak \end{tabular} \\
+% MapServer             & \begin{tabular}[t]{@{}l@{}}O MapServer é um servidor de mapas que permite distribuir dados espaciais \\de forma que estes possam ser renderizados por outros serviços, seguindo \\padrões geográficos como GML, GeoJSON e outros. \\ Endereço \url{http://mapserver.org}  \end{tabular}
+% \end{tabular}
+\begin{tabular}{| p{2.5cm} | p{12cm} |}
+\hline
+Framework            & Descrição \\ \hline                                                                                                                                                                                                                                                                                                                                                                                                              
+Twitter Bootstrap   & O Twitter Bootstrap é um \textit{framework} para desenvolvimento de interface gráfica permite novas criações de forma rápida e simples. Conhecido por permitir um desenvolvimento rápido para dispositivos móveis, o Bootstrap, possui diversas funcionalidades que são acessados através da utilização de JavaScript com CSS. Endereço \url{http://getbootstrap.com} \\ \hline
+OpenLayers2         & Um dos primeiros e mais utilizados \textit{frameworks} para exibição de dados geográficos, o OpenLayers, possui diversas funcionalidades para mostrar gráficos em uma página HTML. Endereço\url{http://openlayers.org/two} \\ \hline
+jQuery                   & Diversas funcionalidades do JavaScript são encapsuladas através deste framework tornando o desenvolvimento de páginas dinâmicas mais simples. O jQuery permite fazer chamadas XMLHttpRequest (XHR) de forma fácil, essas chamadas características de páginas dinâmicas, permitem carregar conteúdos de servidores remotos e atualizar a página em exibição. Endereço \url{http://jquery.com} \\ \hline
+Sly                        & Sly, este é um framework para a exibição de imagens em miniaturas onde o usuário pode, com o mouse ou com o movimento das mãos, mover as imagens de forma dinâmica. Endereço \url{http://darsa.in/sly} \\ \hline
+MapServer            & O MapServer é um servidor de mapas que permite distribuir dados espaciais de forma que estes possam ser renderizados por outros serviços, seguindo padrões geográficos como GML, GeoJSON e outros.  Endereço \url{http://mapserver.org} \\ \hline
 \end{tabular}
 \end{table}
 
-Quando a página é exibida, as camadas encontradas disponíveis no servidor local MapServer são carregados. Estas camadas podem ser de um arquivo de Imagem (raster) ou uma camada de pontos (vetorial), o usuário poderá optar por visualizar cada uma destas camadas. Os arquivos de foto, vídeo e áudio que foram foram enviados pelos voluntários são exibidos no site, permitindo que o usuário possa interagir com estes. A Figura \ref{fig:UMLFrontEndSequence} este processo.
+\pagebreak
+
+Quando a página é exibida, as camadas encontradas disponíveis no servidor local MapServer são carregados. Estas camadas podem ser de um arquivo de Imagem (raster) ou uma camada de pontos (vetorial), o usuário poderá optar por visualizar cada uma destas camadas. Os arquivos de foto, vídeo e áudio que foram foram enviados pelos voluntários são exibidos no site, permitindo que o usuário possa interagir com estes. A Figura \ref{fig:UMLFrontEndSequence} ilustra este processo.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{figuras/UML/UMLFrontEndSequence.png}
+\includegraphics[width=0.6\textwidth]{figuras/UML/UMLFrontEndSequence.png}
 \caption{UML de Sequência do processo de carregamento das camadas, imagens, áudios e vídeos necessárias para o funcionamento da página web do módulo se sensoriamento voluntário.}
 \label{fig:UMLFrontEndSequence}
 \end{figure}
+
+\pagebreak
+
+Por fim, a Tabela \ref{tab:sumarizacao} faz um breve resumo dos componentes utilizados no desenvolvimento deste projeto descritos nesta seção. Apesar de haver diversos outros componentes com funcionalidades semelhantes a alguns dos componentes selecionados, estes não foram considerados neste trabalho devido à preferência por manter a compatibilidade com outros componentes já em utilização pelo projeto ForestWatchers, como PostgreSQL e MapServer.
+
+% Por fim, a Tabela \ref{tab:sumarizacao} faz uma breve sumarização dos componentes utilizados no desenvolvimento deste projeto descritos nesta seção. Apesar de haver diversos outros componentes com funcionalidades semelhantes a alguns dos componentes selecionados, porém não comparado neste trabalho, devido a preferência de manter compatibilidade com outros componentes já em utilização pelo projeto ForestWatchers, como PostgreSQL e MapServer.
+
+\begin{table}[h]
+\centering
+% \small
+\caption{Sumarização dos componentes utilizados.}
+\label{tab:sumarizacao}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|c|l|}
+\hline
+\begin{tabular}[c]{@{}c@{}}Subsistema \\ ou Aplicativo \\ ou Componente\end{tabular}           & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Soluções \\ ou Tecnologias Disponíveis \\ ou Testadas\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Solução \\ Adotada\end{tabular} & \multicolumn{1}{c|}{Motivo}                                                                                                                                                                                  \\ \hline
+\multirow{8}{*}{\begin{tabular}[c]{@{}c@{}}Aplicativo \\ para \\ Coleta de Dados\end{tabular}} & Aplicativo de Sistema Pronto:                                                                                      & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
+                                                                                               & EpiCollect                                                                                                         & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
+                                                                                               & EpiCollect+                                                                                                        & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
+                                                                                               & Sensr                                                                                                              & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\ \cline{2-4} 
+                                                                                               & Aplicativo Nativo:                                                                                                 & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
+                                                                                               & Desenvolvido para Windows Phone                                                                                    & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\ \cline{2-4} 
+                                                                                               & Aplicativo Híbrido:                                                                                                & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
+                                                                                               & \begin{tabular}[c]{@{}l@{}}Desenvolvido com PhoneGap,\\ jQueryMobile, Knockout.js\end{tabular}                     & X                                                          & \begin{tabular}[c]{@{}l@{}}Desenvolvimento baseado em \\ Web (HTML5, CSS, Javascript) \\ e disponível para um grande \\ número de plataformas.\end{tabular}                                                  \\ \hline
+\multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}Servidor \\ para \\ Internet\end{tabular}}          & Back-End:                                                                                                          &                                                            &                                                                                                                                                                                                              \\
+                                                                                               & PostgreSQL                                                                                                         & X                                                          & \begin{tabular}[c]{@{}l@{}}Banco de dados escolhido por\\ ser parte integrante do componente\\ PyBossa, assim não tendo necessidade\\ de instalar diferentes softwares com\\ o mesmo propósito.\end{tabular} \\ \cline{2-4} 
+                                                                                               & Flask                                                                                                              & X                                                          & \begin{tabular}[c]{@{}l@{}}Servidor Web escolhido por\\ ser parte integrante do componente\\ PyBossa, assim não tendo necessidade\\ de instalar diferentes softwares com\\ o mesmo propósito.\end{tabular}   \\ \cline{2-4} 
+                                                                                               & Front-End:                                                                                                         &                                                            &                                                                                                                                                                                                              \\
+                                                                                               & Twitter Bootstrap                                                                                                  & X                                                          & \begin{tabular}[c]{@{}l@{}}Oferece facilidade para o desenvolvimento\\ HTML5\end{tabular}                                                                                                                    \\ \cline{2-4} 
+                                                                                               & OpenLayers2                                                                                                        & X                                                          & \begin{tabular}[c]{@{}l@{}}Gerenciamento de mapas para ambiente\\ Web\end{tabular}                                                                                                                           \\ \cline{2-4} 
+                                                                                               & Jquery                                                                                                             & X                                                          & \begin{tabular}[c]{@{}l@{}}Facilitador para manusear scripts feitos\\ em JavaScript\end{tabular}                                                                                                             \\ \cline{2-4} 
+                                                                                               & Sly                                                                                                                & X                                                          & \begin{tabular}[c]{@{}l@{}}Permite criar miniaturas de imagens ou\\ elementos HTML\end{tabular}                                                                                                              \\ \cline{2-4} 
+                                                                                               & MapServer                                                                                                          & X                                                          & \begin{tabular}[c]{@{}l@{}}Responsável por renderizar imagens para\\ mapas em ambiente Web\end{tabular}                                                                                                      \\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+
 
 
 \chapter{Teste do Módulo de SV}
