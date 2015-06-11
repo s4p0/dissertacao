@@ -1,0 +1,60 @@
+??? = não deu pra entender a letra
+
+
+Capítulo 2.1.1 PRODES METODOLOGIA
+(pg. 06)
+    * ??????? da imagem em regiões cujo pixels tem propriedades melh??????
+    * subdivição de imagens 
+    * regiões cujos pixels tem propriedades semelhantes
+
+Capítulo 3 - Ciência Cidadã
+(pg. 24)
+    * Pouca descrição sobre aspecto da Ciência Cidadã
+    * Epicollect+
+
+Capítulo 4 - ForestWatchers
+(pg. 27)
+    * PyBossa?
+    * "...podem classificar as imagens de forma..."
+
+Capítulo 5 - Metodologia
+(pg. 29)
+    * Falta desenvolver uma estória lógica e estruturada
+
+
+Capítulo 5.1.1 - Aplicativo de Biblioteca Nativa
+(pg. 30)
+    * "...geográficas através do georreferenciamento ..."
+(pg. 31)    
+    * ...REST...
+    * ...GeoJSON....
+(pg. 32)
+    * .... ??? pode ser verificado...
+    * .... ??? pode ser verificado...
+(pg. 33)
+    * é um metaformulário
+
+Capítulo 5.1.3 - Aplicativo de Biblioteca Híbrida
+(pg. 40)
+    * .... GPS interno e se existir um externo?....
+
+Capítulo 5.2.1.1 - Back-End
+(pg. 46)
+    * ...É preciso ter uma visão mais contextual dizendo o porquê? e não o que?....
+
+Capítulo 5.2.1.2 - Back-End
+(pg. 53)
+    * ...tudo ???enc??....
+    * ...??? ?tudo?....
+    * ...ou um pedaço....
+
+Capítulo 6 - Teste do Módulo SV
+(pg. 58)
+    * De onde veio??? Como???
+    * Ao invés de 100x superior é 10.000 x maior a resolução (2.5x2.5 para 250x250)
+(pg. 59)    
+    * Ao invés de 100x superior é 10.000 x maior a resolução (2.5x2.5 para 250x250)
+(pg. 63)
+    * captura quantas imagens?
+    * fez alguma danificação?
+
