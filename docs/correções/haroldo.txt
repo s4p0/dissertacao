@@ -1,0 +1,46 @@
+Capítulo 1.2 - Organização do Documento 
+(pg. 03) 
+    * Ciência Cidadã: Wikipedia (09/03/2000)
+    * CPTEC: Primeiro centro de previsão a realizar previsão experimental
+    * Além de PRODES/DETER: Detecção de queimadas via sensor AVHRR (Advanced Very High Resolution Radiometer)
+        - www.meioambiente.cptec.inpe.br
+
+Capítulo 2.1.1 - Prodes - Metodologia
+(pg. 06) 
+    * Questionou segmentação, mas acredito que considerou logo após, pois segmentação de imagem em DPI (agrupar características espectrais) é diferente de segmentar uma imagem (detectar bordas)
+
+Capítulo 2.2.1 - Deter - Metodologia
+(pg. 09) 
+    * orientou escolher pixels ou pixeis, escolhido pixels
+
+Capítulo 3.1 - Ciência Cidadã Moderna
+(pg. 13) 
+    * ao invés de "...grandes fundadores...", corrigir para "...financiadores..."
+(pg. 14) 
+    * anotado que falta uma forma no gráfico, "Coleta de Dados" (Noise Tube), porém coleta de dados está contido dentro de "Sensoriamento Voluntário"
+(pg. 16)
+    * anotado uma dúvida sobre "pontuação" em relação a ferramenta BOINC. Foi reestruturado.
+
+Capítulo 3.4.1 - Informação Geográfica Voluntariada
+(pg. 20)
+    * Dúvida na frase: Para o governo, o conceito é estudado para possíveis aplicação em sistemas de alerta a surtos de doenças e monitoramento constante para verificar os impactos ambientais locais causados por mudanças climáticas globais.
+    Foi discutido que mudança climática leva tempo para acontecer, anos, séculos. Reformular.
+    (o trecho da referencia ao qual formulei a frase a cima: "For government participants interested in how the observations of citizens might provide early warning of disease outbreaks or constant streams of data about the local environmental impacts of global climate change.")
+
+**** Capítulo 4 - ForestWatchers
+**** (pg. 25)
+****     * Faltou adicionar: Idéia do Fernando Ramos registrado numa para Nature / Classificação automática RNA => Rede Ótima
+****     - Irei procurar e adicionar, foi citado na proposta.
+
+Capítulo 5.1.1 - Aplicativo de Biblioteca Nativa
+(pg. 32)
+    * Georreferenciamento Automatizado - marcado a palavra priori. Reconheço que ficou confuso. Reformular.
+
+Capítulo 5.1.3 - Aplicativo de Biblioteca Híbrida
+(pg. 37)
+    * Foi assinalado PhoneGap e Cordova, mas confesso não ter entendido o mencionamento e durante a apresentação/considerações este não foi citado.
+    * Comentado do uso excessivo de Anglicismo. 
+
+Capítulo 6 - Teste do Módulo de SV
+(pg. 61) 
+    * Marcado texto que não condizia com a realidade. "Observando as propriedades das imagens captadas acima". Reformulada para Fig. 6.8 e 6.9
