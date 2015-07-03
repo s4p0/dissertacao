@@ -1,22 +1,22 @@
-Capítulo 1.2 - Organização do Documento 
-(pg. 03) 
+Capítulo 1.2 - Organização do Documento
+(pg. 03)
     * Ciência Cidadã: Wikipedia (09/03/2000)
     * CPTEC: Primeiro centro de previsão a realizar previsão experimental
     * Além de PRODES/DETER: Detecção de queimadas via sensor AVHRR (Advanced Very High Resolution Radiometer)
         - www.meioambiente.cptec.inpe.br
 
 Capítulo 2.1.1 - Prodes - Metodologia
-(pg. 06) 
+(pg. 06)
     * Questionou segmentação, mas acredito que considerou logo após, pois segmentação de imagem em DPI (agrupar características espectrais) é diferente de segmentar uma imagem (detectar bordas)
 
 Capítulo 2.2.1 - Deter - Metodologia
-(pg. 09) 
+(pg. 09)
     * orientou escolher pixels ou pixeis, escolhido pixels
 
 Capítulo 3.1 - Ciência Cidadã Moderna
-(pg. 13) 
+(pg. 13)
     * ao invés de "...grandes fundadores...", corrigir para "...financiadores..."
-(pg. 14) 
+(pg. 14)
     * anotado que falta uma forma no gráfico, "Coleta de Dados" (Noise Tube), porém coleta de dados está contido dentro de "Sensoriamento Voluntário"
 (pg. 16)
     * anotado uma dúvida sobre "pontuação" em relação a ferramenta BOINC. Foi reestruturado.
@@ -29,8 +29,31 @@ Capítulo 3.4.1 - Informação Geográfica Voluntariada
 
 **** Capítulo 4 - ForestWatchers
 **** (pg. 25)
-****     * Faltou adicionar: Idéia do Fernando Ramos registrado numa para Nature / Classificação automática RNA => Rede Ótima
+****     * Faltou adicionar: Idéia do Fernando Ramos registrado numa carta para Nature / Classificação automática RNA => Rede Ótima
 ****     - Irei procurar e adicionar, foi citado na proposta.
+
+
+@article{Ramos2005,
+author = {Ramos, Fernando Manuel},
+doi = {10.1038/4371232c},
+issn = {1476-4687},
+journal = {Nature},
+keywords = {Conservation of Natural Resources,Conservation of Natural Resources: methods,Environmental Monitoring,Environmental Monitoring: methods,Internet,Internet: trends,Internet: utilization,Rain,Trees,Trees: physiology,Tropical Climate},
+mendeley-groups = {Proposta dados in-situ/new\_introduction},
+month = oct,
+number = {7063},
+pages = {1232},
+pmid = {16251927},
+shorttitle = {Nature},
+title = {{Internet forest-watchers a new force for conservation.}},
+url = {http://dx.doi.org/10.1038/4371232c},
+volume = {437},
+year = {2005}
+}
+
+-- ok
+
+
 
 Capítulo 5.1.1 - Aplicativo de Biblioteca Nativa
 (pg. 32)
@@ -39,8 +62,8 @@ Capítulo 5.1.1 - Aplicativo de Biblioteca Nativa
 Capítulo 5.1.3 - Aplicativo de Biblioteca Híbrida
 (pg. 37)
     * Foi assinalado PhoneGap e Cordova, mas confesso não ter entendido o mencionamento e durante a apresentação/considerações este não foi citado.
-    * Comentado do uso excessivo de Anglicismo. 
+    * Comentado do uso excessivo de Anglicismo.
 
 Capítulo 6 - Teste do Módulo de SV
-(pg. 61) 
+(pg. 61)
     * Marcado texto que não condizia com a realidade. "Observando as propriedades das imagens captadas acima". Reformulada para Fig. 6.8 e 6.9
