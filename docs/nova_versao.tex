@@ -72,7 +72,7 @@ Para realizar o cálculo da taxa de desmatamento, as imagens são selecionadas de 
     \label{fig:prodes_mosaico}
 \end{figure}
 
-Após a seleção das imagens, a próxima etapa envolve transformar seus dados radiométricos em componentes de cena (vegetação, solo e sombra), utilizando o Modelo Linear de Mistura Espectral (MLME) \cite{Monteiro2008}. As bandas 3, 4 e 5 do sensor TM são utilizadas para estimar a proporção dos componentes solo, vegetação e sombra para cada pixel, formando um sistema de equações lineares que pode ser solucionado pelo método dos mínimos quadrados ponderados. O resultado desse modelo linear é uma imagem fração, onde se tem três bandas sintéticas com os valores proporcionais de vegetação, solo e sombra. A segmentação\footnote{Segmentação de imagem é a subdivisão de uma imagem em regiões cujos \textit{pixels} possuam propriedades semelhantes \cite{Monteiro2008}.} da imagem fração é então realizada, ajustando-se os limiares de similaridades e de área.
+Após a seleção das imagens, a próxima etapa envolve transformar seus dados radiométricos em componentes de cena (vegetação, solo e sombra), utilizando o Modelo Linear de Mistura Espectral (MLME) \cite{Monteiro2008}. As bandas 3, 4 e 5 do sensor TM são utilizadas para estimar a proporção dos componentes solo, vegetação e sombra para cada pixel, formando um sistema de equações lineares que pode ser solucionado pelo método dos mínimos quadrados ponderados. O resultado desse modelo linear é uma imagem fração, onde se tem três bandas sintéticas com os valores proporcionais de vegetação, solo e sombra. A segmentação\footnote{Segmentação de imagem é a subdivisão de uma imagem em regiões cujos \textit{píxeis} possuam propriedades semelhantes \cite{Monteiro2008}.} da imagem fração é então realizada, ajustando-se os limiares de similaridades e de área.
 
 Um algoritmo de classificação não-supervisionado de agrupamentos de dados trata as imagens segmentadas, classificando-as de acordo com as classes definidas pelo banco de dados. Como resultado tem-se uma nova imagem \textit{raster}. Então, um fotointerprete tem a tarefa de analisar os polígonos temáticos gerados, tomando a decisão se esses devem ser aceitos ou reclassificados. Uma vez essa imagem aceita, uma máscara de desmatamento contendo as áreas de corte raso já detectados é gerada. Essa máscara será utilizada para eliminar desmatamentos antigos, impedindo que sejam identificados novamente.
 
@@ -96,7 +96,7 @@ As imagens utilizadas por esse sistema são obtidas pelo sensor MODIS (a bordo do
 
 A aquisição das imagens é feita de forma rápida, uma vez que que o DETER utiliza os produtos baseados em \textit{granules}\footnote{Granules são produtos gerados de uma área particular. Granules não cobrem todo o globo.} dos subconjuntos de resposta rápida da NASA. Esses dados encontram-se prontos\footnote{\url{https://earthdata.nasa.gov/data/near-real-time-data/rapid-response/}} para serem utilizados, pois já foram processados, disponibilizados em GeoTIFF, RGB equivalente, no formato de 8-bits e geograficamente projetados \cite{Nasa:swath:2015,Nasa:swath_landsat:2015}.
 
-Essas imagens são então carregadas no Sistema de Processamento de Informações Georreferenciadas (SPRING) para que outros processamentos sejam feitos. Nesta etapa, o especialista necessita aplicar um modelo de mistura para separar o que é floresta, solo ou água (ou sombra). Essa etapa é feita selecionando-se certos \textit{pixels} com uma resposta espectral particular. Então, cada imagem é segmentada e classificada. Após a classificação das imagens, o especialista aplica as máscaras dos desflorestamentos anteriores e de hidrografia, com a finalidade de esconder os desmatamentos já conhecidos assim como outras características.
+Essas imagens são então carregadas no Sistema de Processamento de Informações Georreferenciadas (SPRING) para que outros processamentos sejam feitos. Nesta etapa, o especialista necessita aplicar um modelo de mistura para separar o que é floresta, solo ou água (ou sombra). Essa etapa é feita selecionando-se certos \textit{píxeis} com uma resposta espectral particular. Então, cada imagem é segmentada e classificada. Após a classificação das imagens, o especialista aplica as máscaras dos desflorestamentos anteriores e de hidrografia, com a finalidade de esconder os desmatamentos já conhecidos assim como outras características.
 
 Na última etapa, o especialista corrige os resultados da segmentação automática, pixel a pixel. As vezes é possível que as etapas de classificação e segmentação possam ser colocados de lado, pois o especialista pode extrair todas as informações baseando-se apenas em sua experiência olhando para as imagens do satélite, munido dos arquivos geográficos de desflorestamento prévio e hidrografia.
 
@@ -117,7 +117,7 @@ Através do voluntariado de pessoas comuns, conhecidas como cientistas cidadãos, 
 
 Realizar pesquisas cientificas utilizando-se da colaboração de diversos indivíduos não é novidade, antigamente diversos cientistas realizavam suas pesquisas desta forma. Já no século XIX, Charles Darwin em "A Origem das Espécies" \citeonline{darwin-origin-of-species-1859} contou com a ajuda de mais de dois mil colaboradores e pesquisadores de diferentes áreas.  De acordo com o projeto \textit{Darwin Correspondences}\footnote{\url{http://www.darwinproject.ac.uk/}}, Darwin trocou mais de 7.500 das cartas com correspondentes durante sua pesquisa \cite{DarwinProject_Correspondents}. Os conteúdos destas cartas variavam de anotações científicas sobre algumas espécies, o que requeria um aparato profissional, até simples observações, que vieram a colaborar com teoria da evolução das espécies.
 
-Naquela época, as cartas demoravam meses para serem recebidas e lidas, o processo de responder uma carta e obter um novo retorno da mesma pessoa, chegava a levar anos para acontecer. A falta de infraestrutura e de tecnologias, tornavam a tarefa de entregar uma carta, que hoje em dia é simples e comum, um trabalho difícel e lento. Naquela época, o serviço de correspondência era feito por mensageiros a pé, a cavalo ou através de charretes, tendo navios à vela para transporte marítimo das correspondências. \citeonline{Hyde1891} relembra que para a determinada época, estes serviços eram caros e não acessível para todos, o que dificultava ainda mais o compartilhamento de ideias. Em 1840, com a grande reforma de postagem britânica, \textit{Uniform Penny Postage}\footnote{A reforma realizada pela \textit{Royal Mail} do Reino Unido cobrava apenas um \textit{Penny}, menor moeda do sistema monetário da época, para entregar as cartas indiferente da distância \cite{BritishPostalMuseum2015,Hyde1891}.}, houve uma maior difusão e uso dos serviços, elevando o envio de cartas de 82.500.000 para 169.000.000 em um ano, mais que o dobro \cite{Hyde1891}.
+Naquela época, as cartas demoravam meses para serem recebidas e lidas, o processo de responder uma carta e obter um novo retorno da mesma pessoa, chegava a levar anos para acontecer. A falta de infraestrutura e de tecnologias, tornavam a tarefa de entregar uma carta, que hoje em dia é simples e comum, um trabalho difícil e lento. Naquela época, o serviço de correspondência era feito por mensageiros a pé, a cavalo ou através de charretes, tendo navios à vela para transporte marítimo das correspondências. \citeonline{Hyde1891} relembra que para a determinada época, estes serviços eram caros e não acessível para todos, o que dificultava ainda mais o compartilhamento de ideias. Em 1840, com a grande reforma de postagem britânica, \textit{Uniform Penny Postage}\footnote{A reforma realizada pela \textit{Royal Mail} do Reino Unido cobrava apenas um \textit{Penny}, menor moeda do sistema monetário da época, para entregar as cartas indiferente da distância \cite{BritishPostalMuseum2015,Hyde1891}.}, houve uma maior difusão e uso dos serviços, elevando o envio de cartas de 82.500.000 para 169.000.000 em um ano, mais que o dobro \cite{Hyde1891}.
 
 \citeonline{Zimmer2011}, comenta que um projeto de ciência cidadã como o Evolution MegaLab \cite{Silvertown2011} seria possivelmente uma das formas de Darwin fazer ciência hoje. Neste projeto, mudanças evolucionárias são observadas em tempo real por diversos colaboradores, que coletam e enviam informações sobre as cores das cascas de duas espécies de caramujos, \textit{Cepaea nemoralis} e \textit{C. hortensis}.
 
@@ -154,7 +154,7 @@ Recentemente, o número de projetos que se beneficiam de ciência cidadã está aume
 
 Na década de 80, a internet ainda era apenas um embrião e poucos tinham acesso à rede. Existiam menos de 200.000 servidores espalhados no mundo. Até então não existiam páginas para serem navegadas, a principal forma de troca de mensagem era através de e-mail, criado em 1977 \cite{HistoryOfInternet:David,HistoryOfInternet:Anthony}, outros meios eram por TELNET e IRC, apenas. Só no início da década de 90 que as primeiras páginas de internet foram criadas, após a definição do \textit{WWW}\footnote{World Wide Web} criado por \citeonline{berners1992world}. A internet estava tornando-se popular, com seus aproximados 1 milhão de servidores e suas 50 páginas de internet \cite{HistoryOfInternet:Anthony}.
 
-Com a popularização da internet, iniciou-se a aparição de projetos notáveis da ciência cidadã moderna. Os computadores da época eram caros e possuíam pouco poder computacional, apenas grandes indústrias e universidades tinham acesso a máquinas de grande desempenho. Neste período, surgiram os primeiros projetos de computação voluntária, onde os voluntários doavam o tempo de processamento ocioso de suas máquinas a projetos que necessitavam de grande poder computacional para trabalhar em cima dos seus dados. O conceito desta forma de projeto era de dividir a grande massa de dados existente em pequenas porções que fossem possíveis para os voluntários efetuar downloads, visto que naquela época não havia internet de banda larga. A forma de conexão à internet ainda era discada e o modem mais rápido deste período era o de 56 Kbps\footnote{56 kilobits por segundo} \cite{AndersonCKLW02}.
+Com a popularização da internet, iniciou-se a aparição de projetos notáveis da ciência cidadã moderna. Os computadores da época eram caros e possuíam pouco poder computacional, apenas grandes indústrias e universidades tinham acesso a máquinas de grande desempenho. Neste período, surgiram os primeiros projetos de computação voluntária, onde os voluntários doavam o tempo de processamento ocioso de suas máquinas a projetos que necessitavam de grande poder computacional para trabalhar em cima dos seus dados. O conceito desta forma de projeto era de dividir a grande massa de dados existente em pequenas porções que fossem possíveis para os voluntários efetuar downloads, visto que naquela época não havia internet de banda larga. A forma de conexão à internet ainda era discada e o modem mais rápido deste período era o de 56 Kbps\footnote{56 \textit{kilobits} por segundo} \cite{AndersonCKLW02}.
 
 No meio da década de 90, surgiram os projetos \textbf{\textit{GIMPS}}\footnote{\textit{\url{http://www.mersenne.org/}-Great Internet Mersenne Prime Search}} e \textbf{\textit{Distributed.net}}\footnote{http://www.distributed.net/}\cite{Anderson1999,AndersonCKLW02,Hayes1998}.
 
@@ -162,7 +162,7 @@ No meio da década de 90, surgiram os projetos \textbf{\textit{GIMPS}}\footnote{\
 
 A \textit{Distributed.net}, lançado em 1997, tinha o principal objetivo de quebrar a criptografia gerada pela empresa RSA, para o desafio \textit{RSA Secret-Key Challenge} que correspondia a uma chave de 56-bit e possuía uma recompensa de $10.000,00$ dólares. O projeto criado por Earle Ady e Christopher G. Stach II, contava com a colaboração de mais de $300.000$ voluntários utilizando o tempo de seus computadores realizando um ataque de Força Bruta\footnote{Força Bruta é a forma de tentar obter a a resposta de uma senha através de inúmeras tentativas.} em cima de parte do código disponibilizado para o desafio. Em 250 dias a chave foi descoberta, utilizando um poder computacional equivalente a 26 mil \textit{Pentium} 200 MHz. Outro desafio com uma chave de 64-bit também foi concluído após 4 anos e o prêmio pago. A empresa de segurança RSA, havia dito que para quebrar uma chave de 64-bit, seria necessário mais de 100 anos testando todas as possibilidades e combinações. Atualmente o projeto está focado em quebrar uma chave de 72-bit \cite{distributed.net:online,Distributed.net:wired}.
 
-Em 1999, \citeonline{AndersonCKLW02} iniciou um dos primeiros e mais bem sucedido projeto de ciência cidadã. O objetivo deste projeto era de encontrar vida inteligente no espaço, através da análise de sinais de rádios captadas do espaço, \textit{SETI@Home}. Porém para conseguir analisar esses sinais, o projeto contou com o uso de diferentes computadores, espalhados pela internet formando um grande sistema destribuído de processamento. Os voluntários que se cadastravam no sítio podiam fazer download de um aplicativo que só era ativado quado o computador estava em modo ocioso. O aplicativo recebia pacotes de sinais a serem analisados e no fim do processamento enviava os resultados obtidos ao servidor do projeto.
+Em 1999, \citeonline{AndersonCKLW02} iniciou um dos primeiros e mais bem sucedido projeto de ciência cidadã. O objetivo deste projeto era de encontrar vida inteligente no espaço, através da análise de sinais de rádios captadas do espaço, \textit{SETI@Home}. Porém para conseguir analisar esses sinais, o projeto contou com o uso de diferentes computadores, espalhados pela internet formando um grande sistema distribuído de processamento. Os voluntários que se cadastravam no sítio podiam fazer download de um aplicativo que só era ativado quado o computador estava em modo ocioso. O aplicativo recebia pacotes de sinais a serem analisados e no fim do processamento enviava os resultados obtidos ao servidor do projeto.
 
 \section{Pensamento Voluntário}
 \label{ch:pensamnto_voluntario}
@@ -256,10 +256,9 @@ Por anos a comunidade acadêmica e industrial vem debatendo o uso de dispositivos
 
 \chapter{ForestWatchers}
 \label{ch:forestwatchers}
-Em uma carta enviada a revista Nature\footnote{\url{http://www.nature.com/}} no ano de 2005, \citeonline{Ramos2005} argumenta se a iniciativa de um novo sistema de monitoramento não está próxima. Um sistema que utilize tecnologias de computação distribuída aplicado a catalogos de imagens da Terra de acesso livre com alta resolução, seria possível monitorar partes da floresta mundial usando o engajamento de voluntários e a Internet.
-% Your News in Brief story “Enthusiast uses Google to reveal Roman ruins” (Nature 437, 307; 2005) made me wonder whether the time for a new conservationism is not already on the horizon. A time when the convergence of imaging and grid computing technologies, together with a policy of free access to catalogues of high-resolution Earth imagery, will make it possible to monitor selected patches of forest across the globe using the Internet.
+Em uma carta enviada a revista Nature\footnote{\url{http://www.nature.com/}} no ano de 2005, \citeonline{Ramos2005} argumenta se a iniciativa de um novo sistema de monitoramento não está próxima. Um sistema que utilize tecnologias de computação distribuída aplicado a catálogos de imagens da Terra de acesso livre com alta resolução, seria possível monitorar partes da floresta mundial usando o engajamento de voluntários e a Internet.
 
-Assim com base nesta ideia o projeto ForestWatchers (\url{http://www.forestwatchers.net}) foi criado. O projeto  propõe o desenvolvimento e o lançamento de uma iniciativa de ciência cidadã com o objetivo de involver e integrar cidadãos ao redor do planeta na tarefa de monitorar o desmatamento das florestas tropicais \cite{ForestWatchersDesc}. Estes cidadãos poderão de suas casas, por meio de uma interface \textit{Web}, inspecionar imagens recentes de satélite de áreas de florestas. Estas podem ser de uma reserva indígena na Amazônia, uma floresta nacional em Bornéu ou um parque em Queensland.
+Assim com base nesta ideia o projeto ForestWatchers (\url{http://www.forestwatchers.net}) foi criado. O projeto  propõe o desenvolvimento e o lançamento de uma iniciativa de ciência cidadã com o objetivo de envolver e integrar cidadãos ao redor do planeta na tarefa de monitorar o desmatamento das florestas tropicais \cite{ForestWatchersDesc}. Estes cidadãos poderão de suas casas, por meio de uma interface \textit{Web}, inspecionar imagens recentes de satélite de áreas de florestas. Estas podem ser de uma reserva indígena na Amazônia, uma floresta nacional em Bornéu ou um parque em Queensland.
 
 As imagens são então classificadas em áreas de floresta ou não-floresta, por meio de um algoritmo de classificação supervisionado pelos voluntários na \textit{Web}. Conforme mencionado por \citeonline{Ipeirotis2010}, erros e até mesmo fraude podem ser automaticamente tratados pela redundância do sistema. Para isso, é necessário atrair e manter um grande número de voluntários \cite{Soares:2011:EmCiSc}. Estima-se que cem mil voluntários analisando uma área de 100.000 hectares cada, com um fator de redundância de 20, podem examinar uma área de 500 milhões de hectares, cerca de 40\% a 50\% da área estimada das florestas tropicais do mundo \cite{ForestWatchersDesc}.
 
@@ -272,7 +271,7 @@ A seguir, será discutida a metodologia empregada no projeto.
 
 A metodologia usada neste projeto é inspirada no bem-sucedido programa de detecção de desflorestamento DETER do INPE. Assim, como no sistema DETER, o projeto ForestWatchers também utiliza imagens do sensor MODIS, com resolução de $250$ metros (porém qualquer outro sensor de satélite que forneça suas imagens gratuitamente pode ser utilizado).
 
-Atualmente, são utilizadas imagens disponíveis no catálogo\footnote{\url{https://earthdata.nasa.gov/earth-observation-data/near-real-time/rapid-response/modis-subsets}} gratuíto de imagens da Terra oferecido pela NASA. Estas imagens são disponíveis nos formatos \textit{GeoTIFFs}, \textit{JPEGs} ou \textit{KMZ}, para RGB Cores Verdadeiras (\textit{True-Color RGB}). O sítio eletrônico também disponibiliza as imagens em outras bandas, possibilitando perceber diferentes características. Porém, para que essas imagens possam ser exibidas para os voluntários é necessário que um pré-processamento seja realizado.
+Atualmente, são utilizadas imagens disponíveis no catálogo\footnote{\url{https://earthdata.nasa.gov/earth-observation-data/near-real-time/rapid-response/modis-subsets}} gratuito de imagens da Terra oferecido pela NASA. Estas imagens são disponíveis nos formatos \textit{GeoTIFF}, \textit{JPEG} ou \textit{KMZ}, para RGB Cores Verdadeiras (\textit{True-Color RGB}). O sítio eletrônico também disponibiliza as imagens em outras bandas, possibilitando perceber diferentes características. Porém, para que essas imagens possam ser exibidas para os voluntários é necessário que um pré-processamento seja realizado.
 
 Um diagrama ilustrativo da metodologia utilizada pelo projeto ForestWatchers pode ser visto na Figura \ref{fig:estrutura_atual}.
 \begin{figure}[htb]
@@ -286,9 +285,9 @@ Conforme a área do escopo do projeto, são selecionadas as imagens do catálogo da
 
 Assim, essa imagem pode ser enviada para um servidor que irá gerenciar as imagens as serem disponíveis em um software de Sistema de Informação Geográfica - SIG. O ForestWatchers utiliza o programa MapServer\footnote{\url{http://www.mapserver.org}} para mapas SIG, responsável por tratar as requisições de inserção e seleção das imagens georreferenciadas, e de retornar apenas parte da imagem desejada na forma de \textit{tiles}. Todos os arquivos relacionados à imagem têm suas informações extraídas no formato GeoJSON\footnote{\textit{Geographic JavaScript Object Notation} é um formato para codificar variados tipos de estruturas geográficas (Linhas, Pontos e Polígonos) utilizando a linguagem JavaScript.}, para facilitar a comunicação entre os outros módulos.
 
-Um algoritmo de classificação automática de Rede Neural Artificial - RNA (em desenvolvimento contínuo) é responsável por segmentar as imagens, classificando-as como áreas de floresta e de não-floresta. Cada imagem resultada da classificação automáticas são subdivididas em imagens menores, que serão apresentadas aos voluntários como tarefas. As tarefas que serão apresentadas aos voluntários tem o intúito de corrigir ou validar a classificação automática da RNA, o programa \citeonline{PyBossa2013} utilizado para gerenciar a criação e distribuição das tarefas automaticamente, conforme necessário.
+Um algoritmo de classificação automática de Rede Neural Artificial - RNA (em desenvolvimento contínuo) é responsável por segmentar as imagens, classificando-as como áreas de floresta e de não-floresta. Cada imagem resultada da classificação automáticas são subdivididas em imagens menores, que serão apresentadas aos voluntários como tarefas. As tarefas que serão apresentadas aos voluntários tem o intuito de corrigir ou validar a classificação automática da RNA, o programa \citeonline{PyBossa2013} utilizado para gerenciar a criação e distribuição das tarefas automaticamente, conforme necessário.
 
-Esse é um sistema livre que permite criar e gerenciar projetos tais como classificação de imagem, transcrição e geo-codificação, que envolve tarefas de classificação supervisionada. Este é baseado no \citeonline{Boinc2008} criado por David P. Anderson, mesmo criador do projeto SETI@Home. A principal vantagem desta nova implementação em relação ao sistema original é o uso de uma \textit{API}\footnote{\textit{Application Programming Interface} (API) é um protocolo com o objetivo de servir como interface para os componentes de softwares, permitindo comunicarem entre si.} \textit{REST}\footnote{\textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional \cite{Richardson2008}}.
+Esse é um sistema livre que permite criar e gerenciar projetos tais como classificação de imagem, transcrição e geo codificação, que envolve tarefas de classificação supervisionada. Este é baseado no \citeonline{Boinc2008} criado por David P. Anderson, mesmo criador do projeto SETI@Home. A principal vantagem desta nova implementação em relação ao sistema original é o uso de uma \textit{API}\footnote{\textit{Application Programming Interface} (API) é um protocolo com o objetivo de servir como interface para os componentes de softwares, permitindo comunicarem entre si.} \textit{REST}\footnote{\textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional \cite{Richardson2008}}.
 
 Após a criação das tarefas, os voluntários podem classificar as imagens de forma ordenada. O \citeonline{PyBossa2013} ainda pode ser configurado para agir como um sistema de redundância de tarefas, podendo enviar a mesma tarefa para diferentes voluntários mais de uma vez, garantindo assim um aumento na confiabilidade dos resultados classificados pelos voluntários \cite{Ipeirotis2010}. A utilização de tarefas redundantes em projetos de ciência cidadã é uma das formas de aumentar a confiabilidade nos dados reportados.
 
@@ -297,7 +296,7 @@ Ao final das classificações das tarefas realizadas pelos voluntários, os resulta
 \chapter{Metodologia}
 \label{ch:metodologia}
 
-O conceito de um módulo de sensoriamento voluntário consiste basicamente de \textbf{(a)} um dispositivo capaz de coletar dados, aasociado a uma \textbf{(b)} estrutura de recebimento e armazenamento, e a \textbf{(c)} um sistema de visualização dos dados obtidos \cite{VolunteerSensing2011,Gouveia2008}.
+O conceito de um módulo de sensoriamento voluntário consiste basicamente de \textbf{(a)} um dispositivo capaz de coletar dados, associado a uma \textbf{(b)} estrutura de recebimento e armazenamento, e a \textbf{(c)} um sistema de visualização dos dados obtidos \cite{VolunteerSensing2011,Gouveia2008}.
 
 Para o teste deste conceito o seguinte módulo foi construído em duas etapas. Primeiramente, um aplicativo híbrido, utilizado pelos voluntários para enviarem os dados coletados a partir de um dispositivo móvel, foi desenvolvido. Em seguida, implementou-se uma infraestrutura tecnológica de camadas, divida em camada de recebimento, camada de armazenamento, camada de processamento e camada de visualização dos dados.
 
@@ -334,7 +333,7 @@ Na Tabela \ref{tab:tabela_custo}, as plataformas mostradas são referentes a pesq
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-\subsection{Aplicativo de Biblioteca Nativa} % (fold)
+\subsection{Aplicativo de Biblioteca Nativa}
 \label{ssub:aplicativo_com_biblioteca_nativa}
 
 O primeiro aplicativo desenvolvido como protótipo foi criado para a plataforma Windows Phone da Microsoft dada a disponibilidade de um \textit{smartphone} moderno, o Nokia Lumia 800, lançado no final de 2011\footnote{\url{http://www.gsmarena.com/nokia_lumia_800-4240.php}}. Este aparelho possui sensores de localização (GPS assistido), acelerômetro, bússola, proximidade, câmera de 8 megapixel com georreferenciamento, dentre outros. Um sensor de localização GPS assistido tem a inicialização do seu serviço mais rápido do que um GPS convencional, pois pode utilizar informações de redes \textit{wireless} ou 3G para obter um melhor posicionamento inicial. Acelerômetros permitem monitorar a inclinação do aparelho nos eixos X, Y e Z, fornecendo assim qual a posição do celular ao capturar uma imagem. Câmeras com a habilidade de georreferenciamento permitem incluir informações geográficas no cabeçalho de uma imagem, vídeo ou áudio, assim que estes são capturados. Este cabeçalho pode posteriormente ser lido e compreendido por outros softwares através do padrão \textit{Exchangeable Image File Format} (EXIF) \cite{JEITA2002}.
@@ -358,7 +357,7 @@ Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o s
     \item \textbf{Múltiplas Plataformas}. Aplicativos desenvolvidos para uma única plataforma atrairão menos voluntários do que aplicativos desenvolvidos para mais de uma plataforma. Este é o ponto crítico para o desenvolvimento de aplicativos de sensoriamento voluntário.
 \end{itemize}
 
-\subsection{Aplicativo de Sistema Pronto} % (fold)
+\subsection{Aplicativo de Sistema Pronto}
 \label{ssub:aplicativo_de_sistema_pronto}
 
 {\centering
@@ -392,7 +391,7 @@ Alguns problemas foram detectados no uso deste protótipo, o que inviabilizou o s
                                 Rótulo. Exibição do texto como rótulo.
                                 Obrigatório. O usuário deve informar este dado.
                                 Decimal. Permitindo casas decimais.
-                                Integer. Permitindo somente entrada de números inteiros.
+                                Inteiro. Permitindo somente entrada de números inteiros.
                                 Valor Máximo. Valor máximo permitido para este campo.
                                 Valor Mínimo. Valor mínimo permitido para este campo.
                                 Padrão. Valor padrão a ser especificado ao preencher o campo.
@@ -536,7 +535,7 @@ O administrador do projeto pode verificar os dados online (Figura \ref{fig:epico
 
 Apesar de apresentar melhores soluções para coletar diferentes tipos de dados, o EpiCollect+ possui apenas aplicativos para a plataforma Android. Assim como EpiCollect+, o Sensr tem a mesma função de criar formulários online e através do seu aplicativo utilizá-los como ferramenta de pesquisa. Porém, assim como EpiCollect+, trabalha com uma única plataforma, o iOS.
 
-\subsection{Aplicativo de Biblioteca Híbrida} % (fold)
+\subsection{Aplicativo de Biblioteca Híbrida}
 \label{ssub:aplicativo_com_biblioteca_hibrida}
 
 Em 1991 o primeiro sítio eletrônico foi criado, feito realizado por Berners-Lee em 1991 \cite{berners1992world}. Estima-se que em setembro de 2014 o número de sítios existentes chegou a marca de 1 bilhão \cite{InternetLiveStats:2015}.
@@ -549,7 +548,7 @@ O desenvolvimento de aplicativos utilizando bibliotecas nativas são mais comuns,
 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/developerforce_chart.png} %8.5
+\includegraphics[keepaspectratio,width=0.7\textwidth]{figuras/developerforce_chart.png}
 \end{center}
 \caption{Aplicativos móveis podem ser desenvolvidos de três formas: com biblioteca Nativa (plataforma única); HTML5 (multiplataforma e capacidade parcial); e Híbrida (multiplataforma e capacidade total).}
 \FONTE{\citeonline{Korf2013}}
@@ -572,13 +571,13 @@ Na sua versão mais atual, PhoneGap 4.0.0, existem mais de nove plataformas supor
 
 Estes plugins permitem que apenas as funcionalidades desejadas sejam integradas ao aplicativo. Desta forma é possível manter o desenvolvimento de uma aplicação modular, tendo diversos plugins em diversas aplicações cada qual com diferentes versões. Portanto, não há mais a necessidade de atualizar todo o conjunto, apenas atualizar o plugin necessário e para a versão necessária.
 
-Um plugin refere-se a uma funcionalidade específica do dispositivo a ser encapsulado por um código Javascript para sua utilização pelo framework PhoneGap. Em termos de Programação Orientada a Objetos, a biblioteca Javascript deste framework tem a funcionalidade de uma interface, na qual são definidas as chamadas aos métodos que serão utilizados. A implementação destas funcionalidades é feita a nível de plataforma, de modo a obter a funcionalidade desejada pela interface que a invocou, Figura \ref{fig:phonegap_layers}.
+Um plugin refere-se a uma funcionalidade específica do dispositivo a ser encapsulado por um código JavaScript para sua utilização pelo framework PhoneGap. Em termos de Programação Orientada a Objetos, a biblioteca JavaScript deste framework tem a funcionalidade de uma interface, na qual são definidas as chamadas aos métodos que serão utilizados. A implementação destas funcionalidades é feita a nível de plataforma, de modo a obter a funcionalidade desejada pela interface que a invocou, Figura \ref{fig:phonegap_layers}.
 
 \begin{figure}[htb]
 \begin{center}
 \includegraphics[scale=0.8]{figuras/layers.png}
 \end{center}
-\caption{A partir da versão 3.0, o framework PhoneGap vem utilizando plugins para adicionar diversas funcionalidades aos aplicativos. A camada de visualização é composta por HTML5 e CSS, enquanto a camada lógica é composta pelo Javascript do framework \cite{PhoneGap:CommandLine:2015}.}
+\caption{A partir da versão 3.0, o framework PhoneGap vem utilizando plugins para adicionar diversas funcionalidades aos aplicativos. A camada de visualização é composta por HTML5 e CSS, enquanto a camada lógica é composta pelo JavaScript do framework \cite{PhoneGap:CommandLine:2015}.}
 \label{fig:phonegap_layers}
 \end{figure}
 
@@ -628,7 +627,7 @@ Os dados captados por este aplicativo são em geral dados dos sensores de localiz
 \small
 \caption{Sumário dos Dados Gravados pelo Aplicativo}
 \label{tab:dados_captados}
-\resizebox{\textwidth}{!}{%
+\resizebox{\textwidth}{!}{
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Contexto}    & \textbf{Propriedade} & \textbf{Descrição}                         \\ \midrule
@@ -662,9 +661,8 @@ Os dados captados por este aplicativo são em geral dados dos sensores de localiz
 A sincronização dos dados entre dispositivo e servidor não precisa ocorrer ao mesmo tempo em que as entradas são captadas já que muitas vezes quem irá utilizar o aplicativo estará em lugares remotos. Neste caso, as informações captadas são mantidas apenas no dispositivo para uma sincronização futura e de preferência através de WiFi, uma vez que arquivos de vídeos podem ser bem maiores do que uma foto.
 
 O conjunto de entradas é armazenado no dispositivo através do plugin de armazenamento interno, que permite persistir objetos no formato JSON. Estes dados permanecerão no dispositivo até que o usuário escolha a opção de remover as entradas, caso este já tenha sincronizado os dados com o servidor. A estrutura de uma única entrada é exibida no Código \ref{json:estrutura_imagem} do Apêndice A.
-% \ref{apendice1}.
 
-\section{Infraestrutura Tecnológica} % (fold)
+\section{Infraestrutura Tecnológica} 
 \label{sub:infraestrutura_tecnologica}
 
 A infraestrutura para receber, armazenar e exibir os dados coletados pelos voluntários baseou-se em tecnologias de código aberto. A finalidade é obter-se uma plataforma de distribuição livre juntamente com seu código fonte, podendo ser enriquecido por outros trabalhos.
@@ -678,7 +676,7 @@ A Figura \ref{fig:ArquiteturaServidores} ilustra a infraestrutura que foi criada
 \label{fig:ArquiteturaServidores}
 \end{figure}
 
-\subsection{Servidor para Internet} % (fold)
+\subsection{Servidor para Internet} 
 \label{sub:servidor_web}
 
 Duas são as principais tecnologias por trás deste projeto. A primeira, o aplicativo para dispositivos móveis, é responsável por coletar os dados dos voluntários; a segunda, o servidor para internet, recebe os dados coletados pelos voluntários, armazena-os adequadamente e exibe-os quando solicitado.
@@ -687,7 +685,7 @@ Para a construção da aplicação web, foi utilizado um \textit{framework} criado e
 
 Utilizando Flask foi possível desenvolver um servidor \textit{back-end} responsável por receber os dados enviados pelos voluntários e ao mesmo tempo um servidor \textit{front-end} responsável por mostrar os dados recebidos no formato de uma página web, a interface da plataforma.
 
-\subsubsection{Back-End} % (fold)
+\subsubsection{Back-End} 
 \label{ssub:back_end}
 
 O principal meio de comunicação com servidores web é através do protocolo \textit{Hypertext Transfer Protocol} (HTTP), em português Protocolo de Transferência de Hipertexto. Este funciona por meio de requisição e resposta, como cliente e servidor. Um usuário que deseja visualizar uma página da internet faz uma requisição ao servidor para obter o conteúdo desejado, de forma automática através do navegador.
@@ -736,9 +734,9 @@ DELETE      & \begin{tabular}[t]{@{}l@{}}Remover a informação\\  de um recurso\e
 
 Um serviço web REST permite envio de arquivos para o servidor de três formas:
 \begin{enumerate}
-    \item Utilização de Base64, onde o arquivo é codificado para uma string de 64 caracteres para ser enviado na requisição.
+    \item Utilização de Base64, onde o arquivo é codificado para uma \textit{strings} de 64 caracteres para ser enviado na requisição.
     \item \textit{multipart/form-data} e \textit{metadata}. Utilizar um formulário, \textit{FormData}\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/Guide/Using_FormData_Objects}}, para enviar apenas os arquivos necessários e aguardar o retorno URI deste arquivo gerado e utilizar o método \textit{PUT} para atualizar as informações deste.
-    \item \textit{metatada} e \textit{multipart/form-data}. Método semelhante ao mencionado acima, porém primeiro é enviado as informações do arquivo e um URI é aguardado, uma veste este retornado o arquivo é encaminhado com a identificação do URI.
+    \item \textit{metadata} e \textit{multipart/form-data}. Método semelhante ao mencionado acima, porém primeiro é enviado as informações do arquivo e um URI é aguardado, uma veste este retornado o arquivo é encaminhado com a identificação do URI.
 \end{enumerate}
 
 Apesar destas 3 formas estarem corretas tratando-se de uma arquitetura REST, elas apresentam algumas desvantagens. A primeira aumenta o tamanho do arquivo a ser trafegado pela rede, aumento que pode chegar a mais 33\% do tamanho original. A segunda e terceira esperam um retorno do servidor para continuar o envio, o que eleva a quantidade de transferências necessárias.
@@ -805,15 +803,7 @@ Para o desenvolvimento desta página foi utilizado os \textit{frameworks} Twitter
 \small
 \caption{Componentes Utilizado na Interface Gráfica.}
 \label{tab:front_frameworks}
-% \begin{tabular}{@{}ll@{}}
-% \toprule
-% Framework            & Descrição                                                                                                                                                                                                                                                                                                                                                                                                              \\ \midrule
-% Twitter Bootstrap   & \begin{tabular}[t]{@{}l@{}}O Twitter Bootstrap é um \textit{framework} para desenvolvimento de \\interface gráfica permite novas criações de forma rápida e simples. \\Conhecido por permitir um desenvolvimento rápido para dispositivos \\móveis, o Bootstrap, possui diversas funcionalidades que são acessados \\através da utilização de JavaScript com CSS.\\ Endereço \url{http://getbootstrap.com} \\ \linebreak \end{tabular} \\
-% OpenLayers2         & \begin{tabular}[t]{@{}l@{}}Um dos primeiros e mais utilizados \textit{frameworks} para exibição de \\dados geográficos, o OpenLayers, possui diversas funcionalidades \\para mostrar gráficos em uma página HTML.\\ Endereço\url{http://openlayers.org/two} \\  \linebreak \end{tabular} \\
-% jQuery                   & \begin{tabular}[t]{@{}l@{}}Diversas funcionalidades do JavaScript são encapsuladas através deste \\framework tornando o desenvolvimento de páginas dinâmicas mais \\simples. O jQuery permite fazer chamadas XMLHttpRequest (XHR) \\de forma fácil, essas chamadas características de páginas dinâmicas, \\permitem carregar conteúdos de servidores remotos e atualizar a página \\em exibição.\\ Endereço \url{http://jquery.com} \\ \linebreak \end{tabular} \\
-% Sly                        & \begin{tabular}[t]{@{}l@{}}Sly, este é um framework para a exibição de imagens em miniaturas onde \\o usuário pode, com o mouse ou com o movimento das mãos, mover as \\imagens de forma dinâmica.\\ Endereço \url{http://darsa.in/sly} \\ \linebreak \end{tabular} \\
-% MapServer             & \begin{tabular}[t]{@{}l@{}}O MapServer é um servidor de mapas que permite distribuir dados espaciais \\de forma que estes possam ser renderizados por outros serviços, seguindo \\padrões geográficos como GML, GeoJSON e outros. \\ Endereço \url{http://mapserver.org}  \end{tabular}
-% \end{tabular}
+
 \begin{tabular}{| p{2.5cm} | p{12cm} |}
 \hline
 Framework            & Descrição \\ \hline
@@ -840,11 +830,8 @@ Quando a página é exibida, as camadas encontradas disponíveis no servidor local 
 
 Por fim, a Tabela \ref{tab:sumarizacao} faz um breve resumo dos componentes utilizados no desenvolvimento deste projeto descritos nesta seção. Apesar de haver diversos outros componentes com funcionalidades semelhantes a alguns dos componentes selecionados, estes não foram considerados neste trabalho devido à preferência por manter a compatibilidade com outros componentes já em utilização pelo projeto ForestWatchers, como PostgreSQL e MapServer.
 
-% Por fim, a Tabela \ref{tab:sumarizacao} faz uma breve sumarização dos componentes utilizados no desenvolvimento deste projeto descritos nesta seção. Apesar de haver diversos outros componentes com funcionalidades semelhantes a alguns dos componentes selecionados, porém não comparado neste trabalho, devido a preferência de manter compatibilidade com outros componentes já em utilização pelo projeto ForestWatchers, como PostgreSQL e MapServer.
-
 \begin{table}[h]
 \centering
-% \small
 \caption{Sumarização dos componentes utilizados.}
 \label{tab:sumarizacao}
 \resizebox{\textwidth}{!}{%
@@ -858,7 +845,7 @@ Por fim, a Tabela \ref{tab:sumarizacao} faz um breve resumo dos componentes util
                                                                                                & Aplicativo Nativo:                                                                                                 & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
                                                                                                & Desenvolvido para Windows Phone                                                                                    & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\ \cline{2-4}
                                                                                                & Aplicativo Híbrido:                                                                                                & \multicolumn{1}{l|}{}                                      &                                                                                                                                                                                                              \\
-                                                                                               & \begin{tabular}[c]{@{}l@{}}Desenvolvido com PhoneGap,\\ jQueryMobile, Knockout.js\end{tabular}                     & X                                                          & \begin{tabular}[c]{@{}l@{}}Desenvolvimento baseado em \\ Web (HTML5, CSS, Javascript) \\ e disponível para um grande \\ número de plataformas.\end{tabular}                                                  \\ \hline
+                                                                                               & \begin{tabular}[c]{@{}l@{}}Desenvolvido com PhoneGap,\\ jQueryMobile, KnockoutJS \end{tabular}                     & X                                                          & \begin{tabular}[c]{@{}l@{}}Desenvolvimento baseado em \\ Web (HTML5, CSS, JavaScript) \\ e disponível para um grande \\ número de plataformas.\end{tabular}                                                  \\ \hline
 \multirow{9}{*}{\begin{tabular}[c]{@{}c@{}}Servidor \\ para \\ Internet\end{tabular}}          & Back-End:                                                                                                          &                                                            &                                                                                                                                                                                                              \\
                                                                                                & PostgreSQL                                                                                                         & X                                                          & \begin{tabular}[c]{@{}l@{}}Banco de dados escolhido por\\ ser parte integrante do componente\\ PyBossa, assim não tendo necessidade\\ de instalar diferentes softwares com\\ o mesmo propósito.\end{tabular} \\ \cline{2-4}
                                                                                                & Flask                                                                                                              & X                                                          & \begin{tabular}[c]{@{}l@{}}Servidor Web escolhido por\\ ser parte integrante do componente\\ PyBossa, assim não tendo necessidade\\ de instalar diferentes softwares com\\ o mesmo propósito.\end{tabular}   \\ \cline{2-4}
@@ -879,12 +866,9 @@ Por fim, a Tabela \ref{tab:sumarizacao} faz um breve resumo dos componentes util
 \chapter{Teste do Módulo de SV}
 \label{ch:resultados}
 
-% Of course you can use these images.  These are with Eliana, in the lab of Sidneis students.  These are actually products purchased and processed by the Sectretaria de Meio Ambiente (SEMA) do Estado do Pará.  They are made available to research institutions, for educational purposes.  Please use and if you published anything, please cite and thank SEMA and the Government of Pará.  Thats it!
-%  http://www.sema.pa.gov.br/2010/02/09/8665/
-
 A área utilizada para testar o módulo de SV desenvolvido nesta dissertação (Figura \ref{fig:para_exported}) faz parte da Floresta dos Tapajós, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, PA, dentro portanto da Amazônia Legal. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas \cite{LongoReDeBeRiMe:2012:PhChPa}.
 
-A visita a esta área só foi possível por uma oportunidade oferecida pelo Departamento de Processamento de Imagen (DPI) do INPE, que precisavam georreferenciar alguns pontos de interesse (POI) com alta precisão e coletar alguns dados sobre a área, como exemplo o tipo de vegetação existente em um determinado local. Assim, alguns alunos de mestrado e doutorado puderam se beneficiar com uma viagem para validar seus estudos, em contrapartida poderiam auxiliar na capturas de novos POI e coletar dados da área. Para a captura das informações das áreas para o DPI do INPE, eram utilizadas formulários impressos, classificando os aspectos do local. Utilizando-se de uma câmera fotográfica com GPS interno, imagens georreferenciadas eram capturadas e anotadas junto ao formulário, uma bússola também era utilizada para capturar o sentido em que a foto fora capturada e sua informação escrita no formulário.
+A visita a esta área só foi possível por uma oportunidade oferecida pelo Departamento de Processamento de Imagem (DPI) do INPE, que precisavam georreferenciar alguns pontos de interesse (POI) com alta precisão e coletar alguns dados sobre a área, como exemplo o tipo de vegetação existente em um determinado local. Assim, alguns alunos de mestrado e doutorado puderam se beneficiar com uma viagem para validar seus estudos, em contrapartida poderiam auxiliar na capturas de novos POI e coletar dados da área. Para a captura das informações das áreas para o DPI do INPE, eram utilizadas formulários impressos, classificando os aspectos do local. Utilizando-se de uma câmera fotográfica com GPS interno, imagens georreferenciadas eram capturadas e anotadas junto ao formulário, uma bússola também era utilizada para capturar o sentido em que a foto fora capturada e sua informação escrita no formulário.
 
 Para o teste do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios de algum interesse ao projeto FW, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem apresentar diferentes formas em uma imagem de satélite de baixa resolução espacial tipo MODIS, sendo muitas vezes imperceptível do espaço. Com as fotos obtidas em \textit{in-situ} pelos voluntários é possível complementar e mesmo corrigir os mapas de desmatamento gerados pelos voluntários que apenas têm acesso a imagens de satélite.
 
@@ -905,7 +889,6 @@ A Figura \ref{fig:mapa_fullscreen} ilustra a interface desenvolvida neste trabal
 
 \begin{figure}[h]
 \centering
-% \includegraphics[width=0.9\textwidth]{figuras/resultados/mapa_fullscreen.png}
 \includegraphics[width=0.9\textwidth]{figuras/resultados/full_map_with_menus.png}
 \caption{Interface gráfica \textit{(front-end)} desenvolvido para a exibição dos dados coletados pelos voluntários.}
 \label{fig:mapa_fullscreen}
@@ -925,17 +908,9 @@ Esta pequena janela é comum para os demais recursos (áudios, vídeos e imagens), 
 
 O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido gratuitamente pelo projeto OpenStreetMaps, comentado na Seção \ref{ch:informacao_geografica_voluntariada}. Porém, a interface permite alternar a exibição dos mapas de fundo através da seleção de camadas definidas no menu de ``Camadas'', no canto superior direito da tela (Canto superior direito da Figura \ref{fig:mapa_fullscreen}). Para este projeto foram definidas algumas camadas para melhor compreender este estudo; estas são:
 
-% \begin{figure}[h]
-% \centering
-% % \includegraphics[scale=0.7]{figuras/resultados/layers_menu.png}
-% \includegraphics[scale=0.7]{figuras/resultados/map.png}
-% \caption{Menu com camadas para mapa.}
-% \label{fig:layers_menu}
-% \end{figure}
-
 \begin{itemize}
     \item \textbf{MODIS (250m).} A imagem MODIS selecionada faz parte do acervo de catálogos de imagens rápidas da NASA, FAS Brazil 7, imagem TERRA 2013216\footnote{\url{http://rapidfire.sci.gsfc.nasa.gov/imagery/subsets/?subset=FAS_Brazil7.2013216.terra.250m}} datado de 04 de Agosto de 2013, semana em que iniciou-se o estudo. Imagens MODIS foram comentadas na Seção \ref{ch:monitoramento_florestas}.
-    \item \textbf{SPOT (2.5m).} A imagem SPOT\footnote{\url{http://www.sema.pa.gov.br/2010/02/09/8665/}} possui resolução geográfica de 2.5 metros. Estas imagens, datadas de 11 de Julho de 2009 e 30 de Julho de 2011, são produtos comprados e processados pela Sectretaria de Meio Ambiente (SEMA) do Estado do Pará, são utilizadas para uso acadêmico e estão sendo usadas neste trabalho apenas para realizar comparações com a imagem MODIS do mesmo local, porém com resolução 10.000 vezes maior.
+    \item \textbf{SPOT (2.5m).} A imagem SPOT\footnote{\url{http://www.sema.pa.gov.br/2010/02/09/8665/}} possui resolução geográfica de 2.5 metros. Estas imagens, datadas de 11 de Julho de 2009 e 30 de Julho de 2011, são produtos comprados e processados pela Secretaria de Meio Ambiente (SEMA) do Estado do Pará, são utilizadas para uso acadêmico e estão sendo usadas neste trabalho apenas para realizar comparações com a imagem MODIS do mesmo local, porém com resolução 10.000 vezes maior.
     \item \textbf{Áudios.} Camada de pontos de áudio com suas propriedades.
     \item \textbf{Imagens.} Camada de pontos das imagens com suas propriedades, todas captadas utilizando o aplicativo híbrido.
     \item \textbf{Vídeos.} Camada de pontos dos vídeos com suas propriedades, todas captadas utilizando o aplicativo híbrido.
@@ -949,7 +924,7 @@ O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido gratuitamente pe
 
 Alternando as camadas, é possível verificar mais precisamente a significância do pixel em questão. Uma imagem SPOT tem uma melhor clareza devido a sua resolução ser 10.000 vezes maior do que uma MODIS, o que permite verificar mais cuidadosamente o que há na composição de um pixel MODIS.
 
-Na Figura \ref{map:crop_map_modis} é possível observar grandes áreas sem florestas, sendo estas os conjuntos de pixels de tom mais claro. Contudo, não é trivial diferenciar um único pixel de uma imagem MODIS para identificar se este representa uma área florestada ou não.
+Na Figura \ref{map:crop_map_modis} é possível observar grandes áreas sem florestas, sendo estas os conjuntos de pixeis de tom mais claro. Contudo, não é trivial diferenciar um único pixel de uma imagem MODIS para identificar se este representa uma área florestada ou não.
 
 \begin{figure}[h]
 \centering
@@ -968,9 +943,9 @@ A mesma área é apresentada na Figura \ref{map:crop_map_spot}. Esta camada torna 
 \label{map:crop_map_spot}
 \end{figure}
 
-Porém, utilizar imagens SPOT, como é o caso deste trabalho, para comparar dois tipos de imagens em diferentes camadas não é viável. Imagens SPOT são pagas, diferente das imagens MODIS. Além do mais, possuem um tempo de revisita diferente (em geral menor). Portanto, imagens, vídeos ou áudios captados \textit{in-situ} mantém sua importância na tarefa de discenir uma área florestada de uma área não-florestada.
+Porém, utilizar imagens SPOT, como é o caso deste trabalho, para comparar dois tipos de imagens em diferentes camadas não é viável. Imagens SPOT são pagas, diferente das imagens MODIS. Além do mais, possuem um tempo de revisita diferente (em geral menor). Portanto, imagens, vídeos ou áudios captados \textit{in-situ} mantém sua importância na tarefa de discernir uma área florestada de uma área não-florestada.
 
-A Figura \ref{map:small_map_modis} mostra a área compreendida pelas coordenadas 54\textdegree55'26.4''W a 03\textdegree07'33''S a 03\textdegree07'04.8''S de uma imagem MODIS. Há uma variação de cor no píxel que está abaixo dos dois pontos de imagem. porém é difícil saber ao certo se este representa uma área florestada ou não. Assim, as imagens \textit{in-situ} adquiridas pelo dispositivo podem dar uma contribuição análoga à camada SPOT.
+A Figura \ref{map:small_map_modis} mostra a área compreendida pelas coordenadas 54\textdegree55'26.4''W a 03\textdegree07'33''S a 03\textdegree07'04.8''S de uma imagem MODIS. Há uma variação de cor no pixel que está abaixo dos dois pontos de imagem. porém é difícil saber ao certo se este representa uma área florestada ou não. Assim, as imagens \textit{in-situ} adquiridas pelo dispositivo podem dar uma contribuição análoga à camada SPOT.
 
 \begin{figure}[h]
 \centering
@@ -1012,20 +987,20 @@ Ambas imagens (Fig. \ref{map:small_selected_modis_left} e \ref{map:small_selecte
 
 Observando as propriedades das imagens Fig. \ref{map:small_selected_modis_left} e Fig. \ref{map:small_selected_modis_right}, é possível notar uma propriedade interessante. A orientação das imagens condiz perfeitamente com a visão do mapa mostrado na Figura \ref{map:small_map_spot}, uma vez que essas foram capturadas logo no início do polígono desflorestado, e não no interior do mesmo. Assim, é possível observar que a função da bússola é muito importante pois esta fornece em qual direção a foto foi realizada. Caso a direção estivesse errada, a seta poderia mostrar para uma parte florestada e exibir uma imagem não florestada. Ao treinar uma algoritmo supervisionado, este poderia apresentar divergência por causa deste valor, assumindo que fosse 100\% correto.
 
-Resumindo, a existência de vídeos e áudios captados por voluntários, registrando a fauna local, alguma atividade ilícita de desmatamento, áreas de incêndio, sons de tratores, entre outros, pode auxiliar a tarefa de classificação automática de uma imagem satelital, servindo, por exenplo, de \textit{feedback} à rede neural, tornando-a uma rede supervisionada.
+Resumindo, a existência de vídeos e áudios captados por voluntários, registrando a fauna local, alguma atividade ilícita de desmatamento, áreas de incêndio, sons de tratores, entre outros, pode auxiliar a tarefa de classificação automática de uma imagem de satélite, servindo, por exemplo, de \textit{feedback} à rede neural, tornando-a uma rede supervisionada.
 
 \section{Conclusões e Trabalhos Futuros}
 \label{ch:conclusoes}
 
 O objetivo deste trabalho foi o de propor, desenvolver e testar um módulo de sensoriamento voluntário e integrá-lo ao projeto ForestWatchers. A solução foi desenvolver um aplicativo híbrido em que voluntários que possuam diferentes tipos de dispositivos possam contribuir, captando áudio, vídeo e imagens. Junto com o aplicativo, foi desenvolvido um módulo web para exibição dos dados.
 
-O aplicativo foi desenvolvido utilizando o \textit{framework} PhoneGap, que permite utilizar um único código para gerar aplicativos em outras plataformas de forma fácil, até mesmo por linha de comando. O código foi escrito usando a convenção do PhoneGap (HTML, CSS e JavaScript). Os componentes JQueryMobile e KnockOutJS foram utilizados para desenhar a interface gráfica do aplicativo. Porém, antes de concluirmos que o aplicativo deveria ser híbrido, foram testados duas outras soluções para o desenvolvimento do aplicativo. A primeira, utilizando bibliotecas nativas, exigia que cada aplicativo fosse desenvolvido na sua respectiva plataforma desde o princípio. Posteriormente, foi verificado o uso de \textit{frameworks} coleta de dados, como EpiCollect e Sensr como uma solução. Por não ter controle das funcionalidades e os \textit{frameworks} mais modernos serem desenvolvidos para apenas uma única plataforma, esta abordagem foi também descartada.
+O aplicativo foi desenvolvido utilizando o \textit{framework} PhoneGap, que permite utilizar um único código para gerar aplicativos em outras plataformas de forma fácil, até mesmo por linha de comando. O código foi escrito usando a convenção do PhoneGap (HTML, CSS e JavaScript). Os componentes JQueryMobile e KnockoutJS foram utilizados para desenhar a interface gráfica do aplicativo. Porém, antes de concluirmos que o aplicativo deveria ser híbrido, foram testados duas outras soluções para o desenvolvimento do aplicativo. A primeira, utilizando bibliotecas nativas, exigia que cada aplicativo fosse desenvolvido na sua respectiva plataforma desde o princípio. Posteriormente, foi verificado o uso de \textit{frameworks} coleta de dados, como EpiCollect e Sensr como uma solução. Por não ter controle das funcionalidades e os \textit{frameworks} mais modernos serem desenvolvidos para apenas uma única plataforma, esta abordagem foi também descartada.
 
 O módulo de SV aqui desenvolvido obtém informações dos sensores de câmera (para a captura de imagem e vídeo), microfone (áudio), localização (GPS), orientação (bússola). Os dados são armazenados no dispositivos para serem enviados posteriormente, seguindo um modelo de envio por demanda, quando o usuário solicitar. Desta forma, o tráfico de arquivos grandes como vídeo e áudio podem ser feitos através de redes WiFi ao invés de conexões 3G.
 
 O back-end web é encarregado de receber os dados enviados pelos voluntários e armazená-los adequadamente nos bancos de dados, assim como enviar os dados solicitados pela interface web (o front-end do módulo) para a exibição dos resultados. Cada recurso (imagem, áudio ou vídeo) possui sua respectiva coordenada e outras propriedades.
 
-O módulo de SV foi desenvolvido utilizando Python e o \textit{microframework} Flask com suas extensões, voltado ao desenvolvimento de aplicações web e comunicação web. Um servidor de comunicação web baseado na arquitetura REST foi também desenvolvido, utilizando o protocolo HTTP.
+O módulo de SV foi desenvolvido utilizando Python e o \textit{micro framework} Flask com suas extensões, voltado ao desenvolvimento de aplicações web e comunicação web. Um servidor de comunicação web baseado na arquitetura REST foi também desenvolvido, utilizando o protocolo HTTP.
 
 A interface gráfica (front-end) exibe os dados e resultados enviados pelos voluntários. Esta interface é na forma de uma página web que utiliza-se do mesmo servidor (Flask) do back-end. A página exibe os dados georreferenciados utilizando componentes de mapas.
 
