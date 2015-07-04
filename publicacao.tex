@@ -112,7 +112,7 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 % % JSON SET
 
 \input{./configuracao} %% faça as modificações pertinentes no arquivo configuracao.tex
-	
+
 \makeindex  %% não alterar, gera INDEX, caso haja algum termo indexado no texto
 
 \begin{document} %% início do documento %% não mexer
@@ -136,7 +136,10 @@ english,portuguese %% para os documentos em Português com abstract.tex em Inglês
 %% \include{./docs/revisao_bibliografica}
 %% \include{./docs/metodologia}
 %% \include{./docs/resultado_e_discussoes}
+% \appendix
 \bibliography{./bib/publicacao_nova} %% aponte para seu arquivo de bibliografia no formato bibtex (p.ex: referencia.bib)
+\inicioApendice
+\include{./docs/appendix}
 \inicioIndice
 \include{./docs/contracapa}
 %\todos

@@ -13,7 +13,9 @@ Nos últimos anos uma nova forma de se fazer ciência vem ganhando força e cada ve
 
 Mais recentemente, outra forma de realizar ciência cidadã - pensamento voluntário - surgiu e se popularizou. Nesta forma de ciência cidadã, voluntários emprestam as suas capacidades cognitivas a projetos científicos. Assim, o projeto GalaxyZoo \cite{oxfordgalaxy2007} ganhou grande notoriedade por conseguir atrair dezenas de milhares de cidadãos leigos, que realizaram milhões de tarefas de classificação de galáxias, com desempenho igual a de astrônomos profissionais. Onde a computação voluntária necessita apenas de uma conexão para interligar os computadores e disponibilizar potência computacional ociosa para auxiliar projetos, no pensamento voluntária o poder cognitivo do cidadão é utilizado em ações que ainda não são fáceis para uma máquina realizar de modo eficiente, como o reconhecimento de padrões.
 
-Uma terceira forma de realizar projetos de ciência cidadã vem se fortalecendo ao longo dos últimos anos. Em vez de utilizar a capacidade cognitiva ou de computação de voluntários, alguns projetos necessitam que voluntários coletem dados. Um exemplo dos mais antigos de ciência cidadã é o projeto de contagem de pássaros Christmas Bird Count, que está em sua 115\textdegree edição e ainda cativa milhares de pessoas. Estes projetos de ciência cidadã são chamados de sensoriamento voluntário (SV).
+Uma terceira forma de realizar projetos de ciência cidadã vem se fortalecendo ao longo dos últimos anos. Em vez de utilizar a capacidade cognitiva ou de computação de voluntários, alguns projetos necessitam que voluntários coletem dados. Um exemplo dos mais antigos de ciência cidadã é o projeto de contagem de pássaros \textit{Christmas Bird Count}, que está em sua 115\textdegree edição e ainda cativa milhares de pessoas. Estes projetos de ciência cidadã são chamados de sensoriamento voluntário (SV).
+
+Através do SV os voluntários podem utilizar seus dispositivos móveis para coletarem dados. Em 2015, o número de dispositivos móveis inteligentes irá ultrapassar a quantidade de computadores pessoais. Apesar da existência de diferentes fabricantes de dispositivos e cada qual com sua forma de programar aplicativos, o que restringe o desenvolvimento de aplicativos para apenas algumas plataformas, há diferentes soluções para este problema. Este trabalho utilizou-se de uma plataforma híbrida para desenvolver um aplicativo com um único código em diferentes plataformas, aumentando assim o número de possíveis voluntários que possam contribuir com um projeto de ciência cidadã.
 
 \section{Objetivos}
 \label{ch:objetivos}
@@ -70,7 +72,7 @@ Para realizar o cálculo da taxa de desmatamento, as imagens são selecionadas de 
     \label{fig:prodes_mosaico}
 \end{figure}
 
-Após a seleção das imagens, a próxima etapa envolve transformar seus dados radiométricos em componentes de cena (vegetação, solo e sombra), utilizando o Modelo Linear de Mistura Espectral (MLME) \cite{Monteiro2008}. As bandas 3, 4 e 5 do sensor TM são utilizadas para estimar a proporção dos componentes solo, vegetação e sombra para cada pixel, formando um sistema de equações lineares que pode ser solucionado pelo método dos mínimos quadrados ponderados. O resultado desse modelo linear é uma imagem fração, onde se tem três bandas sintéticas com os valores proporcionais de vegetação, solo e sombra. A segmentação\footnote{Segmentação de imagem é uma técnica de agrupamentos de dados onde características espectrais semelhantes são agrupadas \cite{Monteiro2008}.} da imagem fração é então realizada, ajustando-se os limiares de similaridades e de área.
+Após a seleção das imagens, a próxima etapa envolve transformar seus dados radiométricos em componentes de cena (vegetação, solo e sombra), utilizando o Modelo Linear de Mistura Espectral (MLME) \cite{Monteiro2008}. As bandas 3, 4 e 5 do sensor TM são utilizadas para estimar a proporção dos componentes solo, vegetação e sombra para cada pixel, formando um sistema de equações lineares que pode ser solucionado pelo método dos mínimos quadrados ponderados. O resultado desse modelo linear é uma imagem fração, onde se tem três bandas sintéticas com os valores proporcionais de vegetação, solo e sombra. A segmentação\footnote{Segmentação de imagem é a subdivisão de uma imagem em regiões cujos \textit{pixels} possuam propriedades semelhantes \cite{Monteiro2008}.} da imagem fração é então realizada, ajustando-se os limiares de similaridades e de área.
 
 Um algoritmo de classificação não-supervisionado de agrupamentos de dados trata as imagens segmentadas, classificando-as de acordo com as classes definidas pelo banco de dados. Como resultado tem-se uma nova imagem \textit{raster}. Então, um fotointerprete tem a tarefa de analisar os polígonos temáticos gerados, tomando a decisão se esses devem ser aceitos ou reclassificados. Uma vez essa imagem aceita, uma máscara de desmatamento contendo as áreas de corte raso já detectados é gerada. Essa máscara será utilizada para eliminar desmatamentos antigos, impedindo que sejam identificados novamente.
 
@@ -254,11 +256,12 @@ Por anos a comunidade acadêmica e industrial vem debatendo o uso de dispositivos
 
 \chapter{ForestWatchers}
 \label{ch:forestwatchers}
-Em uma carta enviada a revista Nature\footnote{\url{http://www.nature.com/}} no ano de 2005, \citeonline{Ramos2005} argumenta se a iniciativa de um novo sistema de monitoramento não está próximo. Um sistema que utilize tecnologias de computação distribuída aplicado a catalogos de imagens da Terra de acesso livre com alta resolução, seria possível monitorar partes da floresta mundial usando a Internet.
-
+Em uma carta enviada a revista Nature\footnote{\url{http://www.nature.com/}} no ano de 2005, \citeonline{Ramos2005} argumenta se a iniciativa de um novo sistema de monitoramento não está próxima. Um sistema que utilize tecnologias de computação distribuída aplicado a catalogos de imagens da Terra de acesso livre com alta resolução, seria possível monitorar partes da floresta mundial usando o engajamento de voluntários e a Internet.
 % Your News in Brief story “Enthusiast uses Google to reveal Roman ruins” (Nature 437, 307; 2005) made me wonder whether the time for a new conservationism is not already on the horizon. A time when the convergence of imaging and grid computing technologies, together with a policy of free access to catalogues of high-resolution Earth imagery, will make it possible to monitor selected patches of forest across the globe using the Internet.
 
-O projeto ForestWatchers (\url{http://www.forestwatchers.net}) propõe o desenvolvimento e o lançamento de uma iniciativa de ciência cidadã com o objetivo de involver e integrar cidadãos ao redor do planeta na tarefa de monitorar o desmatamento das florestas tropicais \cite{ForestWatchersDesc}. Estes cidadãos poderão de suas casas, por meio de uma interface \textit{Web}, inspecionar imagens recentes de satélite de áreas de florestas. Estas podem ser de uma reserva indígena na Amazônia, uma floresta nacional em Bornéu ou um parque em Queensland. As imagens são então classificadas em áreas de floresta ou não-floresta, por meio de um algoritmo de classificação supervisionado pelos voluntários na \textit{Web}. Conforme mencionado por \citeonline{Ipeirotis2010}, erros e até mesmo fraude podem ser automaticamente tratados pela redundância do sistema. Para isso, é necessário atrair e manter um grande número de voluntários \cite{Soares:2011:EmCiSc}. Estima-se que cem mil voluntários analisando uma área de 100.000 hectares cada, com um fator de redundância de 20, podem examinar uma área de 500 milhões de hectares, cerca de 40\% a 50\% da área estimada das florestas tropicais do mundo \cite{ForestWatchersDesc}.
+Assim com base nesta ideia o projeto ForestWatchers (\url{http://www.forestwatchers.net}) foi criado. O projeto  propõe o desenvolvimento e o lançamento de uma iniciativa de ciência cidadã com o objetivo de involver e integrar cidadãos ao redor do planeta na tarefa de monitorar o desmatamento das florestas tropicais \cite{ForestWatchersDesc}. Estes cidadãos poderão de suas casas, por meio de uma interface \textit{Web}, inspecionar imagens recentes de satélite de áreas de florestas. Estas podem ser de uma reserva indígena na Amazônia, uma floresta nacional em Bornéu ou um parque em Queensland.
+
+As imagens são então classificadas em áreas de floresta ou não-floresta, por meio de um algoritmo de classificação supervisionado pelos voluntários na \textit{Web}. Conforme mencionado por \citeonline{Ipeirotis2010}, erros e até mesmo fraude podem ser automaticamente tratados pela redundância do sistema. Para isso, é necessário atrair e manter um grande número de voluntários \cite{Soares:2011:EmCiSc}. Estima-se que cem mil voluntários analisando uma área de 100.000 hectares cada, com um fator de redundância de 20, podem examinar uma área de 500 milhões de hectares, cerca de 40\% a 50\% da área estimada das florestas tropicais do mundo \cite{ForestWatchersDesc}.
 
 O projeto conta com desenvolvedores do Laboratório Associado de Computação e Matemática Aplicada (LAC) do INPE, do \textit{Citizen Cyberscience Centre} (CCC), e do Departamento de Ciência e Tecnologia (DCT) da Universidade Federal de São Paulo (UNIFESP), com apoio do \textit{Open Society Foundations} (OSF), \textit{United Nations Institute for Training and Research} (UNITAR), e \textit{UNITAR's Operational Satellite Application Programme} (UNOSAT).
 
@@ -267,7 +270,9 @@ A seguir, será discutida a metodologia empregada no projeto.
 \section{Metodologia}
 \label{ch:fw_metodologia}
 
-A metodologia usada neste projeto é inspirada no bem-sucedido programa de detecção de desflorestamento DETER do INPE. Assim, como no sistema DETER, o projeto ForestWatchers também utiliza imagens do sensor MODIS, com resolução de $250$ metros (porém qualquer outro sensor de satélite que forneça suas imagens gratuitamente pode ser utilizado). Para que essas imagens possam ser exibidas para os voluntários é necessário que um pré-processamento seja feito.
+A metodologia usada neste projeto é inspirada no bem-sucedido programa de detecção de desflorestamento DETER do INPE. Assim, como no sistema DETER, o projeto ForestWatchers também utiliza imagens do sensor MODIS, com resolução de $250$ metros (porém qualquer outro sensor de satélite que forneça suas imagens gratuitamente pode ser utilizado).
+
+Atualmente, são utilizadas imagens disponíveis no catálogo\footnote{\url{https://earthdata.nasa.gov/earth-observation-data/near-real-time/rapid-response/modis-subsets}} gratuíto de imagens da Terra oferecido pela NASA. Estas imagens são disponíveis nos formatos \textit{GeoTIFFs}, \textit{JPEGs} ou \textit{KMZ}, para RGB Cores Verdadeiras (\textit{True-Color RGB}). O sítio eletrônico também disponibiliza as imagens em outras bandas, possibilitando perceber diferentes características. Porém, para que essas imagens possam ser exibidas para os voluntários é necessário que um pré-processamento seja realizado.
 
 Um diagrama ilustrativo da metodologia utilizada pelo projeto ForestWatchers pode ser visto na Figura \ref{fig:estrutura_atual}.
 \begin{figure}[htb]
@@ -277,13 +282,17 @@ Um diagrama ilustrativo da metodologia utilizada pelo projeto ForestWatchers pod
 \FONTE{\citeonline{ForestWatchersDesc}}
 \end{figure}
 
-Primeiramente é necessário adquirir as imagens da NASA referentes à área de interesse do projeto. Para esse processo, ferramentas como FTP\footnote{\textit{File Transfer Protocol (FTP)} é um protocolo para transferência de arquivo utilizado na internet para efetuar \textit{downloads} e \textit{uploads} de arquivos.}e WGET\footnote{WGET é um programa livre para efetuar \textit{download} de conteúdos na internet.} são utilizadas para realizar os downloads necessários. A próxima etapa, envolve recortar as imagens que não são pertinentes à área de interesse, descartando-as e consolidando as imagens restantes num único arquivo GeoTIFF de 16 bits. Essa etapa pode ser executada rapidamente com o auxílio da ferramenta MODIS Reprojection Tool (MRT) \cite{MRToolManual2010}, um software gratuito disponibilizado pela NASA.
+Conforme a área do escopo do projeto, são selecionadas as imagens do catálogo da NASA que possuam a menor cobertura de nuvens e a maior visibilidade do terreno. Para esse processo, ferramentas como FTP\footnote{\textit{File Transfer Protocol (FTP)} é um protocolo para transferência de arquivo utilizado na internet para efetuar \textit{downloads} e \textit{uploads} de arquivos.}e WGET\footnote{WGET é um programa livre para efetuar \textit{download} de conteúdos na internet.} são utilizadas para baixar as imagens. A próxima etapa, envolve recortar as imagens que não são pertinentes à área de interesse, descartando-as e consolidando as imagens restantes num único arquivo GeoTIFF de 16 bits. Essa etapa pode ser executada rapidamente com o auxílio da ferramenta MODIS Reprojection Tool (MRT) \cite{MRToolManual2010}, um software gratuito disponibilizado pela NASA.
 
-As imagens de 16 bits são convertidas para 8 bits por meio de um \textit{script} em Python\footnote{Python é uma linguagem de programação aberta.}. Logo após, uma única imagem é consolidada utilizando-se três bandas (infravermelho médio, vermelho, infravermelho próximo) da imagem de 8 bits. Assim, essa imagem pode ser enviada para um servidor gerenciador de arquivos de mapa. Nesse projeto utiliza-se o MapServer (\url{http://www.mapserver.org}), responsável por tratar as requisições de inserção e seleção das imagens georreferenciadas, e de retornar apenas parte da imagem desejada na forma de \textit{tiles}. Todos os arquivos relacionados à imagem têm suas informações extraídas no formato GeoJSON\footnote{\textit{Geographic JavaScript Object Notation} é um formato para codificar variados tipos de estruturas geográficas.}, para facilitar a comunicação entre os outros módulos. O algoritmo de classificação (ainda em desenvolvimento) faz a segmentação das imagens, classificando-as como  áreas de floresta e de não-floresta. Existindo a necessidade de supervisão das imagens, são criadas tarefas para os usuários poderem classificá-las visualmente.
+Assim, essa imagem pode ser enviada para um servidor que irá gerenciar as imagens as serem disponíveis em um software de Sistema de Informação Geográfica - SIG. O ForestWatchers utiliza o programa MapServer\footnote{\url{http://www.mapserver.org}} para mapas SIG, responsável por tratar as requisições de inserção e seleção das imagens georreferenciadas, e de retornar apenas parte da imagem desejada na forma de \textit{tiles}. Todos os arquivos relacionados à imagem têm suas informações extraídas no formato GeoJSON\footnote{\textit{Geographic JavaScript Object Notation} é um formato para codificar variados tipos de estruturas geográficas (Linhas, Pontos e Polígonos) utilizando a linguagem JavaScript.}, para facilitar a comunicação entre os outros módulos.
 
-O \citeonline{PyBossa2013} é o sistema responsável por gerenciar a criação e distribuição das tarefas automaticamente, conforme necessário. Esse é um sistema livre que permite um usuário criar e gerenciar projetos que requeiram cognição humana, tais como classificação de imagem, transcrição e geo-codificação. Esse sistema é baseado no \citeonline{Boinc2008}, plataforma online desenvolvida para facilitar a criação e a operação de projetos baseados em ciência cidadã. Essa nova implementação traz maiores benefícios em relação ao sistema original, BOSSA, por ser desenvolvida em Python e possuir uma API\footnote{\textit{Application Programming Interface} (API) é um protocolo com o objetivo de servir como interface para os componentes de softwares, permitindo comunicarem entre si.} REST \cite{Richardson2008}.
+Um algoritmo de classificação automática de Rede Neural Artificial - RNA (em desenvolvimento contínuo) é responsável por segmentar as imagens, classificando-as como áreas de floresta e de não-floresta. Cada imagem resultada da classificação automáticas são subdivididas em imagens menores, que serão apresentadas aos voluntários como tarefas. As tarefas que serão apresentadas aos voluntários tem o intúito de corrigir ou validar a classificação automática da RNA, o programa \citeonline{PyBossa2013} utilizado para gerenciar a criação e distribuição das tarefas automaticamente, conforme necessário.
 
-Com as tarefas criadas, os voluntários podem classificar as imagens de forma ordenada. O projeto, com o uso do sistema de redundância que envia a mesma tarefa para diferentes voluntários, garante um aumento na confiabilidade dos resultados \cite{Ipeirotis2010}.
+Esse é um sistema livre que permite criar e gerenciar projetos tais como classificação de imagem, transcrição e geo-codificação, que envolve tarefas de classificação supervisionada. Este é baseado no \citeonline{Boinc2008} criado por David P. Anderson, mesmo criador do projeto SETI@Home. A principal vantagem desta nova implementação em relação ao sistema original é o uso de uma \textit{API}\footnote{\textit{Application Programming Interface} (API) é um protocolo com o objetivo de servir como interface para os componentes de softwares, permitindo comunicarem entre si.} \textit{REST}\footnote{\textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional \cite{Richardson2008}}.
+
+Após a criação das tarefas, os voluntários podem classificar as imagens de forma ordenada. O \citeonline{PyBossa2013} ainda pode ser configurado para agir como um sistema de redundância de tarefas, podendo enviar a mesma tarefa para diferentes voluntários mais de uma vez, garantindo assim um aumento na confiabilidade dos resultados classificados pelos voluntários \cite{Ipeirotis2010}. A utilização de tarefas redundantes em projetos de ciência cidadã é uma das formas de aumentar a confiabilidade nos dados reportados.
+
+Ao final das classificações das tarefas realizadas pelos voluntários, os resultados do projeto são disponibilizados no sítio eletrônico do ForestWatchers, podendo ser utilizados para gerar uma nova imagem levando em consideração as respostas dos voluntários.
 
 \chapter{Metodologia}
 \label{ch:metodologia}
@@ -652,57 +661,8 @@ Os dados captados por este aplicativo são em geral dados dos sensores de localiz
 
 A sincronização dos dados entre dispositivo e servidor não precisa ocorrer ao mesmo tempo em que as entradas são captadas já que muitas vezes quem irá utilizar o aplicativo estará em lugares remotos. Neste caso, as informações captadas são mantidas apenas no dispositivo para uma sincronização futura e de preferência através de WiFi, uma vez que arquivos de vídeos podem ser bem maiores do que uma foto.
 
-O conjunto de entradas é armazenado no dispositivo através do plugin de armazenamento interno, que permite persistir objetos no formato JSON. Estes dados permanecerão no dispositivo até que o usuário escolha a opção de remover as entradas, caso este já tenha sincronizado os dados com o servidor. A estrutura de uma única entrada é exibida no Código \ref{json:estrutura_imagem}.
-{\scriptsize
-\begin{lstlisting}[language=json,firstnumber=1,float,floatplacement=h, caption={Estrutura JSON para envio de um arquivo de imagem.}, label={json:estrutura_imagem},captionpos=b]
-{
-  "entry": {
-      "picture": {
-      "filename" : "",
-      "filepath" :  ""
-    },
-    "compass": {
-      "magneticHeading": "",
-      "trueHeading": "",
-      "orientation": "",
-      "useManual": "",
-      "accuracy" : "",
-    },
-    "gps": {
-      "latitude": "",
-      "longitude": "",
-      "accuracy": "",
-      "altitude": "",
-      "altitudeAccuracy": "",
-      "heading": "",
-      "speed": ""
-    },
-    "options": {
-      "gpsOptions": {
-        "enableHighAccuracy": "",
-        "maximumAge": "",
-        "timeout": ""
-      },
-      "compassOptions": {
-        "frequency": "",
-        "enabled": ""
-      },
-      "pictureOptions": {
-        "quality": ""
-      }
-    }
-  },
-  "device": {
-    "uuid": "",
-    "version": "",
-    "cordova": "",
-    "platform": "",
-    "model": ""
-  }
-}
-\end{lstlisting}
-}
-
+O conjunto de entradas é armazenado no dispositivo através do plugin de armazenamento interno, que permite persistir objetos no formato JSON. Estes dados permanecerão no dispositivo até que o usuário escolha a opção de remover as entradas, caso este já tenha sincronizado os dados com o servidor. A estrutura de uma única entrada é exibida no Código \ref{json:estrutura_imagem} do Apêndice A.
+% \ref{apendice1}.
 
 \section{Infraestrutura Tecnológica} % (fold)
 \label{sub:infraestrutura_tecnologica}
@@ -732,51 +692,19 @@ Utilizando Flask foi possível desenvolver um servidor \textit{back-end} responsá
 
 O principal meio de comunicação com servidores web é através do protocolo \textit{Hypertext Transfer Protocol} (HTTP), em português Protocolo de Transferência de Hipertexto. Este funciona por meio de requisição e resposta, como cliente e servidor. Um usuário que deseja visualizar uma página da internet faz uma requisição ao servidor para obter o conteúdo desejado, de forma automática através do navegador.
 
-Uma página, definida pelo endereço \url{http://www.inpe.br/pos_graduacao/cursos/cap/index.php}, é um recurso do servidor \url{www.inpe.br}. Para obter este recurso é necessário efetuar uma requisição (Código \ref{http:inpe_request}) junto ao servidor. Uma vez que encontrado este recurso, uma resposta (Código \ref{http:inpe_response}) é retornada, com informações em seu cabeçalho e, eventualmente, um corpo de resposta. Por este recurso ser uma página web, o \textit{Content-Type} é do tipo text/html. Com essa informação o navegador pode renderizar a página de forma adequada.
+Uma página, definida pelo endereço \url{http://www.inpe.br/pos_graduacao/cursos/cap/index.php}, é um recurso do servidor \url{www.inpe.br}. Para obter este recurso é necessário efetuar uma requisição (Código \ref{http:inpe_request} do Apêndice B) junto ao servidor. Uma vez que encontrado este recurso, uma resposta (Código \ref{http:inpe_response} do Apêndice B) é retornada, com informações em seu cabeçalho e, eventualmente, um corpo de resposta. Por este recurso ser uma página web, o \textit{Content-Type} é do tipo text/html. Com essa informação o navegador pode renderizar a página de forma adequada.
 
-\begin{lstlisting}[language=json,firstnumber=1,float, floatplacement=h, caption={Requisição HTTP.}, label={http:inpe_request},captionpos=b]
-GET /pos_graduacao/cursos/cap/index.php HTTP/1.1
-Host: www.inpe.br
-Accept: text/html,application/xhtml+xml
-Accept-Encoding: gzip, deflate, sdch
-Accept-Language: en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4
-\end{lstlisting}
-
-% float,floatplacement=H,
-\begin{lstlisting}[language=json,firstnumber=1, float, floatplacement=h, caption={Resposta HTTP.}, label={http:inpe_response},captionpos=b]
-HTTP/1.1 200 OK
-Server: Apache/2.2.3 (CentOS)
-X-Powered-By: PHP/5.1.6
-Content-Type: text/html; charset=iso-8859-1
-\end{lstlisting}
-
-Este é o princípio do serviço web conhecido por \textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional. Trata-se de serviço do tipo arquitetural baseado no protocolo HTTP projetado para utilizar um conjunto de operações bem definidas, utilizando os principais métodos HTTP (Tabela \ref{tab:metodos_http}), um protocolo cliente-servidor sem estado, um Identificador Uniforme de Recursos (Uniform Resource Identifier - URI) para um determinado objeto e transferência de dados, e podendo utilizar o formato JSON.
-
-\begin{table}[h]
-\centering
-\small
-\caption{Métodos Padrões do Protocolo HTTP}
-\label{tab:metodos_http}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lll@{}}
-\toprule
-Método HTTP & Descrição da Ação                                                             & Exemplo de Função                                                                                                             \\ \midrule
-GET         & \begin{tabular}[t]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagens\\ (listar todas as imagens)\end{tabular}                                \\
-GET         & \begin{tabular}[t]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (listar a imagem de \\ identificação \#10)\end{tabular}             \\
-POST        & Criar um novo recurso                                                         & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagens\\ (criar um novo objeto imagem)\end{tabular}                            \\
-PUT         & Atualizar um recurso                                                          & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (atualizar os dados da imagem\\ de identificação \#10)\end{tabular} \\
-DELETE      & Remover um recurso                                                            & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (remover o objeto imagem \\ de identificação \#10)\end{tabular}     \\ \bottomrule
-\end{tabular}
-}
-\end{table}
+Este é o princípio do serviço web conhecido por \textit{Representational State Transfer} (REST), em português Transferência de Estado Representacional. Trata-se de serviço do tipo arquitetural baseado no protocolo HTTP projetado para utilizar um conjunto de operações bem definidas, utilizando os principais métodos HTTP (Tabela \ref{tab:metodos_http} do Apêndice B), um protocolo cliente-servidor sem estado, um Identificador Uniforme de Recursos (Uniform Resource Identifier - URI) para um determinado objeto e transferência de dados, e podendo utilizar o formato JSON.
 
 As operações que cada método HTTP executa utilizando REST são equivalentes as operações de um banco de dados, como selecionar, inserir, atualizar e remover.
 
-O método \textit{GET} tem a responsabilidade de retornar os recursos solicitados e pode ser utilizando tanto de forma geral, solicitando diversos recursos de uma só vez (em geral, este URI encontra-se no plural) ou de forma específica, informando uma identificação única do recurso. Ao invocar o método \textit{POST} e informando detalhes do objeto, um novo recurso é criado com essas informações (em geral, este URI encontra-se no plural). Os métodos \textit{PUT} e \textit{DELETE} exercem a função de atualizar os dados e removê-los, respectivamente. No primeiro, os dados são informados no corpo da requisição, forma semelhante ao método \textit{POST}. Uma descrição dos métodos pode ser vista na Tabela \ref{tab:metodos_http}.
+O método \textit{GET} tem a responsabilidade de retornar os recursos solicitados e pode ser utilizando tanto de forma geral, solicitando diversos recursos de uma só vez (em geral, este URI encontra-se no plural) ou de forma específica, informando uma identificação única do recurso. Ao invocar o método \textit{POST} e informando detalhes do objeto, um novo recurso é criado com essas informações (em geral, este URI encontra-se no plural). Os métodos \textit{PUT} e \textit{DELETE} exercem a função de atualizar os dados e removê-los, respectivamente. No primeiro, os dados são informados no corpo da requisição, forma semelhante ao método \textit{POST}. Uma descrição dos métodos pode ser vista na Tabela \ref{tab:metodos_http} do Apêndice B.
 
-REST é apenas um estilo arquitetural para receber ou enviar dados. Assim, tem-se que o meio de comunicação com o servidor deste projeto é dado através do protocolo HTTP, mesmo protocolo utilizado para requisições de páginas da internet. Porém, para armazenar os dados, ainda é necessário ter um banco de dados.
+REST é apenas um estilo arquitetural para receber ou enviar dados. Assim, tem-se que o meio de comunicação com o servidor deste projeto é dado através do protocolo HTTP, mesmo protocolo utilizado para requisições de páginas da internet.
 
-Como a principal característica deste projeto é permitir georreferenciar dados coletados \textit{in-situ}, um banco geográfico é requerido. Optou-se por utilizar o banco de dados de código aberto PostgreSQL\footnote{\url{http://www.postgresql.org/}}. Este banco de dados oferece meios para adicionar entidades geográficas através da extensão PostGIS\footnote{\url{http://postgis.org/}}. Bancos geográficos possuem funções especiais para tratar este tipo de entidade, permitindo efetuar buscas tendo como parâmetro uma posição geográfica.
+Este é um dos principais benefícios em se utilizar REST, todas as chamadas entre aplicativo e servidor utilizam o protocolo padrão HTTP, portanto não é necessário desenvolver nenhum protocolo novo ou fazer verificações de quais portas estão sendo utilizadas no servidores, tendo que alternar o número da porta em que o servidor irá esperar os dados do aplicativo, caso a porta corrente já esteja em uso. Geralmente, acesso à Internet através de redes públicas tem qualquer todas as comunicações bloqueadas exceto comunicações referentes ao protocolo HTTP. O que permite utilizar um aplicativo que faça uso de REST para enviar e receber dados sem a chance que este seja bloqueado por um \textit{firewall}.
+
+Como uma das principais características deste projeto é a de permitir georreferenciar dados coletados \textit{in-situ}, um banco geográfico é requerido. Optou-se por utilizar o banco de dados de código aberto PostgreSQL\footnote{\url{http://www.postgresql.org/}}. Este banco de dados oferece meios para adicionar entidades geográficas através da extensão PostGIS\footnote{\url{http://postgis.org/}}. Bancos geográficos possuem funções especiais para tratar este tipo de entidade, permitindo efetuar buscas tendo como parâmetro uma posição geográfica.
 
 Cada propriedade, demonstrada no Código \ref{json:estrutura_imagem}, que é capturada pelo voluntário utilizando o aplicativo híbrido descrito na Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}, foi devidamente mapeada no banco de dados, como visto na Figura \ref{fig:moduledb}.
 
@@ -956,6 +884,8 @@ Por fim, a Tabela \ref{tab:sumarizacao} faz um breve resumo dos componentes util
 
 A área utilizada para testar o módulo de SV desenvolvido nesta dissertação (Figura \ref{fig:para_exported}) faz parte da Floresta dos Tapajós, uma reserva federal, e seus arredores. Localizado na cidade de Belterra, PA, dentro portanto da Amazônia Legal. Esta é uma região de floresta tropical. O processo de ocupação na região ocorreu ao longo da rodovia BR-163, depois do desmatamento da floresta primária e abertura de novas estradas para a formação de pequenas fazendas. Como resultado deste processo, existem mosaicos de vegetações secundárias em diversos estágios de desenvolvimento. Áreas de  pasto, milharais e solos expostos dentro de florestas \cite{LongoReDeBeRiMe:2012:PhChPa}.
 
+A visita a esta área só foi possível por uma oportunidade oferecida pelo Departamento de Processamento de Imagen (DPI) do INPE, que precisavam georreferenciar alguns pontos de interesse (POI) com alta precisão e coletar alguns dados sobre a área, como exemplo o tipo de vegetação existente em um determinado local. Assim, alguns alunos de mestrado e doutorado puderam se beneficiar com uma viagem para validar seus estudos, em contrapartida poderiam auxiliar na capturas de novos POI e coletar dados da área. Para a captura das informações das áreas para o DPI do INPE, eram utilizadas formulários impressos, classificando os aspectos do local. Utilizando-se de uma câmera fotográfica com GPS interno, imagens georreferenciadas eram capturadas e anotadas junto ao formulário, uma bússola também era utilizada para capturar o sentido em que a foto fora capturada e sua informação escrita no formulário.
+
 Para o teste do conceito desenvolvido neste trabalho, utilizou-se o aplicativo híbrido (ver Seção \ref{ssub:aplicativo_com_biblioteca_hibrida}) na área de estudo para captar imagens, vídeos e áudios de algum interesse ao projeto FW, como áreas não florestas, clareiras, fazendas ou fauna. Áreas de clareiras, por exemplo, podem apresentar diferentes formas em uma imagem de satélite de baixa resolução espacial tipo MODIS, sendo muitas vezes imperceptível do espaço. Com as fotos obtidas em \textit{in-situ} pelos voluntários é possível complementar e mesmo corrigir os mapas de desmatamento gerados pelos voluntários que apenas têm acesso a imagens de satélite.
 
 \begin{figure}[h]
@@ -975,8 +905,9 @@ A Figura \ref{fig:mapa_fullscreen} ilustra a interface desenvolvida neste trabal
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{figuras/resultados/mapa_fullscreen.png}
-\caption{Interface gráfica \textit{(front-end)} desenvolvido para a exibição dos dados coletados por voluntários.}
+% \includegraphics[width=0.9\textwidth]{figuras/resultados/mapa_fullscreen.png}
+\includegraphics[width=0.9\textwidth]{figuras/resultados/full_map_with_menus.png}
+\caption{Interface gráfica \textit{(front-end)} desenvolvido para a exibição dos dados coletados pelos voluntários.}
 \label{fig:mapa_fullscreen}
 \end{figure}
 
@@ -992,14 +923,15 @@ Esta pequena janela é comum para os demais recursos (áudios, vídeos e imagens), 
 \label{fig:detalhes_conteudos}%
 \end{figure}
 
-O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido gratuitamente pelo projeto OpenStreetMaps, comentado na Seção \ref{ch:informacao_geografica_voluntariada}. Porém, a interface permite alternar a exibição dos mapas de fundo através da seleção de camadas definidas no menu de ``Camadas'', no canto superior direito da tela, visto na Figura \ref{fig:layers_menu}. Para este projeto foram definidas algumas camadas para melhor compreender este estudo; estas são:
+O mapa de fundo da Figura \ref{fig:mapa_fullscreen} é oferecido gratuitamente pelo projeto OpenStreetMaps, comentado na Seção \ref{ch:informacao_geografica_voluntariada}. Porém, a interface permite alternar a exibição dos mapas de fundo através da seleção de camadas definidas no menu de ``Camadas'', no canto superior direito da tela (Canto superior direito da Figura \ref{fig:mapa_fullscreen}). Para este projeto foram definidas algumas camadas para melhor compreender este estudo; estas são:
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.7]{figuras/resultados/layers_menu.png}
-\caption{Menu com camadas para mapa.}
-\label{fig:layers_menu}
-\end{figure}
+% \begin{figure}[h]
+% \centering
+% % \includegraphics[scale=0.7]{figuras/resultados/layers_menu.png}
+% \includegraphics[scale=0.7]{figuras/resultados/map.png}
+% \caption{Menu com camadas para mapa.}
+% \label{fig:layers_menu}
+% \end{figure}
 
 \begin{itemize}
     \item \textbf{MODIS (250m).} A imagem MODIS selecionada faz parte do acervo de catálogos de imagens rápidas da NASA, FAS Brazil 7, imagem TERRA 2013216\footnote{\url{http://rapidfire.sci.gsfc.nasa.gov/imagery/subsets/?subset=FAS_Brazil7.2013216.terra.250m}} datado de 04 de Agosto de 2013, semana em que iniciou-se o estudo. Imagens MODIS foram comentadas na Seção \ref{ch:monitoramento_florestas}.
@@ -1101,12 +1033,8 @@ A interface foi desenvolvida em HTML5, CSS3 e JavaScript. Utilizou-se a bibliote
 
 Para testar o módulo proposto neste trabalho, o aplicativo foi utilizado em uma área do Estado do Pará, próximo a Belterra. O aplicativo captou fotos e vídeo para serem sincronizados posteriormente com o módulo web. Nesta etapa, não foi possível validar o sistema de captura de áudio devido a um erro no código encontrado na versão do PhoneGap para o sistema Windows Phone e por a área não possuir comunicação com internet. Os dados apresentados neste trabalho para o áudio são representativos e foram gerados a partir da extração do áudio dos arquivos de vídeos captados.
 
-% There're few alternatives still:
-% http://2lemetry.com79
-% http://exosite.com47
-% https://www.carriots.com43
-% https://www.grovestreams.com121
-% https://thingspeak.com106
-% http://openenergymonitor.org52
 Como trabalhos futuros, pretende-se integrar ao módulo outros tipos de dados. Existem diversos sítios que permitem compartilhar dados de sensores ambientais pela internet\footnote{\url{https://thingspeak.com}}. Estuda-se agregar tais dados ao projeto permitindo uma visão geral do meio ambiente.
-% Alguns institutos na Ásia e África permitem realizar o monitoramento online de animais, como é o caso de \textit{SAVE THE ELEPHANTS}\footnote{\url{http://savetheelephants.org}} e \textit{SAVE TIGERS NOW}\footnote{\url{http://www.savetigersnow.org}}.
+
+Outro grande avanço esperado para o projeto, é o estudo de como pode ser aumentado a confiabilidade dos dados capturados pelos voluntários. Ferramentas adicionais serão estudas para evitar a falsificação de dados captadas e o uso de inadequado do aplicativo.
+
+E por fim, será avaliado uma forma de adicionar formulários aos aplicativo, de forma análoga ao sistema apresentado pelo EpiCollect. Possibilitando que novos projetos possam utilizar o aplicativo híbrido aqui desenvolvido para coletar dados tabulados, utilizando regras e opções já definidas para o seu cadastro, conforme foi utilizado pelos alunos que auxiliaram a DPI do INPE na área de estudo.

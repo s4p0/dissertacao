@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Apêndice A
+\hypertarget{estilo:apendice1}{} %% uso para este Guia
+%Este apêndice foi criado apenas para indicar como construir um apêndice no estilo, não existia no original da tese.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thechapter}{}%
+\chapter{APÊNDICE A - ESTRUTURA \textit{JSON} PARA ENVIO DE ARQUIVOS.}  % trocar A por B na próxima apêndice e etc
+\label{apendice1} % trocar A por B na próxima apêndice e etc
+\renewcommand{\thechapter}{A}%    % trocar A por B na próxima apêndice e etc
+
+\begin{lstlisting}[language=json,firstnumber=1, caption={Estrutura JSON para envio de um arquivo do tipo de imagem.},captionpos=b, label={json:estrutura_imagem}]
+{
+  "entry": {
+      "picture": {
+      "filename" : "",
+      "filepath" :  ""
+    },
+    "compass": {
+      "magneticHeading": "",
+      "trueHeading": "",
+      "orientation": "",
+      "useManual": "",
+      "accuracy" : "",
+    },
+    "gps": {
+      "latitude": "",
+      "longitude": "",
+      "accuracy": "",
+      "altitude": "",
+      "altitudeAccuracy": "",
+      "heading": "",
+      "speed": ""
+    },
+    "options": {
+      "gpsOptions": {
+        "enableHighAccuracy": "",
+        "maximumAge": "",
+        "timeout": ""
+      },
+      "compassOptions": {
+        "frequency": "",
+        "enabled": ""
+      },
+      "pictureOptions": {
+        "quality": ""
+      }
+    }
+  },
+  "device": {
+    "uuid": "",
+    "version": "",
+    "cordova": "",
+    "platform": "",
+    "model": ""
+  }
+}
+\end{lstlisting}
+
+
+%Este apêndice foi criado apenas para indicar como construir um apêndice no estilo, não existia no original da tese.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thechapter}{}%
+\chapter{APÊNDICE B - REQUISIÇÃO E RESPOSTA DO PROTOCOLO HTTP}
+\renewcommand{\thechapter}{B}%    % trocar A por B na próxima apêndice e etc
+\label{apendice2} % trocar A por B na próxima apêndice e etc
+
+\begin{lstlisting}[language=json,firstnumber=1, caption={Uma requisição de um recurso HTTP através do método \textit{GET}. Ao abrir um novo sítio eletrônico, todos os navegadores enviam uma solicitação da página principal neste formato. De mesma forma, um cabeçalho neste formato será enviado para os métodos \textit{POST}, \textit{PUT} e \textit{DELETE}, métodos básicos do protocolo HTTP.}, label={http:inpe_request},captionpos=b]
+GET /pos_graduacao/cursos/cap/index.php HTTP/1.1
+Host: www.inpe.br
+Accept: text/html,application/xhtml+xml
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4
+\end{lstlisting}
+
+% float,floatplacement=H,
+\begin{lstlisting}[language=json,firstnumber=1, caption={Resposta a uma requisição HTTP de método \textit{GET}. Nesta resposta, o servidor retorna todos os dados referentes ao recurso solicitado. Em caso de arquivos, uma resposta será enviada em binário.}, label={http:inpe_response},captionpos=b]
+HTTP/1.1 200 OK
+Server: Apache/2.2.3 (CentOS)
+X-Powered-By: PHP/5.1.6
+Content-Type: text/html; charset=iso-8859-1
+\end{lstlisting}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Métodos Padrões do Protocolo HTTP}
+\label{tab:metodos_http}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lll@{}}
+\toprule
+Método HTTP & Descrição da Ação                                                             & Exemplo de Função                                                                                                             \\ \midrule
+GET         & \begin{tabular}[t]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagens\\ (listar todas as imagens)\end{tabular}                                \\
+GET         & \begin{tabular}[t]{@{}l@{}}Obter informações \\ sobre um recurso\end{tabular} & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (listar a imagem de \\ identificação \#10)\end{tabular}             \\
+POST        & Criar um novo recurso                                                         & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagens\\ (criar um novo objeto imagem)\end{tabular}                            \\
+PUT         & Atualizar um recurso                                                          & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (atualizar os dados da imagem\\ de identificação \#10)\end{tabular} \\
+DELETE      & Remover um recurso                                                            & \begin{tabular}[t]{@{}l@{}}http://servidor.com/imagem/10\\ (remover o objeto imagem \\ de identificação \#10)\end{tabular}     \\ \bottomrule
+\end{tabular}
+}
+\end{table}
