@@ -7,7 +7,7 @@
 \chapter{APÊNDICE A - ESTRUTURA \textit{JSON} PARA ENVIO DE ARQUIVOS.}  % trocar A por B na próxima apêndice e etc
 \label{apendice1} % trocar A por B na próxima apêndice e etc
 \renewcommand{\thechapter}{A}%    % trocar A por B na próxima apêndice e etc
-
+{\scriptsize 
 \begin{lstlisting}[language=json,firstnumber=1, caption={Estrutura JSON para envio de um arquivo do tipo de imagem.},captionpos=b, label={json:estrutura_imagem}]
 {
   "entry": {
@@ -32,18 +32,12 @@
       "speed": ""
     },
     "options": {
-      "gpsOptions": {
-        "enableHighAccuracy": "",
-        "maximumAge": "",
-        "timeout": ""
-      },
-      "compassOptions": {
-        "frequency": "",
-        "enabled": ""
-      },
-      "pictureOptions": {
-        "quality": ""
-      }
+      "gpsOptions":
+        { "enableHighAccuracy": "", "maximumAge": "", "timeout": "" },
+      "compassOptions":
+        { "frequency": "", "enabled": "" },
+      "pictureOptions":
+        { "quality": "" }
     }
   },
   "device": {
@@ -55,7 +49,7 @@
   }
 }
 \end{lstlisting}
-
+}
 
 %Este apêndice foi criado apenas para indicar como construir um apêndice no estilo, não existia no original da tese.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
